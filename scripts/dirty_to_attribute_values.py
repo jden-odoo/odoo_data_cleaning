@@ -27,6 +27,8 @@ def get_names():
         res.append(ord(col))
     return res
 
+
+# Get corresponding names for letter columns
 def get_corresponding_names(names_list, dirty_data):
     names = []
     all_names = dirty_data.columns
