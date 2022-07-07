@@ -7,21 +7,24 @@ visibility = "Visible"
 company_name = "ABA company"
 
 
+# Gets dirty data from dirty data csv
 def get_dirty_data():
     return pd.read_csv('../../data.csv')
 
 
-#in order of dirty data
+# Returns list of column names ordered by dirty data csv
 def list_names(dirty_data):
     return dirty_data.columns
 
 
-#input will be correct case from xml
+# Get input names (case insensisitive)
+# Future implementation will be drop down XML
 def get_names():
-    names = input("Enter all column names separated by space").split(" ")
+    names = ["Manufacturer", "Collection", "Color", "Vendor_SKU", "Designer", "Fabric_Type", "Fiber_Contents", "Fabric_Width", "Putup_Format"]
     return names
 
 
+# Create ids for name_list
 def get_ids(name_list):
     ids_list = []
     for cell in name_list:
@@ -32,6 +35,7 @@ def get_ids(name_list):
     return ids_list
 
 
+# Get value_id/name from dirty data
 def get_value_id_name(column_name, dirty_data):
     value_id_names = []
     for value in dirty_data[column_name].tolist():
@@ -40,10 +44,14 @@ def get_value_id_name(column_name, dirty_data):
     return value_id_names
 
 
+# Creates a csv for the output
 def create_csv(df):
     df.to_csv('./data/attr-val.csv', sep='\t', encoding='utf-8')
 
 
+# Create the data to be added to the new dataframe for the output csv
+# Creates value_id/id
+# Appends values into the data and returns a dataframe with data
 def create():
     dirty_data = get_dirty_data()
     names_list = get_names()
@@ -69,6 +77,7 @@ def create():
     return df
 
 
+# Creates csv for dataframe
 def parse():
     df = create()
     create_csv(df)
