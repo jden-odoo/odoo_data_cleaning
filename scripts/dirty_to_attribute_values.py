@@ -9,7 +9,7 @@ company_name = "ABA company"
 
 # Gets dirty data from dirty data csv
 def get_dirty_data():
-    return pd.read_csv('../../data.csv')
+    return pd.read_csv('data/dirty_data.csv')
 
 
 # Returns list of column names ordered by dirty data csv
@@ -46,7 +46,7 @@ def get_value_id_name(column_name, dirty_data):
 
 # Creates a csv for the output
 def create_csv(df):
-    df.to_csv('./data/attr-val.csv', sep='\t', encoding='utf-8')
+    df.to_csv('data/attr-val.csv', sep='\t', encoding='utf-8')
 
 
 # Create the data to be added to the new dataframe for the output csv

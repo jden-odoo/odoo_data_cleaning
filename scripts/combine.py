@@ -1,79 +1,77 @@
-#Script to combine the clean data with the atrribute/value data
-#Written for python 3.8.5
-
-
 import pandas as pd
-#requires openpxl
+
+#############################################################################
+#Input: 1: 'data/attr-val.csv' i.e. output from dirty_to_attribute_values.py
+#       2: 'data/outputdata.csv' i.e. output from dirty_to_clean.py
 
 
-#Convert attribute/value data to a dictionary
-attribute_value_data = {}
+#Output: final_output.xlsx, which is a spreadsheet ready for import into Odoo
+#############################################################################
+
+def main():
+    attr_val_dict = create_attr_val_dict()
+    final_data_df = add_attr_to_clean(attr_val_dict)
+    final_data_df.to_excel(excel_writer = 'final_output.xlsx')
 
 
-#Create df for attribute/value excel file
-attr_val_df = pd.read_excel('data/attr-val.xlsx')#TODO: prompt for user input for file name
-attr_name_values = attr_val_df['value_ids/name'] #TODO: use regex or prompt user for input, probably input column
-attr_name_external_ids = attr_val_df['value_ids/id']
+def create_attr_val_dict():
 
-# print(keys.isnull().values.any())
-# print(vals.head().isnull().values.any())
-# print(attr_val_df['name'][25])
-# print(len(attr_val_df))
+    #Convert attribute/value data to a dictionary
 
-attr_val_dict = {}
-currDict = {}
-currCategory = None
-
-for row in range(0, len(attr_val_df)): #Assumes no null keys or vals
-    if not pd.isna(attr_val_df['name'][row]): #TODO: unhardcode 
-        if currCategory:
-            attr_val_dict[currCategory] = currDict
-        currCategory = str(attr_val_df['name'][row]).lower()
-        # print(attr_val_df['id'])
-        currDict = {}
-        currDict['category_external_id'] = str(attr_val_df['id'][row]).lower() #TODO: reserved/enum?
-
-    currDict[str(attr_val_df['value_ids/name'][row]).lower()] = str(attr_val_df['value_ids/id'][row]).lower()
-
-print(currCategory)
-print(currDict)
-if currCategory:
-    attr_val_dict[currCategory] = currDict
+    #Create df for attribute/value excel file
+    # attr_val_df = pd.read_csv('attr-val.csv')
+    #attr_val_df = pd.read_excel('data/attr-val.xlsx')
+    attr_val_df = pd.read_csv('data/attr-val.csv')
 
 
+    # attr_name_values = attr_val_df['value_ids/name'] 
+    # attr_name_external_ids = attr_val_df['value_ids/id']
+    attr_val_dict = {}
+    currDict = {}
+    currCategory = None
 
-#Manually modified file
-#clean_data_df = pd.read_excel('data/modified-clean-data.xlsx')
+    for row in range(0, len(attr_val_df)): 
+        if not pd.isna(attr_val_df['name'][row]):  
+            if currCategory:
+                attr_val_dict[currCategory] = currDict
+            currCategory = str(attr_val_df['name'][row]).replace(' ','_').lower() #Replace space with underscore for consistency
+            currDict = {}
+            currDict['category_external_id'] = str(attr_val_df['id'][row]).lower() 
 
-#Dataframe for clena data without attributes
-clean_data_df = pd.read_excel('data/clean-data-original.xlsx')
+        currDict[str(attr_val_df['value_ids/name'][row]).lower()] = str(attr_val_df['value_ids/id'][row])
 
-def cleanCells(x):
-    x.str.strip() if x.dtype == "object" else x
-    x.str.replace(' ','_')
+    if currCategory:
+        attr_val_dict[currCategory] = currDict
 
-clean_data_df.applymap(cleanCells)
+    return attr_val_dict
 
 
 
 
-clean_data_df['Product Attributes / Attributes / External ID'] = ""
-clean_data_df['Product Attributes / Values / External ID'] = ""
 
-for row in range(0, len(clean_data_df)): #attributes/external id needs fix
-    print(row)
 
-    category_name = str(clean_data_df['Attribute'][row]).lower()
-    attr_name = str(clean_data_df['Value'][row]).lower()
-    if category_name != 'nan':
-        clean_data_df['Product Attributes / Attributes / External ID'][row] = attr_val_dict[category_name]['category_external_id']
-        if attr_name != 'nan':
-            clean_data_df['Product Attributes / Values / External ID'][row] = attr_val_dict[category_name][attr_name]
+def add_attr_to_clean(attr_val_dict):
 
-print(clean_data_df.head())    # print(row)
+    
+    clean_data_df = pd.read_csv('data/outputdata.csv')
+    clean_data_df.replace(' ', '_', regex=True)
+    clean_data_df['Product Attributes / Attributes / External ID'] = ""
+    clean_data_df['Product Attributes / Values / External ID'] = ""
 
-#TODO: strip spaces, replace with underscores
+    for row in range(0, len(clean_data_df)): #attributes/external id needs fix
+        print(row)
 
-clean_data_df.to_excel(excel_writer = 'output.xlsx')
+        category_name = str(clean_data_df['Attribute'][row]).lower()
+        attr_name = str(clean_data_df['Value'][row]).lower()
+        if category_name != 'nan':
+            clean_data_df['Product Attributes / Attributes / External ID'][row] = attr_val_dict[category_name]['category_external_id']
+            if attr_name != 'nan':
+                clean_data_df['Product Attributes / Values / External ID'][row] = attr_val_dict[category_name][attr_name]
+
+    return clean_data_df  
+
+
+
+main()
 
 
