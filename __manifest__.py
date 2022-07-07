@@ -4,7 +4,7 @@
     'license': 'OPL-1',
     'author': 'Odoo Inc',
     'category': '',
-    'summary': 'Add additional functionaliy to the data cleaning module',
+    'summary': 'Add additional functionality to the data cleaning module',
     'description': """
     """,
     'depends': ['base'],
