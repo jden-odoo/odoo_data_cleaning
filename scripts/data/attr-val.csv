@@ -1,5 +1,5 @@
 name	id	display_type	create_variant	visibility	value_id/name	value_id/id
-Manufacturer	ab-manufacturer	Radio	Instantly	Visible	Santee Print Works	manufacturer_1
+Manufacturer	ab-manufacturer	Radio	Instantly	Visible	"""Santee Print Works"""	manufacturer_1
 					Marcus Fabrics	manufacturer_2
 					Choice Fabrics	manufacturer_3
 					Springs Creative Products Group	manufacturer_4
@@ -23,7 +23,7 @@ Manufacturer	ab-manufacturer	Radio	Instantly	Visible	Santee Print Works	manufact
 					Quilt King Batting	manufacturer_22
 					Hobbs Bonded Fibers	manufacturer_23
 					Fabric Cafe Inc	manufacturer_24
-Collection	ab-collection	Radio	Instantly	Visible	Tone on Tone	collection_1
+Collection	ab-collection	Radio	Instantly	Visible	"""Tone on Tone"""	collection_1
 					Simply Solid	collection_2
 					Simply Solid 38	collection_3
 					Mini Dots	collection_4
@@ -568,7 +568,7 @@ Collection	ab-collection	Radio	Instantly	Visible	Tone on Tone	collection_1
 					HL Fusible Batting	collection_543
 					Fashion Prints - Solid - Brown - ROT	collection_544
 					Fashion Prints - Solid - Brown ROT	collection_545
-Color	ab-color	Radio	Instantly	Visible	White	color_1
+Color	ab-color	Radio	Instantly	Visible	"""White"""	color_1
 					Tone	color_2
 					Black	color_3
 					Cream	color_4
@@ -819,3 +819,1850 @@ Color	ab-color	Radio	Instantly	Visible	White	color_1
 					Collegiate	color_249
 					Gray on White	color_250
 					Hobbs	color_251
+Vendor_SKU	ab-vendor_sku	Radio	Instantly	Visible	"""Card 8 - 17632-W/W"""	vendor_sku_1
+					Card 8 17632/T W/T	vendor_sku_2
+					Card 8 18606 W/W	vendor_sku_3
+					Card 8 18606 W/T	vendor_sku_4
+					Fashion Solid - White	vendor_sku_5
+					Fashion Solid - Black	vendor_sku_6
+					Card 8 - 19616 W/W	vendor_sku_7
+					Card 8 - 19616 W/T	vendor_sku_8
+					Card 8 - 20065 W/W	vendor_sku_9
+					Card 8 - 20065 W/T	vendor_sku_10
+					Card 78 - 20707 -Antique	vendor_sku_11
+					Card 78 - 20707 -CREAM/TINT	vendor_sku_12
+					Card 78 - 20707 -K	vendor_sku_13
+					Card 78 - 20707 -Rose Pink	vendor_sku_14
+					Card 78 - 20707 -W/W	vendor_sku_15
+					Card 103 20707 Lipstick Red	vendor_sku_16
+					Card 8 - 21111-W/W	vendor_sku_17
+					Card 8 - 21111-W/T	vendor_sku_18
+					Card 8 - 21113-W/W	vendor_sku_19
+					Card 8 - 21113-W/T	vendor_sku_20
+					Card 8 - 21113-T/T	vendor_sku_21
+					Card 8 - 21114-W/W	vendor_sku_22
+					Card 12 - 21677-W/W	vendor_sku_23
+					Card 12 - 21677-W/NATURAL	vendor_sku_24
+					Card 12 - 21677-W/TEASTAIN	vendor_sku_25
+					Card 8 - 21677-W/W	vendor_sku_26
+					Card 8 - 21677-W/T	vendor_sku_27
+					Card 8 - 21677-T/T	vendor_sku_28
+					"44"" WHITE"	vendor_sku_29
+					"44"" DESIZED NATURAL"	vendor_sku_30
+					"90"" WHITE"	vendor_sku_31
+					"90"" DESIZED NATURAL"	vendor_sku_32
+					"108"" WHITE"	vendor_sku_33
+					"108"" DESIZED NATURAL"	vendor_sku_34
+					"118"" WHITE"	vendor_sku_35
+					"118"" DESIZED NATURAL"	vendor_sku_36
+					"45"" WHITE"	vendor_sku_37
+					"45"" NATURAL"	vendor_sku_38
+					Card 12 - 22015-W/TEASTAIN	vendor_sku_39
+					Card 8 - 22015 W/W	vendor_sku_40
+					Card 8 - 22015-W/T	vendor_sku_41
+					R42-0033	vendor_sku_42
+					R42-0085	vendor_sku_43
+					R42-0093	vendor_sku_44
+					"45"" BLEACHED"	vendor_sku_45
+					Card 8 - 27267-W/W	vendor_sku_46
+					Card 8 - 27267-W/T	vendor_sku_47
+					Card 103 -  29078/B Calico Yellow	vendor_sku_48
+					Card 8 - 29888T W/W	vendor_sku_49
+					Card 8 - 29888T W/T	vendor_sku_50
+					Card 100 - 30510-108 W/W	vendor_sku_51
+					Card 100 - 30510-108 W/Tint	vendor_sku_52
+					Card 242 - 36006 101 - Red	vendor_sku_53
+					Card 242 - 36006 102 - Royal	vendor_sku_54
+					Card 242 - 36006 103 - Lilac	vendor_sku_55
+					Card 242 - 36006 104 - Buttercup	vendor_sku_56
+					Card 242 - 36006 105 - Pink	vendor_sku_57
+					Card 8 - 36241-W/W	vendor_sku_58
+					Card 8 - 36241-W/T	vendor_sku_59
+					Card 8 - 36242-W/W	vendor_sku_60
+					Card 8 - 36242-W/T	vendor_sku_61
+					Card 8 - 36244-W/W	vendor_sku_62
+					Card 8 - 36244-W/T	vendor_sku_63
+					Card 8 - 36249 W/W	vendor_sku_64
+					Card 8 - 36249 W/T	vendor_sku_65
+					Card 8 - 36255 w/w	vendor_sku_66
+					Card 8 - 37127-W/W	vendor_sku_67
+					Card 8 - 37127-W/T	vendor_sku_68
+					Card 8 - 37412-W/W	vendor_sku_69
+					Card 8 - 37412 W/T	vendor_sku_70
+					Card 234 37921 Pink/Ivory	vendor_sku_71
+					Card 234 37921 Green/Ivory	vendor_sku_72
+					Card 234 37923 Pink/Ivory	vendor_sku_73
+					Card 234 37923 Blue/Ivory	vendor_sku_74
+					Card 234 37927 Pink/Ivory	vendor_sku_75
+					Card 234 37927 Blue/Ivory	vendor_sku_76
+					Card 234 37927 Green/Ivory	vendor_sku_77
+					Card 234 37928 Pink/Ivory	vendor_sku_78
+					Card 234 37929 Blue/Ivory	vendor_sku_79
+					Card 234 37929 Green/Ivory	vendor_sku_80
+					Card 242 - 38170 101	vendor_sku_81
+					Card 242 - 38170 102	vendor_sku_82
+					Card 242 - 38170 103	vendor_sku_83
+					Card 242 - 38170 104	vendor_sku_84
+					Card 242 - 38170 105	vendor_sku_85
+					Card 203 39179 White/White	vendor_sku_86
+					Card 190 - 41355-RWB	vendor_sku_87
+					Card 12 - 42249-W/NATURAL	vendor_sku_88
+					Card 12 - 42250-W/W	vendor_sku_89
+					Card 12 - 42250-W/T	vendor_sku_90
+					Card 149 - 43463 W/W	vendor_sku_91
+					Card 8 - 43463/T W/TINT	vendor_sku_92
+					Card 149 43463/T W/Teastain	vendor_sku_93
+					Card 33 - 43681-101	vendor_sku_94
+					Card 33 - 43681-102	vendor_sku_95
+					Card 33 - 43681-104	vendor_sku_96
+					Card 33 - 43681-105	vendor_sku_97
+					Card 33 - 43681-107	vendor_sku_98
+					Card 33 - 43681-108	vendor_sku_99
+					Card 33 - 43681-201	vendor_sku_100
+					Card 33 - 43681-202	vendor_sku_101
+					Card 33 - 43681-203	vendor_sku_102
+					Card 33 - 43681-204	vendor_sku_103
+					Card 33 - 43681-205	vendor_sku_104
+					Card 33 - 43681-207	vendor_sku_105
+					Card 33 - 43681-208	vendor_sku_106
+					Card 33 43681- 301	vendor_sku_107
+					Card 33 43681- 302	vendor_sku_108
+					Card 33 43681- 304	vendor_sku_109
+					Card 33 - 43681-402	vendor_sku_110
+					Card 33 - 43681-403	vendor_sku_111
+					Card 33 - 43681-404	vendor_sku_112
+					Card 33 - 43681-405	vendor_sku_113
+					Card 33 - 43681-407	vendor_sku_114
+					Card 33 - 43681-501	vendor_sku_115
+					Card 33 - 43681-502	vendor_sku_116
+					Card 33 - 43681-503	vendor_sku_117
+					Card 33 - 43681-504	vendor_sku_118
+					Card 33 - 43681-604	vendor_sku_119
+					Card 33 - 43681-605	vendor_sku_120
+					Card 33 43681- 606	vendor_sku_121
+					Card 33 - 43681-607	vendor_sku_122
+					Card 33 - 43681-608	vendor_sku_123
+					Card 33 - 43681-611	vendor_sku_124
+					Card 33 - 43681-612	vendor_sku_125
+					Card 33 - 43681-613	vendor_sku_126
+					Card 33 - 43681-702	vendor_sku_127
+					Card 33 - 43681-703	vendor_sku_128
+					Card 33 - 43681-704	vendor_sku_129
+					Card 33 - 43681-706	vendor_sku_130
+					Card 33 - 43681-707	vendor_sku_131
+					Card 33 - 43681-708	vendor_sku_132
+					Card 33 - 43681-711	vendor_sku_133
+					Card 33 - 43681-714	vendor_sku_134
+					Card 33 43681- 801	vendor_sku_135
+					Card 33 - 43681-802	vendor_sku_136
+					Card 33 43681- 804	vendor_sku_137
+					Card 33 - 43681-805	vendor_sku_138
+					Card 33 - 43681-902	vendor_sku_139
+					Card 33 - 43681-903	vendor_sku_140
+					Card 33 43681- 904	vendor_sku_141
+					Card 33 - 43681-1002	vendor_sku_142
+					Card 33 - 43681-1003	vendor_sku_143
+					Card 33 - 43681-1004	vendor_sku_144
+					Card 33 - 43681-1011	vendor_sku_145
+					Card 33 - 43681-1301	vendor_sku_146
+					Card 33 - 43681-1304	vendor_sku_147
+					Card 33 - 43681-1306	vendor_sku_148
+					Card 33 - 43681-2020	vendor_sku_149
+					Card 33 43681- 1307	vendor_sku_150
+					Card 33 43681- 1513	vendor_sku_151
+					Card 33 43681- 1305	vendor_sku_152
+					43915 #4 Copper/Ivory	vendor_sku_153
+					43915 #30 Lavender	vendor_sku_154
+					43915 #21 Medium Blue	vendor_sku_155
+					43915 #63 Dark Green	vendor_sku_156
+					43915 #8 Grey	vendor_sku_157
+					43915 #33 Brown/Ivory	vendor_sku_158
+					43915 #3 Berry	vendor_sku_159
+					43915 #22 Navy/Ivory	vendor_sku_160
+					43915 #61 Lime Green	vendor_sku_161
+					43915 #1 Red	vendor_sku_162
+					43915 #20 Blue	vendor_sku_163
+					43915 #10 Light Pink	vendor_sku_164
+					43923 #8 Grey	vendor_sku_165
+					43923 #9 Tan	vendor_sku_166
+					43923 #3 Lavender	vendor_sku_167
+					43923 #2 Blue	vendor_sku_168
+					43923 #6 Green	vendor_sku_169
+					43923 #9T Grey/Ivory	vendor_sku_170
+					Card 242 - 43970-101	vendor_sku_171
+					Card 242 - 43970-102	vendor_sku_172
+					Card 242 - 43970-103	vendor_sku_173
+					Card 242 - 43970-104	vendor_sku_174
+					Card 242 - 43970-105	vendor_sku_175
+					44086 Grey	vendor_sku_176
+					44086 #4 Brown/Ivory	vendor_sku_177
+					44086 #2 Blue	vendor_sku_178
+					44086 #1 Red	vendor_sku_179
+					44088 #8 Grey	vendor_sku_180
+					44088 #4 Brown/Ivory	vendor_sku_181
+					44088 #3 Lavender	vendor_sku_182
+					44088 #1 Red	vendor_sku_183
+					Card 242 - 44098 101	vendor_sku_184
+					Card 242 - 44098 102	vendor_sku_185
+					Card 242 - 44098 103	vendor_sku_186
+					Card 242 - 44098 104	vendor_sku_187
+					Card 242 - 44098 105	vendor_sku_188
+					Card 8 - 44261 W/W	vendor_sku_189
+					Card 8 - 44261/T W/TINT	vendor_sku_190
+					Card 47 - 44395-101	vendor_sku_191
+					Card 47 - 44395-102	vendor_sku_192
+					Card 47 - 44395-105	vendor_sku_193
+					Card 47 - 44395-108	vendor_sku_194
+					Card 47 - 44395-202	vendor_sku_195
+					Card 47 - 44395-203	vendor_sku_196
+					Card 47 - 44395-204	vendor_sku_197
+					Card 47 - 44395-205	vendor_sku_198
+					Card 47 - 44395-208	vendor_sku_199
+					Card 47 44395 209	vendor_sku_200
+					Card 47 - 44395- 402	vendor_sku_201
+					Card 47 - 44395-403	vendor_sku_202
+					Card 47 - 44395-405	vendor_sku_203
+					Card 47 44395 - 407	vendor_sku_204
+					Card 47 - 44395-502	vendor_sku_205
+					Card 47 - 44395-503	vendor_sku_206
+					Card 47 44395 - 604	vendor_sku_207
+					Card 47 - 44395-605	vendor_sku_208
+					Card 47 - 44395-611	vendor_sku_209
+					Card 47 44395 - 615	vendor_sku_210
+					Card 47 - 44395-702	vendor_sku_211
+					Card 47 44395 - 703	vendor_sku_212
+					Card 47 - 44395-706	vendor_sku_213
+					Card 47 - 44395-707	vendor_sku_214
+					Card 47 - 44395-714	vendor_sku_215
+					Card 47 - 44395-802	vendor_sku_216
+					Card 47 44395 - 804	vendor_sku_217
+					Card 47 - 44395-805	vendor_sku_218
+					Card 47 - 44395-902	vendor_sku_219
+					Card 47 - 44395-1003	vendor_sku_220
+					Card 47 - 44395-1513	vendor_sku_221
+					Card 47 44395 - 1002	vendor_sku_222
+					Card 47 44395 - 2020	vendor_sku_223
+					Card 47 44395 3004	vendor_sku_224
+					Card 242 - 45584 101	vendor_sku_225
+					Card 242 - 45584 102	vendor_sku_226
+					Card 242 - 45584 103	vendor_sku_227
+					Card 242 - 45584 104	vendor_sku_228
+					Card 242 - 45584 105	vendor_sku_229
+					Card 131 -  45975 Met Gold/Green	vendor_sku_230
+					Card 12 - 46181/T W/T	vendor_sku_231
+					Card 8 - 46261 W/W	vendor_sku_232
+					SPW 149 46261/T W/Teastain	vendor_sku_233
+					Card 100 - 46262-108 W/Tint	vendor_sku_234
+					Card 8 - 46262-45 W/W	vendor_sku_235
+					46364 Orange / White Dot	vendor_sku_236
+					Card 203 46709 Cream Metallic	vendor_sku_237
+					Card 203 46709 CBlack Metallic	vendor_sku_238
+					Card 148 -  47364-Red/G (Metallic)	vendor_sku_239
+					47578 Harvest Dot Gold	vendor_sku_240
+					Card 142 - 47603-101	vendor_sku_241
+					Card 142 - 47603-102	vendor_sku_242
+					Card 142 - 47603-200	vendor_sku_243
+					Card 142 - 47603-201	vendor_sku_244
+					Card 142 - 47603-202	vendor_sku_245
+					Card 142 - 47603-204	vendor_sku_246
+					Card 142 - 47603-206	vendor_sku_247
+					Card 142 - 47603-207	vendor_sku_248
+					Card 142 - 47603-208	vendor_sku_249
+					Card 142 - 47603-401	vendor_sku_250
+					Card 142 - 47603-402	vendor_sku_251
+					Card 142 - 47603-405	vendor_sku_252
+					Card 142 - 47603-500	vendor_sku_253
+					Card 142 - 47603-607	vendor_sku_254
+					Card 142 - 47603-610	vendor_sku_255
+					Card 142 - 47603-611	vendor_sku_256
+					Card 142 - 47603-700	vendor_sku_257
+					Card 142 - 47603-702	vendor_sku_258
+					Card 142 - 47603-703	vendor_sku_259
+					Card 142 - 47603-804	vendor_sku_260
+					Card 142 - 47603-806	vendor_sku_261
+					Card 142 - 47603-900	vendor_sku_262
+					Card 142 - 47603-1506	vendor_sku_263
+					Card 203  47686 White/White	vendor_sku_264
+					Card 203 47686/46043 White/Silver Glitter	vendor_sku_265
+					Card 203 47686/46043 White/Gold Glitter	vendor_sku_266
+					Card 8 - 47716 W/W	vendor_sku_267
+					Card 8 - 47716/T W/TINT	vendor_sku_268
+					Card 8 - 47717 W/W	vendor_sku_269
+					Card 8 - 47717/T W/TINT	vendor_sku_270
+					Card 149 47717/T W/Teastain	vendor_sku_271
+					Card 8 - 47727 W/W	vendor_sku_272
+					Card 8 - 47727/T W/TINT	vendor_sku_273
+					Card 8 - 47728 W/W	vendor_sku_274
+					Card 8 - 47728/T W/TINT	vendor_sku_275
+					Card 8 - 47736 W/W	vendor_sku_276
+					Card 8 - 47736/T W/TINT	vendor_sku_277
+					Card 8 - 47748 W/W	vendor_sku_278
+					Card 8 - 47748/T W Tint	vendor_sku_279
+					48096 Navy/Antique	vendor_sku_280
+					48096 Red/Antique	vendor_sku_281
+					Card 208 48096 W/W	vendor_sku_282
+					Card 208 48096/T White/Tint	vendor_sku_283
+					Card 190 48118 RWB	vendor_sku_284
+					Card 190 48120 Antique Cream	vendor_sku_285
+					Card 182  48381-202	vendor_sku_286
+					Card 236 48413 Met Gold/Red	vendor_sku_287
+					Card 236 49413 Met Gold/Green	vendor_sku_288
+					Card 236 49413 Met Gold/Black	vendor_sku_289
+					Card 236 49413 Met Gold/Cream	vendor_sku_290
+					Card 190 - 48475 RWB/Antique	vendor_sku_291
+					Card 190 - 48476 RWB	vendor_sku_292
+					Card 190 - 48477 RWB	vendor_sku_293
+					Card 190 - 48478 RWB/ Antique	vendor_sku_294
+					Card 190 - 48479 RWB	vendor_sku_295
+					Card 190 - 48480 RWB	vendor_sku_296
+					Card 190 - 48481 Red	vendor_sku_297
+					Card 190 - 48482 RWB	vendor_sku_298
+					CARD 190 48484 RWB/ Antique	vendor_sku_299
+					CARD 190- 48487 RWB	vendor_sku_300
+					Card 190 - 48488 White/Red	vendor_sku_301
+					Card 190 - 48488 White/Navy	vendor_sku_302
+					Card 190 - 48489 Navy/White	vendor_sku_303
+					Card 190 - 48489 Red/White	vendor_sku_304
+					48489 Navy/Antique	vendor_sku_305
+					48489 Red/Antique	vendor_sku_306
+					Card 208 48489 W/W	vendor_sku_307
+					CARD 208 48489/T White/Tint	vendor_sku_308
+					Card 190 - 48493 RWB	vendor_sku_309
+					Card 188 48494- White/Tint	vendor_sku_310
+					Card 188 48494-Gray/White	vendor_sku_311
+					Card 188 48494-White/White	vendor_sku_312
+					Card 235 48494 Brown	vendor_sku_313
+					Card 235 48494 Beige	vendor_sku_314
+					Card 235 48494 Navy	vendor_sku_315
+					Card 235 48494 Light Blue	vendor_sku_316
+					Card 235 48494 Pink	vendor_sku_317
+					Card 235 48494 Yellow	vendor_sku_318
+					Card 235 48494 Light Gray	vendor_sku_319
+					Card 235 48494 Dark Gray	vendor_sku_320
+					Card 235 48494 Turquoise	vendor_sku_321
+					Card 235 48494 Peach	vendor_sku_322
+					Card 235 48494 Purple	vendor_sku_323
+					Card 188 48495-White/Tint	vendor_sku_324
+					Card 188 48495-Gray/White	vendor_sku_325
+					Card 188 48495-White/White	vendor_sku_326
+					Card 188 48497-White/Tint	vendor_sku_327
+					Card 188 48497-Gray/White	vendor_sku_328
+					Card 188 48497-White/White	vendor_sku_329
+					Card 188 48498-White/Tint	vendor_sku_330
+					Card 188 48498-Gray/White	vendor_sku_331
+					Card 188 48498-White/White	vendor_sku_332
+					Card 188 48499-White/Tint	vendor_sku_333
+					Card 188 48499-Gray/White	vendor_sku_334
+					Card 188 48499-White/White	vendor_sku_335
+					Card 188 48500-Gray/White	vendor_sku_336
+					Card 188 48500-White/White	vendor_sku_337
+					Card 188 48501-White/Tint	vendor_sku_338
+					Card 188 48501-Gray/White	vendor_sku_339
+					Card 188 48501-White/White	vendor_sku_340
+					Card 188 48502-White/Tint	vendor_sku_341
+					Card 188 48503-Gray/White	vendor_sku_342
+					Card 188 48503-White/White	vendor_sku_343
+					Card 188 48505-White/Tint	vendor_sku_344
+					Card 188 48505-Gray/White	vendor_sku_345
+					Card 188 48505-White/White	vendor_sku_346
+					48968 RWB	vendor_sku_347
+					CARD 190 49024 RWB	vendor_sku_348
+					Card 190 49025 Antique	vendor_sku_349
+					49026 RWB	vendor_sku_350
+					CARD 190 49027 RWB	vendor_sku_351
+					Card 203 49028 Green	vendor_sku_352
+					Card 203 49029 Blue	vendor_sku_353
+					Card 236 49029 White/White	vendor_sku_354
+					Card 236 49029 Red/White	vendor_sku_355
+					Card 203 49033 Blue Multi	vendor_sku_356
+					Card 203 49043 Green	vendor_sku_357
+					Card 206 49104 Black	vendor_sku_358
+					Card 206 49104 Red	vendor_sku_359
+					Card 206 49105 Black	vendor_sku_360
+					Card 206 49105 Red	vendor_sku_361
+					Card 206 49106 Black	vendor_sku_362
+					Card 206 49106 Red	vendor_sku_363
+					Card 206 49107 Black	vendor_sku_364
+					Card 206 49107 Red	vendor_sku_365
+					Card 206 49108 Black	vendor_sku_366
+					Card 206 49108 Red	vendor_sku_367
+					Card 206 49109 Black	vendor_sku_368
+					Card 206 49109 Red	vendor_sku_369
+					Card 206 49110 Black	vendor_sku_370
+					Card 206 49110 Red	vendor_sku_371
+					Card 206 49111 Black	vendor_sku_372
+					Card 206 49111 Red	vendor_sku_373
+					Card 206 49112 Red	vendor_sku_374
+					Card 206 49113 Black	vendor_sku_375
+					Card 206 49113 Red	vendor_sku_376
+					Card 206 49114 Black	vendor_sku_377
+					Card 206 49114 Red	vendor_sku_378
+					Card 206 49115 Black	vendor_sku_379
+					Card 206 49115 Red	vendor_sku_380
+					Card 206 49116 Black	vendor_sku_381
+					Card 206 49116 Red	vendor_sku_382
+					Card 206 49117 Red	vendor_sku_383
+					Card 206 49118 Black	vendor_sku_384
+					Card 206 49118 Red	vendor_sku_385
+					Card 206 49119 Black	vendor_sku_386
+					Card 206 49119 Red	vendor_sku_387
+					49186 Navy/Antique	vendor_sku_388
+					49186 Red/Antique	vendor_sku_389
+					Card 208 49186 White/White	vendor_sku_390
+					Card 208 49186/T White/Tint	vendor_sku_391
+					Card 208 49187 White/White	vendor_sku_392
+					Card 208 49187/T White/Tint	vendor_sku_393
+					49187 Red/Antique	vendor_sku_394
+					49187 Navy/Antique	vendor_sku_395
+					Card 208 49188 White/White	vendor_sku_396
+					Card 208 49188/T White/Tint	vendor_sku_397
+					49188 Red/Antique	vendor_sku_398
+					49188 Navy/Antique	vendor_sku_399
+					49189 Red/Antique	vendor_sku_400
+					49189 Navy/Antique	vendor_sku_401
+					Card 215 49211 Blue Multi	vendor_sku_402
+					Card 215 49212 Royal	vendor_sku_403
+					Card 215 49213 Royal	vendor_sku_404
+					Card 215 49214 Blue	vendor_sku_405
+					Card 215 49218 Blue	vendor_sku_406
+					Card 215 49218 Cream	vendor_sku_407
+					Card 215 49219 Pink	vendor_sku_408
+					Card 215 49219 Mint	vendor_sku_409
+					Card 215 49220 Pink	vendor_sku_410
+					Card 215 49220 Yellow	vendor_sku_411
+					Card 215 49223 Blue Multi	vendor_sku_412
+					Card 215 49227 Blue Multi	vendor_sku_413
+					Card 217 49293 Blue	vendor_sku_414
+					Card 217 49299	vendor_sku_415
+					Card 219 49374 Black	vendor_sku_416
+					Card 219 49374 Peach	vendor_sku_417
+					49378 105	vendor_sku_418
+					49378 202	vendor_sku_419
+					49378 208	vendor_sku_420
+					49378 403	vendor_sku_421
+					49378 405	vendor_sku_422
+					49378 702	vendor_sku_423
+					49378 801	vendor_sku_424
+					49378 804	vendor_sku_425
+					49378 1003	vendor_sku_426
+					49478 Red/Navy	vendor_sku_427
+					49478 Brown/Beige	vendor_sku_428
+					49479 Pink	vendor_sku_429
+					49479 Blue	vendor_sku_430
+					49479 Bright Yellow	vendor_sku_431
+					49479 Green	vendor_sku_432
+					49480 Pink	vendor_sku_433
+					49480 Peach	vendor_sku_434
+					49481 Lilac	vendor_sku_435
+					49481 Pink	vendor_sku_436
+					49482 Green	vendor_sku_437
+					49482 Purple	vendor_sku_438
+					49483 Bright Yellow	vendor_sku_439
+					49483 Red	vendor_sku_440
+					49484 Pink	vendor_sku_441
+					49484 Blue	vendor_sku_442
+					49522 Red/White	vendor_sku_443
+					49522 Navy/White	vendor_sku_444
+					49523 Red/White	vendor_sku_445
+					49523 Navy/White	vendor_sku_446
+					49524 Red/White	vendor_sku_447
+					49524 Navy/White	vendor_sku_448
+					Card 224 49527 RWB	vendor_sku_449
+					Card 224 49529 RWB/Antique	vendor_sku_450
+					Card 224 49530 RWB/Antique	vendor_sku_451
+					Card 224 49531 RWB	vendor_sku_452
+					Card 224 49532 RWB	vendor_sku_453
+					Card 224 49533 RWB	vendor_sku_454
+					Card 224 49535 RWB	vendor_sku_455
+					Card 230 49674 RWB	vendor_sku_456
+					Card 230 49675 RWB	vendor_sku_457
+					Card 229 49677 Black	vendor_sku_458
+					Card 229 49678/T Ivory/Gold Metallic	vendor_sku_459
+					Card 229 49679 Green/Gold Metallic	vendor_sku_460
+					Card 229 49680 Multi/Green	vendor_sku_461
+					Card 229 49681 Multi	vendor_sku_462
+					Card 229 49682 Green/Gold Metallic	vendor_sku_463
+					Card 229 49683 Cocoa	vendor_sku_464
+					Card 229 49684/T Ivory/Gold Metallic	vendor_sku_465
+					Card 230 49685 RWB	vendor_sku_466
+					Card 230 49687 RWB	vendor_sku_467
+					Card 230 49688 RWB	vendor_sku_468
+					Card 230 49689 RWB	vendor_sku_469
+					CARD 229 49690 Multi/Blue	vendor_sku_470
+					Card 229 49691 Blue	vendor_sku_471
+					Card 229 49692 Multi/Blue	vendor_sku_472
+					Card 229 49693 Multi/Blue	vendor_sku_473
+					Card 229 49694 Red/Green/Navy	vendor_sku_474
+					Card 229 49695 Multi	vendor_sku_475
+					Card 229 49696 RWB	vendor_sku_476
+					Card 229 49697 Red/Green/Navy	vendor_sku_477
+					Card 231 49699 Aqua	vendor_sku_478
+					Card 231 49699 Yellow	vendor_sku_479
+					CARD 231 49701 Green	vendor_sku_480
+					CARD 231 49703 Multi	vendor_sku_481
+					CARD 231 49705 Blue	vendor_sku_482
+					CARD 231 49706 Black	vendor_sku_483
+					Card 231 49707 Green	vendor_sku_484
+					Card 231 49707 Pink	vendor_sku_485
+					Card 231 49707 Black	vendor_sku_486
+					Card 231 49708 Black	vendor_sku_487
+					Card 231 49708 Green	vendor_sku_488
+					Card 228 49724 /T Black/Tan	vendor_sku_489
+					Card 228 49724/T Burgundy/Tan	vendor_sku_490
+					Card 228 49724 /T Blue/Tan	vendor_sku_491
+					Card 228 49724/T  Brown/Tan	vendor_sku_492
+					Card 228 49724 Gray/White	vendor_sku_493
+					49724 W/W	vendor_sku_494
+					49724 W/T Tint Shade 5512	vendor_sku_495
+					Card 228 49725/T  Tan/Black	vendor_sku_496
+					Card 228 49725/T  Tan/Burgundy	vendor_sku_497
+					Card 228 49725/T  Tan/Blue	vendor_sku_498
+					Card 228 49725/T  Tan/Brown	vendor_sku_499
+					Card 228 49725 White/Gray	vendor_sku_500
+					Card 228 49726/T  Black Tan	vendor_sku_501
+					Card 228 49726/T  Burgundy/Tan	vendor_sku_502
+					Card 228 49726/T Blue/Tan	vendor_sku_503
+					Card 228 49726/T Brown/Tan	vendor_sku_504
+					Card 228 49726 Gray/White	vendor_sku_505
+					49726 W/W	vendor_sku_506
+					49726 W/T Tint Shade 5512	vendor_sku_507
+					Card 228 49727/T Tan/Black	vendor_sku_508
+					Card 228 49727/T Tan/Burgundy	vendor_sku_509
+					Card 228 49727/T Tan/Blue	vendor_sku_510
+					Card 228 49727/T Tan/Brown	vendor_sku_511
+					Card 228 49727 White/Gray	vendor_sku_512
+					Card 228 49728/T Black/Tan	vendor_sku_513
+					Card 228 49728/T Burgundy/Tan	vendor_sku_514
+					Card 228 49728/T Blue/Tan	vendor_sku_515
+					Card 228 49728/T Brown/Tan	vendor_sku_516
+					Card 228 49728 Gray/White	vendor_sku_517
+					49728 W/W	vendor_sku_518
+					49728 W/T Tint Shade 5512	vendor_sku_519
+					Card 228 49729/T Tan/Black	vendor_sku_520
+					Card 228 49729/T Tan/Burgundy	vendor_sku_521
+					Card 228 49729/T Tan/Blue	vendor_sku_522
+					Card 228 49729/T Tan/Brown	vendor_sku_523
+					Card 228 49729 White/Gray	vendor_sku_524
+					Card 228 49730/T Black/Tan	vendor_sku_525
+					Card 228 49730/T Burgundy/Tan	vendor_sku_526
+					Card 228 49730/T Blue/Tan	vendor_sku_527
+					Card 228 49730/T Brown/Tan	vendor_sku_528
+					Card 228 49730 Gray/White	vendor_sku_529
+					49730 W/W	vendor_sku_530
+					49730 W/T Tint Shade 5512	vendor_sku_531
+					Card 228 49731/T Tan/Black	vendor_sku_532
+					Card 228 49731/T Tan/Burgundy	vendor_sku_533
+					Card 228 49731/T Tan/Blue	vendor_sku_534
+					CARD 228 49731/T Tan/Brown	vendor_sku_535
+					CARD 228 49731 White/Gray	vendor_sku_536
+					Card 228 49732/T Black/Tan	vendor_sku_537
+					Card 228 49732/T Burgundy/Tan	vendor_sku_538
+					Card 228 49732/T Tan/Blue	vendor_sku_539
+					CARD 228 49732 Gray/White	vendor_sku_540
+					CARD 228 49732/T Brown/Tan	vendor_sku_541
+					49732 W/W	vendor_sku_542
+					49732 W/T Tint Shade 5512	vendor_sku_543
+					Card 228 49733/T Tan/Black	vendor_sku_544
+					Card 228 49733/T Tan/Burgundy	vendor_sku_545
+					Card 228 49733/T Tan/Blue	vendor_sku_546
+					Card 228 49733 White/Gray	vendor_sku_547
+					Card 228 49733/T Tan/Brown	vendor_sku_548
+					Card 233 49776 Multi	vendor_sku_549
+					Card 233 49777 Lilac	vendor_sku_550
+					Card 233 49777 Pink	vendor_sku_551
+					Card 233 49777 Green	vendor_sku_552
+					Card 233 49777 Yellow	vendor_sku_553
+					Card 233 49777 Red	vendor_sku_554
+					Card 233 49777 Navy	vendor_sku_555
+					Card 233 49777 Blue	vendor_sku_556
+					Card 233 49778 Lilac	vendor_sku_557
+					Card 233 49778 Pink	vendor_sku_558
+					Card 233 49778 Green	vendor_sku_559
+					Card 233 49778 Yellow	vendor_sku_560
+					Card 233 49778 Red	vendor_sku_561
+					Card 233 49778 Navy	vendor_sku_562
+					Card 233 49778 Blue	vendor_sku_563
+					Card 233 49780 Multi	vendor_sku_564
+					Card 236 49801 Red	vendor_sku_565
+					Card 236 49801 Green	vendor_sku_566
+					Card 236 49801 Black	vendor_sku_567
+					Card 236 49801 Cream	vendor_sku_568
+					Card 236 49802 Met Gold/Red	vendor_sku_569
+					Card 236 49802 Met Gold/Green	vendor_sku_570
+					Card 236 49802 Met Gold/Black	vendor_sku_571
+					Card 236 49802 Met Gold/Cream	vendor_sku_572
+					Card 236 49803 Black/Red	vendor_sku_573
+					Card 236 49803 Black/Green	vendor_sku_574
+					Card 236 49803 Black/Cream	vendor_sku_575
+					Card 236 49804 Red/White	vendor_sku_576
+					Card 236 49805 Red/White	vendor_sku_577
+					Card 236 49805 Blue/White	vendor_sku_578
+					Card 236 49806 Multi/Cream/Gold Met	vendor_sku_579
+					Card 236 49807 Multi/Cream/Gold Met	vendor_sku_580
+					Card 236 49808 Red/White	vendor_sku_581
+					Card 228 49812/T Tan/Black	vendor_sku_582
+					Card 228 49812/T Tan/Burgundy	vendor_sku_583
+					Card 228 49812/T Tan/Blue	vendor_sku_584
+					Card 228 49812/T Tan/Brown	vendor_sku_585
+					Card 228 49812 White/Gray	vendor_sku_586
+					Card 228 49813/T Black/Tan	vendor_sku_587
+					Card 228 49813/T Burgundy/Tan	vendor_sku_588
+					Card 228 49813/T Blue/Tan	vendor_sku_589
+					Card 228 49813/T Brown/Tan	vendor_sku_590
+					Card 228 49813 Gray/White	vendor_sku_591
+					Card 228 49813 W/W	vendor_sku_592
+					Card 228 49813 W/T	vendor_sku_593
+					Card 228 49814/T Tan/Black	vendor_sku_594
+					Card 228 49814/T Tan/Burgundy	vendor_sku_595
+					Card 228 49814/T Tan/Blue	vendor_sku_596
+					Card 228 49814/T Tan/Brown	vendor_sku_597
+					Card 228 49814 White/Gray	vendor_sku_598
+					Card 228 49815/T Black/Tan	vendor_sku_599
+					Card 228 49815/T Burgundy/Tan	vendor_sku_600
+					Card 228 49815/T Blue/Tan	vendor_sku_601
+					Card 228 49815/T Brown/Tan	vendor_sku_602
+					Card 228 49815 Gray/White	vendor_sku_603
+					Card 228 49815 W/W	vendor_sku_604
+					Card 228 49815 W/T	vendor_sku_605
+					Card 228 49816/T Tan/Black	vendor_sku_606
+					Card 228 49816/T Tan/Burgundy	vendor_sku_607
+					Card 228 49816/T Tan/Blue	vendor_sku_608
+					Card 228 49816/T Tan/Brown	vendor_sku_609
+					Card 228 49817/T Black/Tan	vendor_sku_610
+					Card 228 49817/TBurgundy/Tan	vendor_sku_611
+					Card 228 49817/T Blue/Tan	vendor_sku_612
+					Card 228 49817/T Brown/Tan	vendor_sku_613
+					Card 228 49817 Gray/White	vendor_sku_614
+					Card 228 49817 W/W	vendor_sku_615
+					Card 228 49817 W/T	vendor_sku_616
+					Card 239 11684 Red	vendor_sku_617
+					Card 239 11684 Royal	vendor_sku_618
+					Card 239 11684 Navy	vendor_sku_619
+					10841-97312	vendor_sku_620
+					Cw-12 Kelly Green	vendor_sku_621
+					Cw-29 Orange	vendor_sku_622
+					Cw-25 Red	vendor_sku_623
+					Solid Fleece Royal Blule	vendor_sku_624
+					"Card 164 Fashion Solids 108"" Black"	vendor_sku_625
+					020-ALABAMA	vendor_sku_626
+					020-ARKANSAS	vendor_sku_627
+					020-AUBURN	vendor_sku_628
+					020-GEORGIA	vendor_sku_629
+					020-KANSAS (UNIV)	vendor_sku_630
+					020-LSU	vendor_sku_631
+					020-MISS STATE	vendor_sku_632
+					020-NEBRASKA	vendor_sku_633
+					020-TENNESSEE	vendor_sku_634
+					027-MISSOURI	vendor_sku_635
+					045-ALABAMA	vendor_sku_636
+					045-MISS STATE	vendor_sku_637
+					045-MICHIGAN STATE	vendor_sku_638
+					1132-FLORIDA	vendor_sku_639
+					1165-LSU	vendor_sku_640
+					1165-NEBRASKA	vendor_sku_641
+					1165-TENNESSEE	vendor_sku_642
+					1178-ALABAMA	vendor_sku_643
+					1178-ARKANSAS	vendor_sku_644
+					1178-GEORGIA	vendor_sku_645
+					1178-IOWA STATE	vendor_sku_646
+					1178-LSU	vendor_sku_647
+					1178-MISSOURI	vendor_sku_648
+					1178-VANDERBILT	vendor_sku_649
+					1200-ALABAMA	vendor_sku_650
+					1200-FLORIDA	vendor_sku_651
+					1200-GEORGIA	vendor_sku_652
+					1200-LSU	vendor_sku_653
+					1207-CLEMSON	vendor_sku_654
+					1207-IOWA STATE	vendor_sku_655
+					1208-ALABAMA	vendor_sku_656
+					1208-ARKANSAS	vendor_sku_657
+					1208-MISSOURI	vendor_sku_658
+					1208-NEBRASKA	vendor_sku_659
+					1193-ALABAMA	vendor_sku_660
+					1193-LSU	vendor_sku_661
+					1193-TENNESSEE	vendor_sku_662
+					1210-ALABAMA	vendor_sku_663
+					1267-ALABAMA	vendor_sku_664
+					1267-GEORGIA	vendor_sku_665
+					1199-PREDATORS	vendor_sku_666
+					1158-IOWA (UNIV)	vendor_sku_667
+					1158-IOWA STATE	vendor_sku_668
+					1158-TENNESSEE	vendor_sku_669
+					1164-KANSAS STATE	vendor_sku_670
+					5708-007-001	vendor_sku_671
+					5708-008-001	vendor_sku_672
+					5708-009-001	vendor_sku_673
+					5708-010-001	vendor_sku_674
+					5708-013-001	vendor_sku_675
+					5708-014-001	vendor_sku_676
+					5708-015-001	vendor_sku_677
+					5708-017-001	vendor_sku_678
+					5708-027-001	vendor_sku_679
+					5708-035-001	vendor_sku_680
+					5708-043-001	vendor_sku_681
+					5708-047-001	vendor_sku_682
+					5708-051-001	vendor_sku_683
+					5708-060-001	vendor_sku_684
+					5708-066-001	vendor_sku_685
+					5708-088-001	vendor_sku_686
+					5708-089-001	vendor_sku_687
+					5708-093-001	vendor_sku_688
+					5708-107-001	vendor_sku_689
+					5708-108-001	vendor_sku_690
+					5708-110-001	vendor_sku_691
+					5708-115-001	vendor_sku_692
+					5708-120-001	vendor_sku_693
+					5708-136-001	vendor_sku_694
+					5708-147-001	vendor_sku_695
+					5708-152-001	vendor_sku_696
+					5708-169-001	vendor_sku_697
+					5708-180-001	vendor_sku_698
+					5708-183-001	vendor_sku_699
+					"Lab Dip ""A"" 2014-04-09"	vendor_sku_700
+					"Lab Dip ""C"" 2014-04-09"	vendor_sku_701
+					"Lab Dip ""C"" 2013-11-26"	vendor_sku_702
+					"Lab Dip ""A"" 2014-03-12"	vendor_sku_703
+					"Lab Dip ""A"" 2013-11-26"	vendor_sku_704
+					"Lab Dip ""B"" 2014-04-09"	vendor_sku_705
+					"Lab Dip ""C"" 2014-03-12"	vendor_sku_706
+					"Lab Dip ""B"" 2013-11-26"	vendor_sku_707
+					Pending 2014-03-12	vendor_sku_708
+					"Lab Dip ""B"" 2013-12-11"	vendor_sku_709
+					"Lab Dip ""B"" 2014-03-12"	vendor_sku_710
+					P/S White 2020-08-20	vendor_sku_711
+					"Lab Dip ""B"" 2014-04-04"	vendor_sku_712
+					"Lab Dip ""A"" 2014-04-04"	vendor_sku_713
+					"Lab Dip ""B"" 2015-02-17"	vendor_sku_714
+					"Lab Dip ""A"" 2015-02-17"	vendor_sku_715
+					"Lab Dip ""C"" 2015-06-08"	vendor_sku_716
+					"Lab Dip ""B"" 2015-06-08"	vendor_sku_717
+					2019-05-07 Pantone 534 C. Midnight	vendor_sku_718
+					2019-05-07 Pantone 7716,326C C. Gulfsteam	vendor_sku_719
+					#210 s/o 2016-06-15	vendor_sku_720
+					#235 Tan s/o 2016-06-15	vendor_sku_721
+					158-41 s/o Nov. 28, 16 C#C	vendor_sku_722
+					158-40 s/o July 14, 2016	vendor_sku_723
+					158-15 s/o July 14, 2016	vendor_sku_724
+					#280 s/o 2016-06-15	vendor_sku_725
+					158-320 Hot Pink s/o Sept 26, 2016	vendor_sku_726
+					#335 s/o 2016-06-15	vendor_sku_727
+					158-35 s/o Oct. 12, 2016	vendor_sku_728
+					158-21 s/o July 14, 2016	vendor_sku_729
+					158-20 s/o 2016-08-01	vendor_sku_730
+					158-49 Light Blue s/o 2016-08-01	vendor_sku_731
+					158-23 s/o Aug 25, 2016	vendor_sku_732
+					158-24 s/o Aug 25, 2016	vendor_sku_733
+					158-37 s/o Aug 25, 2016	vendor_sku_734
+					158-36 s/o July 14, 2016	vendor_sku_735
+					158-480 Aqua s/o 2016-08-01	vendor_sku_736
+					158-630 s/o Sept 26, 2016	vendor_sku_737
+					158-27 s/o 2016-05-31	vendor_sku_738
+					158-28 s/o 2016-05-31	vendor_sku_739
+					#730 s/o 2016-06-15	vendor_sku_740
+					#755 s/o 2016-06-15	vendor_sku_741
+					158-760 Citrus s/o 2016-08-01	vendor_sku_742
+					158-39 s/o Nov 16, 16	vendor_sku_743
+					158-31 s/o 2016-08-01	vendor_sku_744
+					158-32 s/o Aug 25,16	vendor_sku_745
+					158-33 s/o Aug 25, 2016	vendor_sku_746
+					158-34 s/o July 14, 2016	vendor_sku_747
+					TX-10591SY-1	vendor_sku_748
+					TX-10608WJ-2	vendor_sku_749
+					TX-10609WJ-1	vendor_sku_750
+					TX-10609WJ-2	vendor_sku_751
+					TX-10610WJ-1	vendor_sku_752
+					TX-10610WJ-2	vendor_sku_753
+					TX-10611-WJ2	vendor_sku_754
+					TX-10611WJ-3	vendor_sku_755
+					TX-10656WJ col. 01 s/o # 2 10.29.2020	vendor_sku_756
+					TX-10656WJ col. 02 s/o # 2 10.29.2020	vendor_sku_757
+					TX-10656WJ col. 05 s/o 09.16.2020	vendor_sku_758
+					TX-10656WJ col. 07 s/o 09.16.2020	vendor_sku_759
+					TX-10656WJ col. 08 s/o 09.16.2020	vendor_sku_760
+					TX-10656WJ col. 13 s/o 09.16.2020	vendor_sku_761
+					TX-10656WJ col. 15 s/o 09.16.2020	vendor_sku_762
+					TX-10656WJ col. 21 s/o 09.16.2020	vendor_sku_763
+					TX-10656WJ col. 23 s/o 09.16.2020	vendor_sku_764
+					TX-10656WJ col. 24 s/o 09.16.2020	vendor_sku_765
+					TX-10656WJ col. 26 s/o 09.16.2020	vendor_sku_766
+					TX-10656WJ col. 27 s/o 09.16.2020	vendor_sku_767
+					TX-10656WJ col. 28 s/o 09.16.2020	vendor_sku_768
+					TX-10656WJ col. 31 s/o 09.16.2020	vendor_sku_769
+					TX-10656WJ col. 33 s/o 09.16.2020	vendor_sku_770
+					TX-10656WJ col. 35 s/o 09.16.2020	vendor_sku_771
+					TX-10656WJ col. 37 s/o 09.16.2020	vendor_sku_772
+					TX-10656WJ col. 38 s/o 09.16.2020	vendor_sku_773
+					TX-10656WJ col. 41 s/o 09.16.2020	vendor_sku_774
+					TX-10656WJ col. 42 s/o # 2 10.29.2020	vendor_sku_775
+					TX-10656WJ col. 43 s/o # 1 10.29.2020	vendor_sku_776
+					TX-10657WJ-1	vendor_sku_777
+					TX-10657WJ-2	vendor_sku_778
+					D#10672SY C#4 Apr 05, 2021	vendor_sku_779
+					D#10672SY C#12 Apr 05, 2021	vendor_sku_780
+					TX-10677WJ-2	vendor_sku_781
+					TX-10677WJ-5	vendor_sku_782
+					TX-10677WJ-7	vendor_sku_783
+					TX-10677WJ-9	vendor_sku_784
+					TX-10677WJ-10	vendor_sku_785
+					TX-10677WJ-12	vendor_sku_786
+					TX-10677WJ-14 Option A	vendor_sku_787
+					TX-10677WJ-014 Option D	vendor_sku_788
+					TX-10677WJ Option A	vendor_sku_789
+					TX10739SY-01 1ST S/O 5/06/21	vendor_sku_790
+					TX10739SY-02 1ST S/O 5/06/21	vendor_sku_791
+					TX10739SY-03 1ST S/O 5/06/21	vendor_sku_792
+					TX10739SY-04 1ST S/O 5/06/21	vendor_sku_793
+					TX10741SY-01 1ST S/O 5/06/21	vendor_sku_794
+					TX10741SY-04 1ST S/O 5/06/21	vendor_sku_795
+					TX10741SY-03 1ST S/O 5/06/21	vendor_sku_796
+					TX10741SY-05 1ST S/O 5/06/21	vendor_sku_797
+					D#10848SY C#1 Apr 05, 2021	vendor_sku_798
+					D#10848SY C#4 Apr 05, 2021	vendor_sku_799
+					D#10848SY C#7 Apr 05, 2021	vendor_sku_800
+					D#10848SY C#12 Apr 05, 2021	vendor_sku_801
+					TX10871SY-03 1ST S/O 5/20/21	vendor_sku_802
+					TX10871SY-02 1ST S/O 5/20/21	vendor_sku_803
+					TX10871SY-01 1ST S/O 5/20/21	vendor_sku_804
+					TX10874SY-02 1ST S/O 5/20/21	vendor_sku_805
+					TX10874SY-01 1STS/O 5/20/21	vendor_sku_806
+					TX10874SY-03 1ST S/O 5/20/21	vendor_sku_807
+					TX10875SY-03 1ST S/O 5/20/21	vendor_sku_808
+					TX10875SY-01 1ST S/O 5/20/21	vendor_sku_809
+					TX10875SY-02 1ST S/O 5/20/21	vendor_sku_810
+					TX10876SY-01 1ST S/O 5/20/21	vendor_sku_811
+					TX10876SY-02 1ST S/O 5/20/21	vendor_sku_812
+					TX10876SY-03 1ST S/O 5/20/21	vendor_sku_813
+					TX10878SH-01 1ST S/O 5/20/21	vendor_sku_814
+					TX10878SH-02 1ST S/O 5/20/21	vendor_sku_815
+					TX10878SH-03 1ST S/O 5/20/21	vendor_sku_816
+					TX10879SH-02 1ST S/O 5/20/21	vendor_sku_817
+					TX10879SH-01 1ST S/O 5/20/21	vendor_sku_818
+					TX10879SH-03 1ST S/O 5/20/21	vendor_sku_819
+					TX10880SH-02 1ST S/O 5/20/21	vendor_sku_820
+					TX10880SH-04 1ST S/O 5/20/21	vendor_sku_821
+					TX10880SH-01 1ST S/O 5/20/21	vendor_sku_822
+					TX10880SH-03 1ST S/O 5/20/21	vendor_sku_823
+					TX10880SH-05 1ST S/O 5/20/21	vendor_sku_824
+					TX10880SH-06 1ST S/O 5/20/21	vendor_sku_825
+					TX10881SH-01 1ST S/O 5/20/21	vendor_sku_826
+					TX10881SH-03 1ST S/O 5/20/21	vendor_sku_827
+					TX10881SH-02 1ST S/O 5/20/21	vendor_sku_828
+					TX10882SH-01 1ST S/O 5/20/21	vendor_sku_829
+					TX10882SH-03 1ST S/O 5/20/21	vendor_sku_830
+					TX10882SH-02 1ST S/O 5/20/21	vendor_sku_831
+					TX10883SY-01 1ST S/O 5/06/21	vendor_sku_832
+					TX10883SY-02 1ST S/O 5/06/21	vendor_sku_833
+					TX10883SY-03 1ST S/O 5/06/21	vendor_sku_834
+					TX10883SY-04 1ST S/O 5/06/21	vendor_sku_835
+					TX10884SY-02 2ND S/O 6/01/21	vendor_sku_836
+					TX10884SY-03 1ST S/O 5/06/21	vendor_sku_837
+					TX10884SY-05 2ND S/O 6/01/21	vendor_sku_838
+					TX10884SY-04 1ST S/O 5/06/21	vendor_sku_839
+					TX10885SY-01 1ST S/O  5/06/21	vendor_sku_840
+					TX10885SY-03 1ST S/O 5/06/21	vendor_sku_841
+					TX10885SY-02 1ST S/O 5/06/21	vendor_sku_842
+					TX10885SY-04 1ST S/O 5/06/21	vendor_sku_843
+					TX10887GY-02 1ST S/O 5/20/21	vendor_sku_844
+					TX10887GY-01 1ST S/O 5/20/21	vendor_sku_845
+					TX10887GY-03 1ST S/O 5/20/21	vendor_sku_846
+					Leopard	vendor_sku_847
+					Tiger	vendor_sku_848
+					Zebra	vendor_sku_849
+					Cheetah	vendor_sku_850
+					Mini Leopard	vendor_sku_851
+					Mini Tiger	vendor_sku_852
+					Mini Tiger - lighter shade	vendor_sku_853
+					Mini Zebra Print	vendor_sku_854
+					Mini Cheetah Print	vendor_sku_855
+					DA-3478 GOLD/PRUPLE	vendor_sku_856
+					D#15002-002 C# Minitiger - LSU 08/27/2020	vendor_sku_857
+					6953-01 S/O 5/20/21 Black	vendor_sku_858
+					6953-03 S/O 5/20/21 Navy	vendor_sku_859
+					6953-4 S/O 5/20/21 Cream	vendor_sku_860
+					RS49568 Red Navy Ivory	vendor_sku_861
+					49796 W/W	vendor_sku_862
+					49796 W/T	vendor_sku_863
+					RS 49772- Large stars RWB/Blue	vendor_sku_864
+					RS 49773-Small stars RWB/Blue	vendor_sku_865
+					7230-01 S/O 5/20/21 Black	vendor_sku_866
+					7230-3 S/O 5/20/21 Navy	vendor_sku_867
+					7230-4 S/O 5/20/21 Cream	vendor_sku_868
+					7231-01 S/O 5/20/21 Black	vendor_sku_869
+					7231-03 S/O 5/20/21 Navy	vendor_sku_870
+					7231-04 S/O 5/20/21 Cream	vendor_sku_871
+					7246-01 S/O 5/20/21 Black	vendor_sku_872
+					7246-3 S/O 5/20/21 Navy	vendor_sku_873
+					7246-04 S/O 5/20/21 Cream	vendor_sku_874
+					7271-01 S/O 5/20/21 Black	vendor_sku_875
+					7271-03 S/O 5/20/21 Navy	vendor_sku_876
+					7271-4 S/O 5/20/21 Cream	vendor_sku_877
+					7272-3 S/O 5/20/21 Navy	vendor_sku_878
+					7272-4 S/O 5/20/21 Cream	vendor_sku_879
+					7803-01  s/o 2012-03-16	vendor_sku_880
+					7803-02  p/s 05/26/2020	vendor_sku_881
+					17803 03 KY Blue and Optic white - s/o 2020-07-22	vendor_sku_882
+					"TX-10650Y KY Blue -  1/4"" KY Blue and white"	vendor_sku_883
+					"TX-10650Y Crimson Red - 1/4"" Crimson Red and white"	vendor_sku_884
+					8073-01 S/O 5/20/21 Black	vendor_sku_885
+					8073-3 S/O 5/20/21 Navy	vendor_sku_886
+					8073-4 S/O 5/20/21 Cream	vendor_sku_887
+					8074-01 S/O 5/20/21 Black	vendor_sku_888
+					8074-3 S/O 5/20/21 Navy	vendor_sku_889
+					8074-4 S/O 5/20/21 Cream	vendor_sku_890
+					8138-01 S/O 5/20/21 Black	vendor_sku_891
+					8138-3 S/O 5/20/21 Navy	vendor_sku_892
+					8138-4 S/O 5/20/21 Cream	vendor_sku_893
+					TX-8606-1 S/O 4/21/21 Yellow	vendor_sku_894
+					TX-8606-2 S/O 4/21/21 Burnt Orange	vendor_sku_895
+					TX-8606-3 S/O 4/21/21 Burnt Sienna	vendor_sku_896
+					TX-8606-4 S/O 4/21/21 Wheat	vendor_sku_897
+					TX-8606-5 S/O 4/21/21 Chocolate	vendor_sku_898
+					TX-8606-6 S/O 4/21/21 Lime	vendor_sku_899
+					TX-8606-7 S/O 4/21/21 Olive	vendor_sku_900
+					TX-8606-8 S/O 4/21/21 Baby Blue	vendor_sku_901
+					TX-8606 C#13 05/18/21 Scarlet	vendor_sku_902
+					TX-8606 C#14 05/18/21 Garnet	vendor_sku_903
+					TX-8606 C#16 05/18/21 Coffee	vendor_sku_904
+					TX-8606 C#22 05/18/21 Light Pink	vendor_sku_905
+					TX-8606 C#23 05/18/21 Pink	vendor_sku_906
+					TX-8606 C#27 05/18/21 Lilac	vendor_sku_907
+					TX-8606 C#28 05/18/21 Ocean	vendor_sku_908
+					TX-8606 C#29 05/18/21 Sky Blue	vendor_sku_909
+					TX-8606 C#30 05/18/21 Sapphire Blue	vendor_sku_910
+					TX-8606 C#31 05/18/21 Pale Blue	vendor_sku_911
+					TX-8606 C#32 05/18/21 Purple	vendor_sku_912
+					TX-8606 C#33 05/18/21 Navy	vendor_sku_913
+					TX-8606 C#34 05/18/21 Teal	vendor_sku_914
+					TX-8606 C#46 05/18/21 Light Grey	vendor_sku_915
+					TX-8606 C#47 05/18/21 Charcoal	vendor_sku_916
+					TX-8606-49 S/O 4/21/21 Black	vendor_sku_917
+					Card 555 RS49594 210	vendor_sku_918
+					Card 555 RS49594 280	vendor_sku_919
+					Card 555 RS49594 320	vendor_sku_920
+					Card 555 RS49594 360	vendor_sku_921
+					Card 555 RS49594 370	vendor_sku_922
+					Illusion Pastel 49594 400	vendor_sku_923
+					Illusion Pastel 49594 401	vendor_sku_924
+					49594 415	vendor_sku_925
+					Card 555 RS49594 430	vendor_sku_926
+					Card 555 RS49594 450	vendor_sku_927
+					49594 480	vendor_sku_928
+					Illusion Pastel 49594 500	vendor_sku_929
+					49594 525	vendor_sku_930
+					Illusion Pastel 49594 600	vendor_sku_931
+					Card 555 RS49594 680	vendor_sku_932
+					Illusion Pastel 49594 700	vendor_sku_933
+					Card 555 RS49594 730	vendor_sku_934
+					Card 555 RS49594 785	vendor_sku_935
+					Card 555 RS49594 930	vendor_sku_936
+					Card 555 RS49594 985	vendor_sku_937
+					49649 W/T	vendor_sku_938
+					49638 200 White White	vendor_sku_939
+					49638 201 White Tint (Tint Shade #5512)	vendor_sku_940
+					49638 800 Burgundy	vendor_sku_941
+					49662 White/Tint	vendor_sku_942
+					49662 200 Tan Parchment	vendor_sku_943
+					49662 201 Buttercup	vendor_sku_944
+					Subtle Paisley 49662 714 Brown	vendor_sku_945
+					49662 203 Cocoa	vendor_sku_946
+					49662 204 Pebble	vendor_sku_947
+					49662 Dark Grey/Black	vendor_sku_948
+					49662 Light Blue	vendor_sku_949
+					49662 401 Bright Blue	vendor_sku_950
+					49662 501 Dark/Denim	vendor_sku_951
+					49662 403 Blue Jewel	vendor_sku_952
+					49662 404 Robin	vendor_sku_953
+					49662 500 Seafoam	vendor_sku_954
+					Subtle Paisley 49662 605 Hunter Green	vendor_sku_955
+					49662 502 Sage	vendor_sku_956
+					49662 Lt Pink	vendor_sku_957
+					49662 601 Fuschia	vendor_sku_958
+					49662 700 Lilac/Purple	vendor_sku_959
+					49662 701 Violet	vendor_sku_960
+					49662 702 Hyacinth	vendor_sku_961
+					49662 901 Red	vendor_sku_962
+					49662 801 Burgundy	vendor_sku_963
+					49795 100 Beige	vendor_sku_964
+					49795 200 Yellow	vendor_sku_965
+					49795 300  Coral	vendor_sku_966
+					49795 700 Magenta	vendor_sku_967
+					49809 Light Grey	vendor_sku_968
+					49809 Dark Grey	vendor_sku_969
+					49809 Chocolate	vendor_sku_970
+					49809 Sage	vendor_sku_971
+					49809 Light Blue	vendor_sku_972
+					49809 Lilac	vendor_sku_973
+					49809 Yellow	vendor_sku_974
+					49809 Light Pink	vendor_sku_975
+					49809 Light Teal	vendor_sku_976
+					49809 Magenta	vendor_sku_977
+					49809 Dark Teal	vendor_sku_978
+					49809 Navy	vendor_sku_979
+					49809 Dark Purple	vendor_sku_980
+					49809 Black	vendor_sku_981
+					49809 Tan/Cream	vendor_sku_982
+					RS 49841 05 Burnt Orange	vendor_sku_983
+					RS 49841 8 Yellow	vendor_sku_984
+					RS 49841 15 Caribbean Blue	vendor_sku_985
+					RS 49841 21 Light Blue	vendor_sku_986
+					RS 49841 23 Royal	vendor_sku_987
+					RS 49841 24 Navy	vendor_sku_988
+					RS 49841 26 Purple	vendor_sku_989
+					RS 49841 27 Lilac	vendor_sku_990
+					RS 49841 28 Tea Dye	vendor_sku_991
+					RS 49841 31 Chocolate	vendor_sku_992
+					RS 49841 33 Grey	vendor_sku_993
+					RS 49841 35 Fuchsia	vendor_sku_994
+					RS 49841 37 Black	vendor_sku_995
+					RS 49841 38 Red	vendor_sku_996
+					RS 49841 42 Hunter Green	vendor_sku_997
+					49841 Sangria	vendor_sku_998
+					S13-8797-0113	vendor_sku_999
+					R28-9596-0240	vendor_sku_1000
+					WR8-7702-9165	vendor_sku_1001
+					1563820CH	vendor_sku_1002
+					TP-830-XR	vendor_sku_1003
+					C83-5901-0480	vendor_sku_1004
+					C83-5901-2340	vendor_sku_1005
+					C83-5901-4008	vendor_sku_1006
+					Q1686-68048-739S	vendor_sku_1007
+					LH14023-Coral	vendor_sku_1008
+					LH14023-Lettuce	vendor_sku_1009
+					LH14023-Petal	vendor_sku_1010
+					2448-002	vendor_sku_1011
+					2723-002	vendor_sku_1012
+					2837-001	vendor_sku_1013
+					2845-002	vendor_sku_1014
+					A-7325-B	vendor_sku_1015
+					A-7670-L	vendor_sku_1016
+					A-8491-G	vendor_sku_1017
+					Q1803-98611-237	vendor_sku_1018
+					R25-2888-0166	vendor_sku_1019
+					R10-9723-0220	vendor_sku_1020
+					R10-9723-0244	vendor_sku_1021
+					TP-1901-R	vendor_sku_1022
+					A-8716-MR	vendor_sku_1023
+					A-8749-K	vendor_sku_1024
+					A-8470-N	vendor_sku_1025
+					AB-7391-IB	vendor_sku_1026
+					R17-8287-0135	vendor_sku_1027
+					A-8773-LB	vendor_sku_1028
+					WR9-8202-0113	vendor_sku_1029
+					R65-9887-0233	vendor_sku_1030
+					A-8456-K	vendor_sku_1031
+					A-8889-P3	vendor_sku_1032
+					A-8889-L2	vendor_sku_1033
+					Seersucker-Check-Lime	vendor_sku_1034
+					A-8753-LT	vendor_sku_1035
+					A-8753-N	vendor_sku_1036
+					A-8754-T	vendor_sku_1037
+					A-8757-G	vendor_sku_1038
+					A-8757-N	vendor_sku_1039
+					A-8759-T	vendor_sku_1040
+					A-8759-L2	vendor_sku_1041
+					65117-034951	vendor_sku_1042
+					A-9216-Y	vendor_sku_1043
+					R21-0575-1014	vendor_sku_1044
+					R21-0575-1032	vendor_sku_1045
+					A-8451-P	vendor_sku_1046
+					A-C-NATURAL	vendor_sku_1047
+					A-C-CURRENCY	vendor_sku_1048
+					A-C-RASPBERRY	vendor_sku_1049
+					51021M-X	vendor_sku_1050
+					51252-1	vendor_sku_1051
+					51254-2	vendor_sku_1052
+					51254-4	vendor_sku_1053
+					51258-6	vendor_sku_1054
+					51260-2	vendor_sku_1055
+					51260-4	vendor_sku_1056
+					51276-7	vendor_sku_1057
+					51277-1	vendor_sku_1058
+					51261-5	vendor_sku_1059
+					51261-2	vendor_sku_1060
+					51261-3	vendor_sku_1061
+					HOLL-600-MU	vendor_sku_1062
+					C7474-BLUE	vendor_sku_1063
+					A-8903-G	vendor_sku_1064
+					A-9388-B1	vendor_sku_1065
+					R22-8427-0510	vendor_sku_1066
+					G092502	vendor_sku_1067
+					PA17007	vendor_sku_1068
+					PA17015	vendor_sku_1069
+					PA17016	vendor_sku_1070
+					C6794-White	vendor_sku_1071
+					G052301	vendor_sku_1072
+					A-9314-C	vendor_sku_1073
+					A-9321-RN	vendor_sku_1074
+					A-8593-MB	vendor_sku_1075
+					A-8593-ME1	vendor_sku_1076
+					A-8593-MT	vendor_sku_1077
+					A-9137-BN	vendor_sku_1078
+					A-9498-G	vendor_sku_1079
+					A-9498-G1	vendor_sku_1080
+					A-9498-R	vendor_sku_1081
+					A-9503-E	vendor_sku_1082
+					A-9505-G	vendor_sku_1083
+					A-9505-L	vendor_sku_1084
+					A-9505-Y	vendor_sku_1085
+					A-9292-Y	vendor_sku_1086
+					A-9299-WW	vendor_sku_1087
+					A-9542-N	vendor_sku_1088
+					A-9542-O	vendor_sku_1089
+					A-9542-P	vendor_sku_1090
+					A-9542-Y	vendor_sku_1091
+					P9096-PANEL	vendor_sku_1092
+					SP9177-PINK	vendor_sku_1093
+					P9437-CREAM	vendor_sku_1094
+					P9437-RED	vendor_sku_1095
+					C9742-BLUE	vendor_sku_1096
+					C9743-YELLOW	vendor_sku_1097
+					C9744-BLUE	vendor_sku_1098
+					P9745-BLUE	vendor_sku_1099
+					P9745-PINK	vendor_sku_1100
+					Q3000-77657-914	vendor_sku_1101
+					Q3000-77659-178	vendor_sku_1102
+					Q3000-77659-978	vendor_sku_1103
+					Q3000-77660-177	vendor_sku_1104
+					Q3007-68538-753	vendor_sku_1105
+					Q3029-11164-473	vendor_sku_1106
+					Q3029-11164-973	vendor_sku_1107
+					2101-007	vendor_sku_1108
+					2734-002	vendor_sku_1109
+					2299-001	vendor_sku_1110
+					3044-001	vendor_sku_1111
+					0082-022	vendor_sku_1112
+					0084-001	vendor_sku_1113
+					3110-002	vendor_sku_1114
+					2847-001	vendor_sku_1115
+					2205-001	vendor_sku_1116
+					"108"" Black/White Stripe ticking"	vendor_sku_1117
+					A-9528-TR	vendor_sku_1118
+					A-9530-Y	vendor_sku_1119
+					A-9531-Y	vendor_sku_1120
+					A-9269-N	vendor_sku_1121
+					A-9401-E	vendor_sku_1122
+					TP-2229-1	vendor_sku_1123
+					R47-0850-0133	vendor_sku_1124
+					R47-0850-0110	vendor_sku_1125
+					R47-0850-0121	vendor_sku_1126
+					R47-0850-0151	vendor_sku_1127
+					R47-0852-0133	vendor_sku_1128
+					R47-0852-0114	vendor_sku_1129
+					R47-0852-0150	vendor_sku_1130
+					R06-2339-0143	vendor_sku_1131
+					R06-2352-0142	vendor_sku_1132
+					R19-0815-0146	vendor_sku_1133
+					R54-0704-0115	vendor_sku_1134
+					R54-0704-0133	vendor_sku_1135
+					R22-8511-0112	vendor_sku_1136
+					A-9525-N	vendor_sku_1137
+					A-9525-V	vendor_sku_1138
+					A-9527-N	vendor_sku_1139
+					A-9398-L	vendor_sku_1140
+					AHE-18971-185	vendor_sku_1141
+					4486-24112-TAN1	vendor_sku_1142
+					4486-25044-ORA1	vendor_sku_1143
+					AC17-3139-NE	vendor_sku_1144
+					A-9717-N	vendor_sku_1145
+					A-9721-N	vendor_sku_1146
+					A-9722-T	vendor_sku_1147
+					A-9722-N	vendor_sku_1148
+					A-9722-R	vendor_sku_1149
+					A-9635-B	vendor_sku_1150
+					A-9635-B1	vendor_sku_1151
+					A-9635-E	vendor_sku_1152
+					A-9635-G	vendor_sku_1153
+					A-9635-G1	vendor_sku_1154
+					A-9635-O	vendor_sku_1155
+					A-9635-P	vendor_sku_1156
+					A-9635-T	vendor_sku_1157
+					A-9763-G	vendor_sku_1158
+					AZQ-19102-168	vendor_sku_1159
+					A-9502-C	vendor_sku_1160
+					A-9502-E	vendor_sku_1161
+					A-9634-C	vendor_sku_1162
+					A-9634-V	vendor_sku_1163
+					OA-6022201	vendor_sku_1164
+					OA-6022302	vendor_sku_1165
+					OA-6023401	vendor_sku_1166
+					OA-6023501	vendor_sku_1167
+					OA-6023503	vendor_sku_1168
+					OA-6023604	vendor_sku_1169
+					OA-6024702	vendor_sku_1170
+					OA-6027802	vendor_sku_1171
+					OA-6031302	vendor_sku_1172
+					OA-6031303	vendor_sku_1173
+					A-9408-C	vendor_sku_1174
+					A-9737-R	vendor_sku_1175
+					A-9738-R	vendor_sku_1176
+					A-9740-R	vendor_sku_1177
+					A-9743-R	vendor_sku_1178
+					A-9744-C	vendor_sku_1179
+					R21-04-MULTI	vendor_sku_1180
+					R21-06-CREAM	vendor_sku_1181
+					R21-09-GREEN	vendor_sku_1182
+					R21-10-GOLD	vendor_sku_1183
+					R21-11-MULTI	vendor_sku_1184
+					R21-12-BROWN	vendor_sku_1185
+					R21-12-CREAM	vendor_sku_1186
+					R21-64-BLUE	vendor_sku_1187
+					R21-64-REDBLUE	vendor_sku_1188
+					R21-66-PINK	vendor_sku_1189
+					R21-67-DKGREEN	vendor_sku_1190
+					W14-05-LTGREEN	vendor_sku_1191
+					W14-05-RED	vendor_sku_1192
+					W17-02-PURPLE	vendor_sku_1193
+					W17-03-BLACK	vendor_sku_1194
+					W17-03-CREAM	vendor_sku_1195
+					W17-04-GREEN	vendor_sku_1196
+					W17-06-RED	vendor_sku_1197
+					W17-07-BLACK	vendor_sku_1198
+					W21-07-GOLD	vendor_sku_1199
+					W21-07-GREEN	vendor_sku_1200
+					W21-07-RED	vendor_sku_1201
+					W54-U111-0156	vendor_sku_1202
+					W54-U115-0142	vendor_sku_1203
+					W54-U135-0129	vendor_sku_1204
+					W54-U135-0154	vendor_sku_1205
+					R21-0958-0123	vendor_sku_1206
+					R21-21-BLUE	vendor_sku_1207
+					R21-21-GREEN	vendor_sku_1208
+					R21-22-BROWN	vendor_sku_1209
+					R21-22-GOLD	vendor_sku_1210
+					R21-23-BLUE	vendor_sku_1211
+					R21-23-LTBROWN	vendor_sku_1212
+					R21-23-TAN	vendor_sku_1213
+					R21-24-BROWN	vendor_sku_1214
+					R21-26-DKBROWN	vendor_sku_1215
+					R21-26-LTGREEN	vendor_sku_1216
+					R21-28-MULTI	vendor_sku_1217
+					R22-0910-0113	vendor_sku_1218
+					R22-0915-0110	vendor_sku_1219
+					R23-0905-0130	vendor_sku_1220
+					R33-0891-0130	vendor_sku_1221
+					R33-0893-0125	vendor_sku_1222
+					R33-0895-0114	vendor_sku_1223
+					R33-0896-0126	vendor_sku_1224
+					R54-0968-0129	vendor_sku_1225
+					R54-0968-0154	vendor_sku_1226
+					R54-0972-0157	vendor_sku_1227
+					R57-0999-0113	vendor_sku_1228
+					R57-1000-0130	vendor_sku_1229
+					R57-1001-0113	vendor_sku_1230
+					R57-1001-0142	vendor_sku_1231
+					R57-1002-0135	vendor_sku_1232
+					A-9807-KO	vendor_sku_1233
+					TP-2113-1	vendor_sku_1234
+					51514-1	vendor_sku_1235
+					51514-7	vendor_sku_1236
+					51469-4	vendor_sku_1237
+					51469-8	vendor_sku_1238
+					51255-1	vendor_sku_1239
+					51255-2	vendor_sku_1240
+					51256-3	vendor_sku_1241
+					51256-4	vendor_sku_1242
+					51257-3	vendor_sku_1243
+					50518-1	vendor_sku_1244
+					50518-3	vendor_sku_1245
+					50518-4	vendor_sku_1246
+					50518-5	vendor_sku_1247
+					50519-2	vendor_sku_1248
+					50519-5	vendor_sku_1249
+					50520-5	vendor_sku_1250
+					50521-2	vendor_sku_1251
+					50521-6	vendor_sku_1252
+					50521-7	vendor_sku_1253
+					51997-6	vendor_sku_1254
+					51454-1	vendor_sku_1255
+					51338-2	vendor_sku_1256
+					51338-3	vendor_sku_1257
+					51340-2	vendor_sku_1258
+					51340-6	vendor_sku_1259
+					51341-6	vendor_sku_1260
+					45147-1	vendor_sku_1261
+					50807-X	vendor_sku_1262
+					51606-3	vendor_sku_1263
+					51608-1	vendor_sku_1264
+					51608-2	vendor_sku_1265
+					51608-3	vendor_sku_1266
+					51088-3	vendor_sku_1267
+					51088-4	vendor_sku_1268
+					51088-5	vendor_sku_1269
+					51964M-3	vendor_sku_1270
+					51965M-1	vendor_sku_1271
+					51965M-3	vendor_sku_1272
+					51235-4	vendor_sku_1273
+					51237-8	vendor_sku_1274
+					A-9697-C	vendor_sku_1275
+					CS-9666M-BLACK	vendor_sku_1276
+					CS-9666M-IVORY	vendor_sku_1277
+					CS-9674M-CREAM	vendor_sku_1278
+					CS-9674M-RED	vendor_sku_1279
+					CS-9674M-PICKLE	vendor_sku_1280
+					CS-9674M-SMOKE	vendor_sku_1281
+					CS-9684M-IVORY	vendor_sku_1282
+					CS-9684M-WINE	vendor_sku_1283
+					CS-9684M-STORM	vendor_sku_1284
+					A-8831-L	vendor_sku_1285
+					A-9356-L	vendor_sku_1286
+					A-9820-K	vendor_sku_1287
+					A-9820-L	vendor_sku_1288
+					CS-32-CHOCOLATE	vendor_sku_1289
+					CS-32-PINKLEMONADE	vendor_sku_1290
+					CS-32-WHISPER	vendor_sku_1291
+					CS-33-COCOA	vendor_sku_1292
+					A-9855-KR	vendor_sku_1293
+					A-9856-N	vendor_sku_1294
+					A-9856-R	vendor_sku_1295
+					A-9860-N	vendor_sku_1296
+					TP-2086-G	vendor_sku_1297
+					A-9863-B	vendor_sku_1298
+					A-9863-BL	vendor_sku_1299
+					A-9863-E	vendor_sku_1300
+					A-9863-Y	vendor_sku_1301
+					TP-2431-B	vendor_sku_1302
+					TP-2432-R	vendor_sku_1303
+					TP-2437-T	vendor_sku_1304
+					TP-2378-1	vendor_sku_1305
+					TP-2379-T	vendor_sku_1306
+					TP-2379-W	vendor_sku_1307
+					TP-2380-Q	vendor_sku_1308
+					A-9868-K	vendor_sku_1309
+					CS-37-BUBBLE	vendor_sku_1310
+					CS-37-CARRIBEAN	vendor_sku_1311
+					CS-37-MARGARITA	vendor_sku_1312
+					CS-37-PAPAYA	vendor_sku_1313
+					CS-38-BRASS	vendor_sku_1314
+					CS-38-GUAVAPUNCH	vendor_sku_1315
+					CS-38-RASPBERRY	vendor_sku_1316
+					CS-38-TEAL	vendor_sku_1317
+					CS-39-GUACAMOLE	vendor_sku_1318
+					CS-39-ORCHID	vendor_sku_1319
+					CS-39-PAPRIKA	vendor_sku_1320
+					CS-39-PASSION	vendor_sku_1321
+					A-9837-E1	vendor_sku_1322
+					A-9837-G2	vendor_sku_1323
+					A-9837-O	vendor_sku_1324
+					A-9837-O1	vendor_sku_1325
+					A-9837-P	vendor_sku_1326
+					A-9837-R	vendor_sku_1327
+					A-9837-Y	vendor_sku_1328
+					R14-0933-0143	vendor_sku_1329
+					R14-0934-0122	vendor_sku_1330
+					R14-0936-0122	vendor_sku_1331
+					R14-0936-0143	vendor_sku_1332
+					R14-0937-0114	vendor_sku_1333
+					R14-0938-0126	vendor_sku_1334
+					R14-0939-0125	vendor_sku_1335
+					R14-0939-0150	vendor_sku_1336
+					R15-0980-0142	vendor_sku_1337
+					R15-0981-0122	vendor_sku_1338
+					R15-0984-0110	vendor_sku_1339
+					R15-0984-0142	vendor_sku_1340
+					R17-19-BLUE	vendor_sku_1341
+					R22-04-NAVY	vendor_sku_1342
+					R22-06-NAVY	vendor_sku_1343
+					R22-12-NAVY	vendor_sku_1344
+					R31-13-PINK	vendor_sku_1345
+					R31-15-CREAM	vendor_sku_1346
+					R31-15-RED	vendor_sku_1347
+					R31-16-TAN	vendor_sku_1348
+					R31-17-TAN	vendor_sku_1349
+					R31-18-DK TAN	vendor_sku_1350
+					R31-19-CREAM	vendor_sku_1351
+					R31-19-DK PINK	vendor_sku_1352
+					R31-21-CREAM	vendor_sku_1353
+					R31-22-RED	vendor_sku_1354
+					R38-22-BLACK	vendor_sku_1355
+					R38-22-RED	vendor_sku_1356
+					R38-23-BROWN	vendor_sku_1357
+					R38-23-GOLD	vendor_sku_1358
+					R38-24-BLACK	vendor_sku_1359
+					R38-24-RED	vendor_sku_1360
+					R38-25-BLACK	vendor_sku_1361
+					R38-25-PURPLE	vendor_sku_1362
+					R38-26-MULTI	vendor_sku_1363
+					R38-27-PURPLE	vendor_sku_1364
+					R47-0961-0144	vendor_sku_1365
+					R47-0961-0150	vendor_sku_1366
+					R47-0962-0112	vendor_sku_1367
+					R47-0962-0142	vendor_sku_1368
+					R47-0962-0150	vendor_sku_1369
+					R47-0963-0126	vendor_sku_1370
+					R47-0963-0133	vendor_sku_1371
+					R47-0963-0154	vendor_sku_1372
+					R47-0964-0114	vendor_sku_1373
+					R47-0964-0145	vendor_sku_1374
+					R47-0965-PINK	vendor_sku_1375
+					R47-0965-YELLOW	vendor_sku_1376
+					W21-763-TAN	vendor_sku_1377
+					W21-765-BLUE	vendor_sku_1378
+					W21-766-BROWN	vendor_sku_1379
+					W21-772-CREAM	vendor_sku_1380
+					W21-777-BLACK	vendor_sku_1381
+					W21-780-CREAM	vendor_sku_1382
+					W21-781-GRAY	vendor_sku_1383
+					W21-785-NAVY	vendor_sku_1384
+					W21-806-RED	vendor_sku_1385
+					W21-807-RED	vendor_sku_1386
+					W21-808-ROYAL	vendor_sku_1387
+					W21-810-GREEN	vendor_sku_1388
+					A-8958-T	vendor_sku_1389
+					A-9083-R	vendor_sku_1390
+					A-5900-E	vendor_sku_1391
+					A-7555-C	vendor_sku_1392
+					A-7637-BR	vendor_sku_1393
+					A-8340-C	vendor_sku_1394
+					A-8367-B	vendor_sku_1395
+					A-8515-L2	vendor_sku_1396
+					A-8515-L4	vendor_sku_1397
+					A-M-BLACK	vendor_sku_1398
+					A-M-GRASSHOPPER	vendor_sku_1399
+					A-M-JADE	vendor_sku_1400
+					TP-2223-1	vendor_sku_1401
+					TP-2248-G	vendor_sku_1402
+					TP-2248-R	vendor_sku_1403
+					TP-2248-X	vendor_sku_1404
+					TP-2088-S9	vendor_sku_1405
+					A-9832-B	vendor_sku_1406
+					CR480-HONEY	vendor_sku_1407
+					CR480-MTNMEADOW	vendor_sku_1408
+					CR480-RAINDROP	vendor_sku_1409
+					CR480-WILDBLUE	vendor_sku_1410
+					C10113-PINK	vendor_sku_1411
+					C10113-YELLOW	vendor_sku_1412
+					C10850-TAUPE	vendor_sku_1413
+					C10856-RUST	vendor_sku_1414
+					C10857-TAUPE	vendor_sku_1415
+					C10858-RUST	vendor_sku_1416
+					C10860-GRAY	vendor_sku_1417
+					C10466-SKY	vendor_sku_1418
+					C10271-MUSTARD	vendor_sku_1419
+					C10271-WHITE	vendor_sku_1420
+					C10275-CORAL	vendor_sku_1421
+					C10275-POWDER	vendor_sku_1422
+					C10321-ANTIQUE	vendor_sku_1423
+					C10321-CHARCOAL	vendor_sku_1424
+					C10321-CORAL	vendor_sku_1425
+					C10324-CHARCOAL	vendor_sku_1426
+					C10325-CHARCOAL	vendor_sku_1427
+					C10325-CREAM	vendor_sku_1428
+					C10143-CHARCOAL	vendor_sku_1429
+					C10143-LEMONADE	vendor_sku_1430
+					C10144-ORANGE	vendor_sku_1431
+					C10146-GRAPEFRUIT	vendor_sku_1432
+					C10146-ORANGE	vendor_sku_1433
+					P10523-PANEL	vendor_sku_1434
+					C9813-SEAGLASS	vendor_sku_1435
+					C9814-CREAM	vendor_sku_1436
+					C10206-AQUA	vendor_sku_1437
+					C10206-BLUSH	vendor_sku_1438
+					C10316-RED	vendor_sku_1439
+					C10317-MULTI	vendor_sku_1440
+					C10583-SEAGLASS	vendor_sku_1441
+					C10304-ORANGE	vendor_sku_1442
+					C10305-LIME	vendor_sku_1443
+					C10306-LIME	vendor_sku_1444
+					C10306-ORANGE	vendor_sku_1445
+					C10306-TAUPE	vendor_sku_1446
+					C10293-SUNSET	vendor_sku_1447
+					C10367-CREAM	vendor_sku_1448
+					C10516-NAVY	vendor_sku_1449
+					C10502-OLIVE	vendor_sku_1450
+					C10502-PEONY	vendor_sku_1451
+					SC10505-PEONY	vendor_sku_1452
+					SC10506-MIST	vendor_sku_1453
+					C10244-KEYLIME	vendor_sku_1454
+					C10246-BLUSH	vendor_sku_1455
+					C10493-BLUSH	vendor_sku_1456
+					C10472-HOTPINK	vendor_sku_1457
+					SC10473-PINK	vendor_sku_1458
+					SC10473-TEAL	vendor_sku_1459
+					SC9086-BLUE	vendor_sku_1460
+					SC9086-CREAM	vendor_sku_1461
+					SC9086-ORANGE	vendor_sku_1462
+					K10432-BLUSH	vendor_sku_1463
+					K10432-WHITE	vendor_sku_1464
+					K10434-MULBERRY	vendor_sku_1465
+					C10204-YELLOW	vendor_sku_1466
+					A-9358-E	vendor_sku_1467
+					A-9359-E	vendor_sku_1468
+					A-9359-R	vendor_sku_1469
+					A-9389-E	vendor_sku_1470
+					A-9389-LR	vendor_sku_1471
+					A-8618-T	vendor_sku_1472
+					A-8987-LE	vendor_sku_1473
+					A-8987-T	vendor_sku_1474
+					A-8988-T	vendor_sku_1475
+					A-8989-GL	vendor_sku_1476
+					A-8989-LE	vendor_sku_1477
+					A-9902-B	vendor_sku_1478
+					A-9902-LB	vendor_sku_1479
+					A-9904-L	vendor_sku_1480
+					A-9904-LB	vendor_sku_1481
+					A-9905-B	vendor_sku_1482
+					A-9905-L	vendor_sku_1483
+					A-9907-B	vendor_sku_1484
+					A-9908-O	vendor_sku_1485
+					CS-9669M-EMERALD	vendor_sku_1486
+					CS-9669M-STRAWBERRY	vendor_sku_1487
+					CS-9669M-TRUFFLE	vendor_sku_1488
+					CS-33-DAWN	vendor_sku_1489
+					CS-33-FADED	vendor_sku_1490
+					CS-33-PISTACHIO	vendor_sku_1491
+					CS-33-SUNSHINE	vendor_sku_1492
+					CS-34-ALMOND	vendor_sku_1493
+					CS-34-BUTTER	vendor_sku_1494
+					CS-34-JADE	vendor_sku_1495
+					CS-34-UNIFORM	vendor_sku_1496
+					CS-40-BRASS	vendor_sku_1497
+					CS-40-CREAM	vendor_sku_1498
+					CS-40-ISLE	vendor_sku_1499
+					CS-40-PINKLEMONADE	vendor_sku_1500
+					CS-41-CLAY	vendor_sku_1501
+					CS-41-FADED	vendor_sku_1502
+					CS-41-LEAF	vendor_sku_1503
+					CS-41-OYSTER	vendor_sku_1504
+					CS-41-PRESSEDFLOWER	vendor_sku_1505
+					CS-42-GRAPHITE	vendor_sku_1506
+					CS-42-SKY	vendor_sku_1507
+					CS-42-STORM	vendor_sku_1508
+					CS-42-SULFUR	vendor_sku_1509
+					CS-42-TERRACOTTA	vendor_sku_1510
+					A-9254-E	vendor_sku_1511
+					A-9254-E2	vendor_sku_1512
+					A-9254-G	vendor_sku_1513
+					A-9254-G2	vendor_sku_1514
+					A-9254-O2	vendor_sku_1515
+					A-9254-P2	vendor_sku_1516
+					A-9254-T3	vendor_sku_1517
+					A-9245-B	vendor_sku_1518
+					A-9245-G	vendor_sku_1519
+					A-9246-T	vendor_sku_1520
+					A-9247-P	vendor_sku_1521
+					A-9247-T	vendor_sku_1522
+					WV-PLUS-G	vendor_sku_1523
+					WV-PLUS-P	vendor_sku_1524
+					WV-SASHIKO-B	vendor_sku_1525
+					WV-SASHIKO-C	vendor_sku_1526
+					WV-SASHIKO-P	vendor_sku_1527
+					AB-8688-B1	vendor_sku_1528
+					AB-8688-E	vendor_sku_1529
+					AB-8688-P1	vendor_sku_1530
+					AB-8688-Y	vendor_sku_1531
+					AB-8692-C	vendor_sku_1532
+					AB-8692-E	vendor_sku_1533
+					AB-8692-L	vendor_sku_1534
+					AB-8692-R	vendor_sku_1535
+					AB-8693-B1	vendor_sku_1536
+					AB-8693-E	vendor_sku_1537
+					AB-8693-P1	vendor_sku_1538
+					AB-8695-E	vendor_sku_1539
+					AB-8695-K	vendor_sku_1540
+					AB-8695-O1	vendor_sku_1541
+					AB-8695-R	vendor_sku_1542
+					A-8511-B2	vendor_sku_1543
+					A-8511-E3	vendor_sku_1544
+					A-8511-G1	vendor_sku_1545
+					A-8511-G3	vendor_sku_1546
+					A-8511-LN	vendor_sku_1547
+					A-8511-N3	vendor_sku_1548
+					A-8511-R1	vendor_sku_1549
+					A-8511-R2	vendor_sku_1550
+					A-8511-Y	vendor_sku_1551
+					A-9566-CY	vendor_sku_1552
+					A-9567-BG	vendor_sku_1553
+					A-9567-BL	vendor_sku_1554
+					A-9567-CG	vendor_sku_1555
+					A-9567-E	vendor_sku_1556
+					A-9570-E	vendor_sku_1557
+					TP-2088-G2	vendor_sku_1558
+					TP-2088-P4	vendor_sku_1559
+					TP-2088-R	vendor_sku_1560
+					TP-2088-T	vendor_sku_1561
+					TP-2088-Y	vendor_sku_1562
+					TP-2430-Q	vendor_sku_1563
+					TP-2433-B3	vendor_sku_1564
+					TP-2436-1	vendor_sku_1565
+					AB-9888-B	vendor_sku_1566
+					AB-9888-BL	vendor_sku_1567
+					AB-9888-C	vendor_sku_1568
+					AB-9888-E	vendor_sku_1569
+					AB-9888-EO	vendor_sku_1570
+					AB-9888-EP	vendor_sku_1571
+					AB-9888-G	vendor_sku_1572
+					AB-9888-GT	vendor_sku_1573
+					AB-9888-KB	vendor_sku_1574
+					AB-9888-O	vendor_sku_1575
+					AB-9888-OE	vendor_sku_1576
+					AB-9888-P	vendor_sku_1577
+					AB-9888-PB	vendor_sku_1578
+					AB-9888-R	vendor_sku_1579
+					AB-9888-T	vendor_sku_1580
+					AB-9888-TG	vendor_sku_1581
+					AB-9888-VE	vendor_sku_1582
+					AB-9888-Y	vendor_sku_1583
+					A-8991-L	vendor_sku_1584
+					A-9451-N	vendor_sku_1585
+					A-9556-N	vendor_sku_1586
+					A-8620-N1	vendor_sku_1587
+					A-8622-L1	vendor_sku_1588
+					A-8760-N	vendor_sku_1589
+					A-9658-C	vendor_sku_1590
+					A-9658-C1	vendor_sku_1591
+					A-9658-L	vendor_sku_1592
+					A-9659-K	vendor_sku_1593
+					A-9659-L	vendor_sku_1594
+					A-9659-N	vendor_sku_1595
+					A-9661-C	vendor_sku_1596
+					A-9661-L	vendor_sku_1597
+					A-9661-N	vendor_sku_1598
+					A-9662-C	vendor_sku_1599
+					A-9662-K	vendor_sku_1600
+					A-9662-N	vendor_sku_1601
+					A-9663-L	vendor_sku_1602
+					A-9663-N	vendor_sku_1603
+					A-8903-EI	vendor_sku_1604
+					A-8903-K	vendor_sku_1605
+					A-8903-L	vendor_sku_1606
+					A-8903-P	vendor_sku_1607
+					A-8903-T	vendor_sku_1608
+					A-8903-Y	vendor_sku_1609
+					A-9036-B	vendor_sku_1610
+					A-9036-E	vendor_sku_1611
+					A-9036-K	vendor_sku_1612
+					A-9036-L	vendor_sku_1613
+					A-9036-P	vendor_sku_1614
+					A-9036-T	vendor_sku_1615
+					A-9236-C	vendor_sku_1616
+					A-9236-G	vendor_sku_1617
+					A-9236-V	vendor_sku_1618
+					A-9236-Y1	vendor_sku_1619
+					A-9236-Y2	vendor_sku_1620
+					A-9235-C1	vendor_sku_1621
+					A-9438-B	vendor_sku_1622
+					A-9438-E	vendor_sku_1623
+					A-9598-E	vendor_sku_1624
+					A-9598-Y	vendor_sku_1625
+					A-9817-K	vendor_sku_1626
+					A-9397-L	vendor_sku_1627
+					A-9402-T	vendor_sku_1628
+					A-9402-Y	vendor_sku_1629
+					A-9173-B1	vendor_sku_1630
+					A-9173-C	vendor_sku_1631
+					A-9173-E	vendor_sku_1632
+					A-9173-G	vendor_sku_1633
+					A-9173-L	vendor_sku_1634
+					A-9173-LC	vendor_sku_1635
+					A-9173-N	vendor_sku_1636
+					A-9173-O	vendor_sku_1637
+					A-9173-T	vendor_sku_1638
+					A-9173-Y	vendor_sku_1639
+					A-9173-Y1	vendor_sku_1640
+					A-9615-T	vendor_sku_1641
+					A-9619-TN	vendor_sku_1642
+					CAMO-C8000-GREEN	vendor_sku_1643
+					CAMO-C8000-SILVER	vendor_sku_1644
+					FUN-C8941-SKY	vendor_sku_1645
+					FUN-C8943-WHITE	vendor_sku_1646
+					FUN-C8944-SKY	vendor_sku_1647
+					STELLA-1630-MIDNIGHT	vendor_sku_1648
+					STELLA-1632-WHITE	vendor_sku_1649
+					STELLA-SRR1681-CREAM	vendor_sku_1650
+					STELLA-SRR1682-FOG	vendor_sku_1651
+					STELLA-DCWR1962-MULTI	vendor_sku_1652
+					STELLA-LW1770-WHITE	vendor_sku_1653
+					R17-0855-0113	vendor_sku_1654
+					R17-0856-0113	vendor_sku_1655
+					R17-0860-0140	vendor_sku_1656
+					R17-0861-0112	vendor_sku_1657
+					R17-0861-0132	vendor_sku_1658
+					R17-0862-0132	vendor_sku_1659
+					R17-0863-0111	vendor_sku_1660
+					R17-0863-0114	vendor_sku_1661
+					R22-0128-TAN	vendor_sku_1662
+					R22-0130-NAVY	vendor_sku_1663
+					R22-41-CREAM	vendor_sku_1664
+					R22-46-LTGREEN	vendor_sku_1665
+					R22-46-LTPURPLE	vendor_sku_1666
+					R22-46-PURPLEGREEN	vendor_sku_1667
+					R22-48-PURPLE	vendor_sku_1668
+					R47-01-NAVY	vendor_sku_1669
+					R47-02-BLUE	vendor_sku_1670
+					R47-03-MULTI	vendor_sku_1671
+					R47-0961-RED	vendor_sku_1672
+					R47-0962-ORANGE	vendor_sku_1673
+					R47-0962-TURQ	vendor_sku_1674
+					R47-0964-PINK	vendor_sku_1675
+					R47-0964-YELLOW	vendor_sku_1676
+					R47-05D-MULTI	vendor_sku_1677
+					R47-06D-MULTI	vendor_sku_1678
+					R47-07D-MULTI	vendor_sku_1679
+					R21-0986-0110-RED	vendor_sku_1680
+					R21-0986-0140-TAN	vendor_sku_1681
+					R21-0988-0111-RED	vendor_sku_1682
+					R21-0988-0150-SLATE	vendor_sku_1683
+					R21-0989-0145-TAN	vendor_sku_1684
+					R21-0989-0150-SLATE	vendor_sku_1685
+					R13-N525-112D	vendor_sku_1686
+					R15-09-CREAM	vendor_sku_1687
+					1556-7811 Girl Science Black	vendor_sku_1688
+					Pound Goods	vendor_sku_1689
+					"Pound Goods 108"""	vendor_sku_1690
+					In Stitches Pink Case Pack	vendor_sku_1691
+					A-COLLECTIVE-10	vendor_sku_1692
+					BATTING, SUPER KING 120X120, 12 PER CASE	vendor_sku_1693
+					6317 HL-72	vendor_sku_1694
+					6319 HL-81	vendor_sku_1695
+					6320 HL-90	vendor_sku_1696
+					6321 HLBY-96	vendor_sku_1697
+					6427 HNS-120	vendor_sku_1698
+					6387 PD-90	vendor_sku_1699
+					6394 TM-90	vendor_sku_1700
+					TCWBY-96	vendor_sku_1701
+					HL-45	vendor_sku_1702
+					DKHL-90	vendor_sku_1703
+					DKHL-120	vendor_sku_1704
+					DKHLBY-108	vendor_sku_1705
+					TP 45	vendor_sku_1706
+					TP 72	vendor_sku_1707
+					TP 81	vendor_sku_1708
+					TP 96	vendor_sku_1709
+					TP 120	vendor_sku_1710
+					TPBY96 96X30 YARD ROLL	vendor_sku_1711
+					Santee Spirals - Tone on Tone	vendor_sku_1712
+					Santee Spirals - Vintage Miniatures	vendor_sku_1713
+					Patriotic Santee roll	vendor_sku_1714
+					Black and Red Spirals	vendor_sku_1715
+					32241	vendor_sku_1716
+					151-ARKANSAS	vendor_sku_1717
+					610-ARKANSAS	vendor_sku_1718
+					610-AUBURN	vendor_sku_1719
+					610-KENTUCKY	vendor_sku_1720
+					610-LSU	vendor_sku_1721
+					3S-FIRE-X	vendor_sku_1722
+					3S-FRESH-X	vendor_sku_1723
+					Card 12 - 22015-W/W	vendor_sku_1724
+					Card 8 - 36255-W/T	vendor_sku_1725
+					Card 33 - 43681-3001	vendor_sku_1726
+					Card 142 - 47603-105	vendor_sku_1727
+					Card 188 48502-Gray/White	vendor_sku_1728
+					Card 188 48502-White/White	vendor_sku_1729
+					Card 188 48504-Gray/White	vendor_sku_1730
+					49378 205	vendor_sku_1731
+					HLBY-120	vendor_sku_1732
+					BHLBY-108	vendor_sku_1733
+					HNSBY-96	vendor_sku_1734
+					HBSBY-96	vendor_sku_1735
+					TCWBRD-96	vendor_sku_1736
+					PDBY-108	vendor_sku_1737
+					HFBY 96	vendor_sku_1738
+					Solid - Brown	vendor_sku_1739
+Designer	ab-designer	Radio	Instantly	Visible	"""Santee Print Works"""	designer_1
+					Maw-Bell	designer_2
+					Makower UK	designer_3
+					Judie Rothermel	designer_4
+					Ador-Label	designer_5
+					Jinny Beyer	designer_6
+					Audrey Wright	designer_7
+					Lynette Jensen	designer_8
+					Kathy Hall	designer_9
+					Rachel Thomas Pellman	designer_10
+					Grumpy Cat Limited	designer_11
+					Molly Hatch	designer_12
+					Alison Glass	designer_13
+					Pam Buda	designer_14
+					Laura Berringer	designer_15
+					Sarah Golden	designer_16
+					Andover Fabrics	designer_17
+					Laundry Basket	designer_18
+					Patrick Lose	designer_19
+					Whistler Studios	designer_20
+					Kelly Ventura	designer_21
+					Paula Barnes	designer_22
+					Libs Elliott	designer_23
+					Di Ford-Hall	designer_24
+					Kim Schaefer	designer_25
+					Sarah J Maxwell	designer_26
+					Cindy Staub	designer_27
+					Molly B's Studio	designer_28
+					Renee Nanneman	designer_29
+					Chains	designer_30
+					Spokes	designer_31
+					Flower Dots	designer_32
+					Daisies	designer_33
+					Tiny Flowers	designer_34
+					Flowers on Point	designer_35
+					Dotted Floral	designer_36
+					Feathers	designer_37
+					Timeworn Toolbox Designs	designer_38
+					Deirdre Bond-Abel	designer_39
+					Max & Louise	designer_40
+					Two Can Art	designer_41
+					Nancy Rink	designer_42
+					Sheryl Johnson	designer_43
+					Sarah Maxwell	designer_44
+					Marcus Fabrics	designer_45
+					Giucy Giuce	designer_46
+					Quilted Koala	designer_47
+					Lizzy House - Brisbane	designer_48
+					Laundry Basket Quilts	designer_49
+					Eric Carle	designer_50
+					Allison Glass	designer_51
+					Stella	designer_52
+					Forever More	designer_53
+					Blue Dahlia	designer_54
+					Purple Passion	designer_55
+					Choose To Be	designer_56
+					Tulip Time	designer_57
+					Bristol Belle	designer_58
+					Nancy Rink Designs	designer_59
+					Donna Robertson	designer_60
+Fabric_Type	ab-fabric_type	Radio	Instantly	Visible	"""Cotton"""	fabric_type_1
+					Backing	fabric_type_2
+					Muslin	fabric_type_3
+					Flannel	fabric_type_4
+					Fleece	fabric_type_5
+					Other	fabric_type_6
+					Wool	fabric_type_7
+Fiber_Contents	ab-fiber_contents	Radio	Instantly	Visible	"""100% Cotton"""	fiber_contents_1
+					100% Polyester	fiber_contents_2
+					55% Cotton/45% Polyester	fiber_contents_3
+					50% Cotton/45% Polyester/5% Spandex	fiber_contents_4
+					60% Cotton/40% Polyester	fiber_contents_5
+					95% Cotton/5% Spandex	fiber_contents_6
+					80% Cotton/20% Polyester	fiber_contents_7
+					80% Cotton/20% Wool	fiber_contents_8
+					100% Wool	fiber_contents_9
+Fabric_Width	ab-fabric_width	Radio	Instantly	Visible	"""45"" wide"""	fabric_width_1
+					"44"" wide"	fabric_width_2
+					"38"" wide"	fabric_width_3
+					"108"" wide"	fabric_width_4
+					"90"" wide"	fabric_width_5
+					"118"" wide"	fabric_width_6
+					"60"" wide"	fabric_width_7
+					"43"" wide"	fabric_width_8
+					"57"" wide"	fabric_width_9
+					"52"" wide"	fabric_width_10
+					"18"" x 22"""	fabric_width_11
+					"120"" x 120"""	fabric_width_12
+					"72"" x 90"""	fabric_width_13
+					"81"" x 96"""	fabric_width_14
+					"90"" x 108"""	fabric_width_15
+					"96"" wide"	fabric_width_16
+					"45"" x 60"""	fabric_width_17
+					"72"" x 96"""	fabric_width_18
+					"96"" x 108"""	fabric_width_19
+					"5"" x 5"""	fabric_width_20
+					"2.5"" x 45"""	fabric_width_21
+					"10"" x 10"""	fabric_width_22
+					"48"" x 60"""	fabric_width_23
+					"120"" wide"	fabric_width_24
+Putup_Format	ab-putup_format	Radio	Instantly	Visible	"""D/R"""	putup_format_1
+					Box	putup_format_2
+					Case Pack	putup_format_3
+					Fat Quarters	putup_format_4
+					ROT	putup_format_5
+					Swatch	putup_format_6
+					Package	putup_format_7
+					Flat Fold	putup_format_8
