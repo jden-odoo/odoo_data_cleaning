@@ -33,7 +33,6 @@ def get_corresponding_names(names_list, dirty_data):
     for i in range(len(all_names.tolist())):
         if (i + 97) in names_list:
             names.append(all_names[i])
-    print(names)
     return names
 
 
