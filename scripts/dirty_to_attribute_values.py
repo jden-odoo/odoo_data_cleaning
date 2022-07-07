@@ -1,15 +1,27 @@
+#############################################################################################
+#Usage: python3 dirty_to_attribute_values.py dirtydata.csv columns unit    
+#Input (Space separated): 
+#   1. Dirtydata.csv
+#   2. column letters for attribute/value pairs
+#   3. company name
+
+#Output: attr-val.xlsx
+#Sample Input: python3 dirty_to_attribute_values.py dirtydata.csv b, yard
+
 import pandas as pd
+import sys
 
 
 display_type = "Radio"
 create_variant = "Instantly"
 visibility = "Visible"
 company_name = "ABA company"
+attributes = ["Name", "Manufacturer", "Collection", "Color", "Vendor_SKU", "Designer", "Fabric_Type", "Fiber_Contents", "Fabric_Width", "Putup_Format", "Sales Price", "Product Category"]
 
 
 # Gets dirty data from dirty data csv
-def get_dirty_data():
-    return pd.read_csv('data/dirty_data.csv')
+def get_dirty_data(dirtydata):
+    return pd.read_csv(dirtydata)
 
 # Returns list of column names ordered by dirty data csv
 def list_names(dirty_data):
@@ -18,27 +30,24 @@ def list_names(dirty_data):
 
 # Get input names (case insensisitive)
 # Future implementation will be drop down XML
-def get_names():
-    column_letters = ['b', 'c', 'e', 'f', 'g', 'h', 'i', 'j', 'k']
-    res = []
-    for col in column_letters:
-        col = col.lower()
-        res.append(ord(col))
-    return res
+def get_names(values):
+    array = []
+    for value in values:
+        value = ord(value.lower())-97
+        array.append(attributes[value])
+    return array
 
 
-# Get corresponding names for letter columns
-def get_corresponding_names(names_list, dirty_data):
-    names = []
-    all_names = dirty_data.columns
-    for i in range(len(all_names.tolist())):
-        if (i + 97) in names_list:
-            names.append(all_names[i])
-    return names
+def get_number_columns(values):
+    array = []
+    for value in values:
+        value = ord(value.lower())-97
+        array.append(value)
+    return array
 
 
 # Create ids for name_list
-def get_ids(name_list):
+def get_ids(name_list, company_name):
     ids_list = []
     for cell in name_list:
         if cell in ids_list and cell != " ":
@@ -51,7 +60,7 @@ def get_ids(name_list):
 # Get value_id/name from dirty data
 def get_value_id_name(column_name, dirty_data):
     value_id_names = []
-    for value in dirty_data[column_name].tolist():
+    for value in dirty_data.iloc[:,column_name].tolist():
         if value not in value_id_names:
             value_id_names.append(value)
     return value_id_names
@@ -59,22 +68,21 @@ def get_value_id_name(column_name, dirty_data):
 
 # Creates a csv for the output
 def create_csv(df):
-    df.to_excel(excel_writer = './data/attr-val-test.xlsx')
+    df.to_excel(excel_writer = './data/attr-val.xlsx')
 
 
 # Create the data to be added to the new dataframe for the output csv
 # Creates value_id/id
 # Appends values into the data and returns a dataframe with data
-def create():
-    dirty_data = get_dirty_data()
-    #print(dirty_data.iloc[:, 5][4073])
-    names_list = get_names()
-    names_list_words = get_corresponding_names(names_list, dirty_data)
-    ids_list = get_ids(names_list_words)
+def create(input_array, dirtydata, companyname):
+    dirty_data = get_dirty_data(dirtydata)
+    names_list = get_names(input_array)
+    numbers = get_number_columns(input_array)
+    ids_list = get_ids(names_list, companyname)
     data = []
     count = 0
-    for name in names_list_words:
-        value_id_names = get_value_id_name(name, dirty_data)
+    for name in names_list:
+        value_id_names = get_value_id_name(numbers[count], dirty_data)
         id_num = 1
         prev = ""
         for value in value_id_names:
@@ -88,15 +96,14 @@ def create():
                 data.append([name, ids_list[count], display_type, create_variant, visibility, "\"" + value + "\"", value_id_id.lower()])
             prev = name
         count = count + 1
-    df = pd.DataFrame(data, columns=["name", "id", "display_type", "create_variant", "visibility", "value_id/name", "value_id/id"]).set_index('name')
-    #print(df.iloc[:, 4][1538])
+    df = pd.DataFrame(data, columns=["name", "id", "display_type", "create_variant", "visibility", "value_ids/name", "value_ids/id"]).set_index('name')
     return df
 
 
 # Creates csv for dataframe
-def parse():
-    df = create()
+def parse(input_array, dirtydata, companyname):
+    df = create(input_array, dirtydata, companyname)
     create_csv(df)
 
-
-parse()
+arr = sys.argv[2].split(",")
+parse(arr, sys.argv[1], sys.argv[3])
