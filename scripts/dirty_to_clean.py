@@ -1,5 +1,24 @@
-import csv
+#############################################################################################
+#Usage: python3 dirty_to_clean.py dirtydata.csv columns unit    
+#Input (Space separated): 1: [dirtydata].csv, replace dirtydata with actual file name
+#       2: letter of columns inputed in the following order: 
+#         Name,Manufacturer,Collection,Color,Vendor_SKU,Designer,Fabric_Type,Fiber_Contents,Fabric Width,Putup_Format, Sales Price, Cost, Product Categry
+#         for instance, in the example file DEV | 01 Client Dirty Data, input would be d,b,c,e,f,g,h,i,j,k,l,m,n (not case-sensitive)
+#       3: unit needed, for instance: yard
+#Commandline input example: python3 dirty_to_clean.py dirtydata.csv d,b,c,e,f,g,h,i,j,k,l,m,n yard
 
+
+#Output: outputdata.csv                                                                                       
+
+
+
+import csv
+import sys
+
+
+
+
+#############################################################################################
 #input: data of inrows, and a comma separated list of the column letter of the fields in the following order :
 #        [Name,Manufacturer,Collection,Color,Vendor_SKU,Designer,Fabric_Type,Fiber_Contents,Fabric Width,Putup_Format, Sales Price, Cost, Product Categry]
 # for instance, in the example file DEV | 01 Client Dirty Data, input would be ['d','b','c','e','f','g','h','i','j','k','l','m','n'] (not case-sensitive)
@@ -96,4 +115,6 @@ def main(dirtydata,columns,unit):
     item_dict = create_item_dict(inRows,columns)
     output_clean_data(item_dict,outHeader,unit)
 
-main('dirtydata.csv',['d','b','c','e','f','g','h','i','j','k','l','m','n'],'yard')
+# main('dirtydata.csv',['d','b','c','e','f','g','h','i','j','k','l','m','n'],'yard')
+arr = sys.argv[2].split(',')
+main(sys.argv[1],arr,sys.argv[3])
