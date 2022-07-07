@@ -15,7 +15,7 @@
 import csv
 import sys
 
-
+#TODO: CHANGE FILE PATHS FOR INPUT/OUTPUT
 
 
 #############################################################################################
@@ -62,7 +62,7 @@ def create_item_dict(inRows,columns):
 
 
 def output_clean_data(item_dict,outHeader,unit):
-    f = open('outputdata.csv','w')
+    f = open('../data/outputdata.csv','w')
     writer = csv.writer(f)
     writer.writerow(outHeader)
     for key in item_dict.keys():

@@ -9,8 +9,7 @@ company_name = "ABA company"
 
 # Gets dirty data from dirty data csv
 def get_dirty_data():
-    return pd.read_csv('../../data.csv', thousands=',')
-
+    return pd.read_csv('data/dirty_data.csv')
 
 # Returns list of column names ordered by dirty data csv
 def list_names(dirty_data):
