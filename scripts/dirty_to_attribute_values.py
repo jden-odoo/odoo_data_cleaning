@@ -9,7 +9,7 @@ company_name = "ABA company"
 
 # Gets dirty data from dirty data csv
 def get_dirty_data():
-    return pd.read_csv('data/dirty_data.csv')
+    return pd.read_csv('../data/dirty_data.csv')
 
 # Returns list of column names ordered by dirty data csv
 def list_names(dirty_data):
@@ -59,7 +59,7 @@ def get_value_id_name(column_name, dirty_data):
 
 # Creates a csv for the output
 def create_csv(df):
-    df.to_excel(excel_writer = './data/attr-val-test.xlsx')
+    df.to_excel(excel_writer = '../data/attr-val.xlsx')
 
 
 # Create the data to be added to the new dataframe for the output csv
@@ -85,10 +85,10 @@ def create():
             if prev == name:
                 data.append(["","","","","",value,value_id_id])
             else:
-                data.append([name, ids_list[count], display_type, create_variant, visibility, "\"" + value + "\"", value_id_id.lower()])
+                data.append([name, ids_list[count], display_type, create_variant, visibility, value, value_id_id.lower()])
             prev = name
         count = count + 1
-    df = pd.DataFrame(data, columns=["name", "id", "display_type", "create_variant", "visibility", "value_id/name", "value_id/id"]).set_index('name')
+    df = pd.DataFrame(data, columns=["name", "id", "display_type", "create_variant", "visibility", "value_ids/name", "value_ids/id"]).set_index('name')
     #print(df.iloc[:, 4][1538])
     return df
 
