@@ -117,4 +117,4 @@ def main(dirtydata,columns,unit):
 
 # main('dirtydata.csv',['d','b','c','e','f','g','h','i','j','k','l','m','n'],'yard')
 arr = sys.argv[2].split(',')
-main(sys.argv[1],arr,sys.argv[3])
+main(sys.argv[1],arr,sys.argv[4])

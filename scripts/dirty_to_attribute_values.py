@@ -6,7 +6,7 @@
 #   3. company name
 
 #Output: attr-val.xlsx
-#Sample Input: python3 dirty_to_attribute_values.py dirtydata.csv b, yard
+#Sample Input: python3 dirty_to_attribute_values.py dirtydata.csv b, companyname, unit
 
 import pandas as pd
 import sys
@@ -106,4 +106,5 @@ def parse(input_array, dirtydata, companyname):
     create_csv(df)
 
 arr = sys.argv[2].split(",")
+arr = arr[1:len(arr)-3]
 parse(arr, sys.argv[1], sys.argv[3])
