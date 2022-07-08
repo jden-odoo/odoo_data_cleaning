@@ -6,7 +6,7 @@
 #   3. company name
 
 #Output: attr-val.xlsx
-#Sample Input: python3 dirty_to_attribute_values.py dirtydata.csv b, yard
+#Sample Input: python3 dirty_to_attribute_values.py dirtydata.csv b,c,e,f,g,h,i,j,k companyname
 
 import pandas as pd
 import sys
@@ -38,6 +38,7 @@ def get_names(values):
     return array
 
 
+#letter array to indexes
 def get_number_columns(values):
     array = []
     for value in values:
@@ -68,7 +69,7 @@ def get_value_id_name(column_name, dirty_data):
 
 # Creates a csv for the output
 def create_csv(df):
-    df.to_excel(excel_writer = '../data/attr-val.xlsx')
+    df.to_excel(excel_writer = './data/attr-val.xlsx')
 
 
 # Create the data to be added to the new dataframe for the output csv
