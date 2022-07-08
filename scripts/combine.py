@@ -13,20 +13,54 @@ def main():
     final_data_df = add_attr_to_clean(attr_val_dict)
     final_data_df.to_excel(excel_writer = '../data/final_output.xlsx')
 
+#############################################
+# Convert attribute/value data to a dictionary
+# Input: Datafram from excel file
+# Output: Nested dictionary, where outer key is attribute name and inner key is value name.
+# The outer key corresponds to a diciontary with two values inside it
+# 1. 'category-external-id', which is the attributes external id as a string.
+# 2. an inner key, which corresponds to an inner dictionary
+#
+# The inner key's dictionary has the value external ids in it
+# All keys in the dictionary have spaces in them replaced with _
+# External id's are not modified at all
+#
+# Example 
+# Original excel file
+# Attribute_Name,Attribute_External_ID,Value_Name,Value_External_ID
+# Color of Car Body,car_body_color,White,car_body_white
+# ,,Green,car_body_green
+# Color of Car Trim,car_trim_color,White,car_trim_white
+# ,,Green, car_trim_green
+#
+# create_attr_val_dict() will return:
+# {
+#     'color_of_car_body', {
+#         'car_body_color_value': {
+#             'category_external_id': 'car_body_color',
+#             'white': 'car_body_white',
+#             'green': 'car_body_green'
+#         }
+#     }
+#     'color_of_car_trim', {
+#         'car_trim_color_value': {
+#             'category_external_id': 'car_body_color',
+#             'white': 'car_body_white',
+#             'green': 'car_body_green'
+#         }
+#     }
+# }
 
 def create_attr_val_dict():
 
-    #Convert attribute/value data to a dictionary
-
-    #Create df for attribute/value excel file
-    # attr_val_df = pd.read_csv('attr-val.csv')
-    #attr_val_df = pd.read_excel('data/attr-val.xlsx')
     
+
+    #dirty_to_attribute_values output
     #attr_val_df = pd.read_excel('../data/attr-val.xlsx')
 
 
-    #TESting
-    attr_val_df = pd.read_excel('../data/DEV _ 02 Attributes and Values List to Import into Odoo.xlsx')
+    #Testing
+    attr_val_df = pd.read_excel('../data/original-attr-val.xlsx')
 
     # attr_name_values = attr_val_df['value_ids/name'] 
     # attr_name_external_ids = attr_val_df['value_ids/id']
@@ -56,7 +90,6 @@ def add_attr_to_clean(attr_val_dict):
     clean_data_df['Product Attributes / Values / External ID'] = ""
 
     for row in range(0, len(clean_data_df)): #attributes/external id needs fix
-        print(row)
 
         category_name = str(clean_data_df['Attribute'][row]).lower()
         attr_name = str(clean_data_df['Value'][row]).lower()

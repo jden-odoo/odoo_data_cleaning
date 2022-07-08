@@ -52,7 +52,7 @@ def get_number_columns(values):
 def get_ids(name_list, company_name):
     ids_list = []
     for cell in name_list:
-        if cell in ids_list and cell != " ":
+        if cell in ids_list and pd.isna(cell):
             ids_list.append(" ")
         else:
             ids_list.append(company_name.lower()[:2] + "-" + cell.lower())
@@ -102,7 +102,7 @@ def create(input_array, dirtydata, companyname):
     return df
 
 
-# Creates csv for dataframe
+# Creates csv for dataframesantee
 def parse(input_array, dirtydata, companyname):
     df = create(input_array, dirtydata, companyname)
     create_csv(df)
