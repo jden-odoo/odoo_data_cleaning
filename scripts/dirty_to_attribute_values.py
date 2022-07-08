@@ -6,7 +6,8 @@
 #   3. company name
 
 #Output: attr-val.xlsx
-#Sample Input: python3 dirty_to_attribute_values.py dirtydata.csv b, companyname, unit
+#Sample Input: python3 dirty_to_attribute_values.py dirtydata.csv b,c,e,f,g,h,i,j,k companyname
+
 
 import pandas as pd
 import sys
@@ -38,6 +39,7 @@ def get_names(values):
     return array
 
 
+#letter array to indexes
 def get_number_columns(values):
     array = []
     for value in values:
