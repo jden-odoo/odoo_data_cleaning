@@ -8,6 +8,7 @@
 #Output: attr-val.xlsx
 #Sample Input: python3 dirty_to_attribute_values.py dirtydata.csv b,c,e,f,g,h,i,j,k companyname
 
+
 import pandas as pd
 import sys
 
@@ -69,7 +70,7 @@ def get_value_id_name(column_name, dirty_data):
 
 # Creates a csv for the output
 def create_csv(df):
-    df.to_excel(excel_writer = './data/attr-val.xlsx')
+    df.to_excel(excel_writer = '../data/attr-val.xlsx')
 
 
 # Create the data to be added to the new dataframe for the output csv
@@ -107,4 +108,5 @@ def parse(input_array, dirtydata, companyname):
     create_csv(df)
 
 arr = sys.argv[2].split(",")
+arr = arr[1:len(arr)-3]
 parse(arr, sys.argv[1], sys.argv[3])

@@ -11,7 +11,7 @@ import pandas as pd
 def main():
     attr_val_dict = create_attr_val_dict()
     final_data_df = add_attr_to_clean(attr_val_dict)
-    final_data_df.to_excel(excel_writer = '../data/attr-val.xlsx')
+    final_data_df.to_excel(excel_writer = '../data/final_output.xlsx')
 
 
 def create_attr_val_dict():
