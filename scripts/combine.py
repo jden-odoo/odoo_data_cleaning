@@ -22,11 +22,11 @@ def create_attr_val_dict():
     # attr_val_df = pd.read_csv('attr-val.csv')
     #attr_val_df = pd.read_excel('data/attr-val.xlsx')
     
-    #attr_val_df = pd.read_excel('../data/attr-val.xlsx')
+    attr_val_df = pd.read_excel('../data/attr-val.xlsx')
 
 
     #TESting
-    attr_val_df = pd.read_excel('../data/DEV _ 02 Attributes and Values List to Import into Odoo.xlsx')
+    #attr_val_df = pd.read_excel('../data/DEV _ 02 Attributes and Values List to Import into Odoo.xlsx')
 
     # attr_name_values = attr_val_df['value_ids/name'] 
     # attr_name_external_ids = attr_val_df['value_ids/id']
@@ -56,7 +56,6 @@ def add_attr_to_clean(attr_val_dict):
     clean_data_df['Product Attributes / Values / External ID'] = ""
 
     for row in range(0, len(clean_data_df)): #attributes/external id needs fix
-        print(row)
 
         category_name = str(clean_data_df['Attribute'][row]).lower()
         attr_name = str(clean_data_df['Value'][row]).lower()
