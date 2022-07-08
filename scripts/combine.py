@@ -9,9 +9,8 @@ import pandas as pd
 #############################################################################
 
 def main():
-    print('main called')
     attr_val_dict = create_attr_val_dict()
-    print('main finished')
+
     #print(attr_val_dict['manufacturer'])
     # for row in attr_val_dict.keys():
     #     print(attr_val_dict[row])
@@ -81,7 +80,7 @@ def main():
 ##################################################
 
 def create_attr_val_dict():
-    print('func called')
+
 
     #Testing
     attr_val_df = pd.read_excel('../data/original-attr-val.xlsx')
@@ -99,14 +98,13 @@ def create_attr_val_dict():
             currDict['category_external_id'] = str(attr_val_df['id'][row]).lower() 
 
         newValue = str(attr_val_df['value_ids/name'][row]).replace(' ','_').lower()
-        print(newValue)
         currDict[newValue] = str(attr_val_df['value_ids/id'][row])
 
     if currCategory:
         attr_val_dict[currCategory] = currDict
 
     return attr_val_dict
-    
+
 
 ############################################################
 # Input: nested dictionary with external ids. See create_attr_val_dict() documentation for details

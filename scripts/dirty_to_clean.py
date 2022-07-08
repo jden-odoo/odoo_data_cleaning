@@ -106,7 +106,7 @@ def create_item_dict(inHeader,inRows,parents,children):
 
 
 def output_clean_data(item_set,outHeader,id_dict):
-    f = open('./outputdata.csv','w')
+    f = open('../data/outputdata.csv','w')
     writer = csv.writer(f)
     writer.writerow(outHeader)
     count = 0
