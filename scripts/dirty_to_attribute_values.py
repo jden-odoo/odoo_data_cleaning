@@ -55,7 +55,7 @@ def get_value_id_name(column_name, dirty_data):
     for value in dirty_data[column_name].tolist():
         if value not in value_id_names:
 
-            value_id_names.append(str(value).replace(' ','_').lower())
+            value_id_names.append(value)
     return value_id_names
 
 
