@@ -5,7 +5,7 @@
 #   2. column letters for attributes
 
 #Output: attr-val.xlsx
-#Sample Input: python3 dirty_to_attribute_values.py dirtydata.csv b,c,e,f,g,h,i,j,k
+#Sample Input: python3 dirty_to_attribute_values.py dirtydata.csv b,c,e,f,g,h,i,j,k companyname yard
 
 
 import pandas as pd
@@ -51,8 +51,9 @@ def get_external_ids(name_list):
 def get_value_id_name(column_name, dirty_data):
     value_id_names = []
     for value in dirty_data[column_name].tolist():
-        if value not in value_id_names
-            value_id_names.append(value)
+        if value not in value_id_names:
+
+            value_id_names.append(str(value).replace(' ','_').lower())
     return value_id_names
 
 
@@ -101,10 +102,7 @@ def parse(input_array, dirtydata):
     create_csv(df)
 
 
-arr = sys.argv[2].split(",")
-arr = arr[1:len(arr)-3]
+
+arr = sys.argv[3].split(",")
+
 parse(arr, sys.argv[1])
-
-#arr = sys.argv[3].split(",")
-
-#parse(arr, sys.argv[1])
