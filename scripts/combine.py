@@ -22,11 +22,11 @@ def create_attr_val_dict():
     # attr_val_df = pd.read_csv('attr-val.csv')
     #attr_val_df = pd.read_excel('data/attr-val.xlsx')
     
-    #attr_val_df = pd.read_excel('../data/attr-val.xlsx')
+    attr_val_df = pd.read_excel('../data/attr-val.xlsx')
 
 
     #TESting
-    attr_val_df = pd.read_excel('../data/DEV _ 02 Attributes and Values List to Import into Odoo.xlsx')
+    #attr_val_df = pd.read_excel('../data/DEV _ 02 Attributes and Values List to Import into Odoo.xlsx')
 
     # attr_name_values = attr_val_df['value_ids/name'] 
     # attr_name_external_ids = attr_val_df['value_ids/id']
