@@ -129,7 +129,7 @@ def output_clean_data(item_set,outHeader,id_dict):
                 attr0,val0 = attributes[attr_start]
 
             if val0 != '':
-                row.append(attr0)
+                row.append("attribute_"+str(attr0).replace(' ','_').lower())
                 row.append(id_dict[attr0][val0])
         
         writer.writerow(row)
@@ -144,7 +144,7 @@ def output_clean_data(item_set,outHeader,id_dict):
             temprow = []
             for j in range(parent_len):
                 temprow.append('')
-            temprow.append(attr)
+            temprow.append("attribute_"+str(attr).replace(' ','_').lower())
             temprow.append(id_dict[attr][val])
             writer.writerow(temprow)
             count+=1
