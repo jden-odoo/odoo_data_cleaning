@@ -54,7 +54,8 @@ def get_value_id_name(column_name, dirty_data):
     value_id_names = []
     for value in dirty_data[column_name].tolist():
         if value not in value_id_names:
-            value_id_names.append(value)
+
+            value_id_names.append(str(value).replace(' ','_').lower())
     return value_id_names
 
 
@@ -102,10 +103,7 @@ def parse(input_array, dirtydata):
     create_csv(df)
 
 
-arr = sys.argv[2].split(",")
-arr = arr[1:len(arr)-3]
+
+arr = sys.argv[3].split(",")
+
 parse(arr, sys.argv[1])
-
-#arr = sys.argv[3].split(",")
-
-#parse(arr, sys.argv[1])
