@@ -1,6 +1,6 @@
 # Input Format: python3 dirty_toattribute_values_v2.py filename productid attribute value parentlist
 # Assumptions:
-# Attribute name 
+#   Attribute name 
 # Sample Input: python3 dirty_to_attribute_values_v2.py ../data/dirty_data_v2.csv a i j b,c,d
 
 
