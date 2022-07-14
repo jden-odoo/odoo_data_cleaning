@@ -2,6 +2,8 @@ from xmlrpc import client
 import pandas as pd
 import sys
 import threading
+import time
+import multiprocessing
 
 
 def main():   
@@ -9,8 +11,9 @@ def main():
     url = 'http://localhost:8069'
     user = 'admin'
 
-    db = 'import-script-6'
-    password = 'daaf39788bc1ff76faf6e2a7b7e4551ebdaa21e3'
+    db = 'import-script-8'
+    password = 'ee204a78be907ba59c6d6ef9fa2d336d8c73ce33'
+
 
     common = client.ServerProxy('{}/xmlrpc/2/common'.format(url))
     uid = common.authenticate(db, user, password, {})
@@ -19,18 +22,43 @@ def main():
     attr_val_dict = create_attr_val_dict()
     database_ids = create_attribute_records(db, uid, password, models, attr_val_dict)
 
-    t1 = threading.Thread(target=add_attributes_and_values(db, uid, password, models, database_ids))
-    t2 = threading.Thread(target=add_attributes_and_values(db, uid, password, models, database_ids))
-    t3 = threading.Thread(target=add_attributes_and_values(db, uid, password, models, database_ids))
+    t1 = multiprocessing.Process(target=add_attributes_and_values(db, uid, password, models, database_ids))
+    t2 = multiprocessing.Process(target=add_attributes_and_values(db, uid, password, models, database_ids))
+    t3 = multiprocessing.Process(target=add_attributes_and_values(db, uid, password, models, database_ids))
+    t4 = multiprocessing.Process(target=add_attributes_and_values(db, uid, password, models, database_ids))
+    t5 = multiprocessing.Process(target=add_attributes_and_values(db, uid, password, models, database_ids))
+    t6 = multiprocessing.Process(target=add_attributes_and_values(db, uid, password, models, database_ids))
+    t7 = multiprocessing.Process(target=add_attributes_and_values(db, uid, password, models, database_ids))
+    t8 = multiprocessing.Process(target=add_attributes_and_values(db, uid, password, models, database_ids))
+    t9 = multiprocessing.Process(target=add_attributes_and_values(db, uid, password, models, database_ids))
+    t10 = multiprocessing.Process(target=add_attributes_and_values(db, uid, password, models, database_ids))
+    t11 = multiprocessing.Process(target=add_attributes_and_values(db, uid, password, models, database_ids))
+    t12 = multiprocessing.Process(target=add_attributes_and_values(db, uid, password, models, database_ids))
 
     t1.start()
-    t2.start()
-    t3.start()
-
     t1.join()
+    t2.start()
     t2.join()
+    t3.start()
     t3.join()
-    
+    t4.start()
+    t4.join()
+    t5.start()
+    t5.join()
+    t6.start()
+    t6.join()
+    t7.start()
+    t7.join()
+    t8.start()
+    t8.join()
+    t9.start()
+    t9.join()
+    t10.start()
+    t10.join()
+    t11.start()
+    t11.join()
+    t12.start()
+    t12.join()
 
 ##################################################
 # Reads from attribute-value excel file and creates corresponding attribute and value records in the database
@@ -77,6 +105,8 @@ def create_attribute_records(db, uid, password, models, attr_val_dict):
     
     return database_ids
 
+#attribute names/ not ids todo
+#ui, match fields
 
 #############################################
 # Convert attribute/value data to a dictionary
@@ -188,7 +218,7 @@ def add_attributes_and_values(db, uid, password, models, database_ids):
     curr_product_id = None
     for row in range(0, len(output_df) - 1):  
         #TODO: implement duplicate checking
-        if row % 1000 == 0:
+        if row % 100 == 0:
             print(row)
 
         if not pd.isna(output_df['Name'][row]):
@@ -246,7 +276,10 @@ def convert_field_data_type(field_type, field_val):
         return str(field_val)
     #TODO: add more cases for different field types
 
+start = time.time()
 main()
+end = time.time()
+print(end - start)
 
 
 #old testing databases and api keys
@@ -262,3 +295,11 @@ main()
 
 # db = 'import-script-4'
 # password = '736bea35eed6cca1f4959e469f9c68039ea39703'
+
+# db = 'import-script-6'
+# password = 'daaf39788bc1ff76faf6e2a7b7e4551ebdaa21e3'
+
+
+#TODO
+#importable fields => readonly = false
+#ui to match fields
