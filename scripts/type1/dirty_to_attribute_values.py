@@ -1,9 +1,8 @@
 #############################################################################################
-#Usage: python3 dirty_to_attribute_values.py dirtydata.csv columns unit    
+#Usage: python3 dirty_to_attribute_values.py dirtydata.csv attributes    
 #Input (Space separated): 
 #   1. Dirtydata.csv
-#   2. column letters for attribute/value pairs
-#   3. company name
+#   2. column letters for attributes
 
 #Output: attr-val.xlsx
 #Sample Input: python3 dirty_to_attribute_values.py dirtydata.csv b,c,e,f,g,h,i,j,k companyname yard
@@ -28,7 +27,6 @@ def list_all_columns(dirty_data):
     return dirty_data.columns
 
 
-# Get input names (case insensisitive)
 # Future implementation will be drop down XML
 def get_attribute_names(input_array, all_columns):
     array = []
@@ -54,7 +52,6 @@ def get_value_id_name(column_name, dirty_data):
     value_id_names = []
     for value in dirty_data[column_name].tolist():
         if value not in value_id_names:
-
             value_id_names.append(value)
     return value_id_names
 
@@ -85,6 +82,7 @@ def create(input_array, dirtydata):
         for value in value_id_names:
             if not isinstance(value, str):
                 continue
+            #create value_ids/id
             value_id_id = name.lower() + "_" + str(id_num)
             id_num = id_num + 1
             if prev == name:
