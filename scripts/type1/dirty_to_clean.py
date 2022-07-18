@@ -40,7 +40,7 @@ def create_attr_val_dict():
 
 
     #Testing
-    attr_val_df = pd.read_excel('../data/attr-val.xlsx')
+    attr_val_df = pd.read_excel('../../data/attr-val.xlsx')
 
     attr_val_dict = {}
     currDict = {}

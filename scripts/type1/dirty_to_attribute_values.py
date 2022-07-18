@@ -58,7 +58,7 @@ def get_value_id_name(column_name, dirty_data):
 
 # Creates a csv for the output
 def create_csv(df):
-    df.to_excel(excel_writer = '../data/attr-val.xlsx')
+    df.to_excel(excel_writer = '../../data/attr-val.xlsx')
 
 
 # Create the data to be added to the new dataframe for the output csv
