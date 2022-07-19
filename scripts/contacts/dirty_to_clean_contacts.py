@@ -1,7 +1,7 @@
-# Input: python3 dirty_to_clean_contacts.py filename addresses_column
+# Input: python3 dirty_to_clean_contacts.py filename addresses_columns
 #
-# Sample Input: python3 dirty_to_clean_contacts.py ../data/short_contacts_data.csv d
-# Sample Input: python3 dirty_to_clean_contacts.py ../data/main_addresses.csv d,e,f
+# Sample Input: python3 dirty_to_clean_contacts.py ../../data/short_contacts_data.csv d
+# Sample Input: python3 dirty_to_clean_contacts.py ../../data/main_addresses.csv d,e,f
 
 
 import re
@@ -10,7 +10,7 @@ import sys
 import json
 
 import urllib.request
-import config
+import config as config
 import requests
 
 
@@ -21,11 +21,7 @@ def read_data(dirty_data):
 
 # gets all addresses from dirty data based on given indexes
 def get_all_addresses(index, df):
-    rows = df[df.columns[ord(index[0])-97]].count()
-    for i in index:
-        temp = df[df.columns[ord(i)-97]].count()
-        if temp > rows:
-            rows = temp
+    rows = len(df)
     data = []
     for i in range(rows):
         data.append("")
@@ -113,7 +109,7 @@ def dict_to_list(values):
 
 # creates a csv given a dataframe
 def create_csv(df):
-    df.to_csv("../data/temp.csv", sep=',', encoding = 'utf-8')
+    df.to_csv("../../data/temp.csv", sep=',', encoding = 'utf-8')
 
 
 def create(dirty_data, index):
@@ -121,7 +117,7 @@ def create(dirty_data, index):
     all_addresses = get_all_addresses(index, df)
     data = get_address_info_3(all_addresses)
     values = dict_to_list(data)
-    new_df = pd.DataFrame(values, columns=["Addresses", "Latitude", "Longitude"]).set_index("Addresses")
+    new_df = pd.DataFrame(values, columns=["Addresses", "Latitude", "Longitude"]).iloc[1: , :].set_index("Addresses")
     create_csv(new_df)
 
 
