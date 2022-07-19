@@ -1,0 +1,411 @@
+from odoo import models
+import sys
+from xmlrpc import client
+import pandas as pd
+import time
+
+
+#requires --limit-time-real=100000
+
+class EnhancedImport(models.TransientModel):
+    _name = 'base_import.import'
+    _inherit = 'base_import.import'
+
+        
+    def execute_import(self, fields, columns, options, dryrun=False):
+
+        start = time.time()
+
+        url = 'http://localhost:8069' #TODO: explain how to get
+        db = 'import-script'
+        user = 'admin'
+        password = 'f65c1d5dbbbba31900657973cfe3603248ff5a86'
+
+        common = client.ServerProxy('{}/xmlrpc/2/common'.format(url))
+        uid = common.authenticate(db, user, password, {})
+        models = client.ServerProxy('{}/xmlrpc/2/object'.format(url))
+
+        attr_val_dict = self.create_attr_val_dict()
+        database_ids = self.create_attribute_records(db, uid, password, models, attr_val_dict)
+        product_field_information = self.get_field_information(db, uid, password, models, fields, columns)
+        print("In driver",product_field_information.keys())
+        self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information)
+
+        end = time.time()
+        print(end - start)
+
+        return []
+
+
+
+
+       
+    ########################################
+    # This script requires the sale module
+    #
+    # Main driver function for this script. 
+    # Inputs:
+    # 1. url: This is the url for the database to import into.
+    # 2. db: This is the name of the database that will be accessed.
+    # 3. user: This is the username that will be used to access the database.
+    # 4. password: This is the api key that will be used to access the database.
+    # This function does not have an output.
+    #
+    # Example command to run script
+    # python import.py http://localhost:8069 import-script admin 5326200ebea7bdb285c6b25023fe67f16200ba75 fields columns
+    ########################################
+    # def main(url, db, user, password, fields, columns):   
+    #     #TODO: take url, user, db and pass as user inputs
+    #     # url = sys.argv[1]
+    #     # db = sys.argv[2]
+    #     # user = sys.argv[3]
+    #     # password = sys.argv[4]
+
+    #     common = client.ServerProxy('{}/xmlrpc/2/common'.format(url))
+    #     uid = common.authenticate(db, user, password, {})
+    #     models = client.ServerProxy('{}/xmlrpc/2/object'.format(url))
+
+    #     attr_val_dict = create_attr_val_dict()
+    #     database_ids = create_attribute_records(db, uid, password, models, attr_val_dict)
+    #     add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict)
+
+        
+    ##################################################
+    # Reads from attribute-value excel file and creates corresponding attribute and value records in the database
+    # Note that there are hardcoded default values for the fields create_variant and display_type.
+    # Input: 
+    # 1. db: This is the name of the database as a string.This is passed in from the command line via main.
+    # 2. uid: This is the user id, which is needed to make api calls. This is passed in from main.
+    # 3. password: This is the api key that allows you to access the database. This is passed in from the command line via main.
+    # 4. models: This is the object that allows us to make api calls. This is created and passed in from main.
+    # 5. attr_val_dict: This is nested dictionary that maps attributes and values to their external ids. This is the output from create-attr_val_dict.
+    # Output:
+    # 1. database_ids: This is a dictionary that maps attribute and value external ids to their database ids.
+    ##################################################
+    def create_attribute_records(self, db, uid, password, models, attr_val_dict):
+
+        CREATE_VARIANT_DEFAULT = 'always'
+        DISPLAY_TYPE_DEFAULT = 'radio'
+        VISIBILITY_DEFAULT = 'visibile'
+
+        database_ids = {}
+        #TODO: implement duplicate checking
+
+        for attribute in attr_val_dict.keys():
+            
+            attribute_id_number = models.execute_kw(db, uid, password, 'product.attribute', 'create', [{
+                'name': attribute,
+                'create_variant': CREATE_VARIANT_DEFAULT,
+                'display_type': DISPLAY_TYPE_DEFAULT,
+            }]) 
+
+            attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
+
+            # TODO: no visibility field in model?
+            database_ids[attribute_external_id] = attribute_id_number
+            
+            val_dict = attr_val_dict[attribute]['values']
+            for val in val_dict.keys():
+                value_external_id = val_dict[val]
+                value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
+                    'name': val,
+                    'attribute_id': attribute_id_number,
+                }])
+                models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
+                    'value_ids': [(4, value_id_number, 0)]
+                }])
+                database_ids[value_external_id] = value_id_number
+        
+        return database_ids
+
+
+
+    #############################################
+    # Convert attribute/value data to a dictionary
+    # Input: None. The name of the file to be opened is hard coded.
+    # Output: Nested dictionary, where outer key is attribute name and inner key is value name.
+    # The outer key corresponds to a diciontary with two values inside it
+    # 1. 'Attribute-external-id', which is the attributes external id as a string.
+    # 2. an inner key, which corresponds to an inner dictionary
+    #
+    # The inner key's dictionary has the value external ids in it
+    # All keys in the dictionary have spaces in them replaced with _
+    # External id's are not modified at all
+    #
+    # Example 
+    # Original excel file
+    # Attribute_Name,Attribute_External_ID,Value_Name,Value_External_ID
+    # Color of Car Body,car_body_color,White,car_body_white
+    # ,,Green,car_body_green
+    # Color of Car Trim,car_trim_color,White,car_trim_white
+    # ,,Green,car_trim_green
+    #
+    # create_attr_val_dict() will return:
+    # {
+    #     'color_of_car_body', {
+    #         'attribute_external_id': 'car_body_color',
+    #         'values': {
+    #             'white': 'car_body_white',
+    #             'green': 'car_body_green'
+    #         }
+    #     }
+    #     'color_of_car_trim', {
+    #         'attribute_external_id': 'car_trim_color'
+    #         'values': {
+    #             'white': 'car_trim_white',
+    #             'green': 'car_trim_green'
+    #         }
+    #     }
+    # }
+    ##################################################
+
+    def create_attr_val_dict(self):
+
+        attr_val_df = pd.read_excel('/home/jden/data-cleaning/ui-module/data/attr-val.xlsx')
+
+        attr_val_dict = {}
+        curr_attribute = None
+
+        for row in range(0, len(attr_val_df)):
+            if not pd.isna(attr_val_df['name'][row]):            
+                curr_attribute = str(attr_val_df['name'][row]).replace(' ','_').lower()
+                attr_val_dict[curr_attribute] = {}
+                attr_val_dict[curr_attribute]['attribute_external_id'] = attr_val_df['id'][row]
+                attr_val_dict[curr_attribute]['values'] = {}
+
+            curr_val_name = str(attr_val_df['value_ids/name'][row]).replace(' ', '_').lower()
+            curr_val_external_id = str(attr_val_df['value_ids/id'][row])
+            
+            attr_val_dict[curr_attribute]['values'][curr_val_name] = curr_val_external_id
+
+        return attr_val_dict
+
+
+    ############################################################
+    # This function creates new product.template records. It then adds the corresponding attribute lines to those records.
+    # Input:
+    # 1. db: This is the name of the database as a string.This is passed in from the command line via main.
+    # 2. uid: This is the user id, which is needed to make api calls. This is passed in from main.
+    # 3. password: This is the api key that allows you to access the database. This is passed in from the command line via main.
+    # 4. models: This is the object that allows us to make api calls. This is created and passed in from main.
+    # 5. database_ids: This is a dictionary that maps attribute and value external ids to their database ids. This is the output from create_attribute_records.
+    # Output: none
+    #
+    # When creating the product.template records, there must be a field with a description that exactly matches the column 
+    # names except for white space before and after the column name. For example, " Name " will match with the name field, but 
+    # "name" will not. If a matching field cannot be found for a column, an error message will be printed and the function will ignore
+    # that column.
+    #
+    ############################################################
+
+    def add_attributes_and_values(self, db, uid, password, models, database_ids, attr_val_dict, product_field_information):
+        output_df = pd.read_csv('/home/jden/data-cleaning/ui-module/data/modified_outputdata.csv')
+        output_df.rename(columns = lambda x: x.strip().lower(), inplace=True)
+
+        parent_model_batch = [] 
+        attribute_lines_batch = []
+        product_ids = [] 
+
+        BATCH_SIZE = 100
+
+        curr_product_id = -1
+
+        for row in range(0, len(output_df)):
+            #TODO: implement duplicate checking
+            if row % 50 == 0:
+                print(row)
+
+            if not pd.isna(output_df['name'][row]):
+                new_product_fields = {} 
+                new_product_attr_vals = {}
+                curr_product_id += 1
+                
+                for col in output_df.columns:
+                    if len(parent_model_batch) > BATCH_SIZE:
+                        self.batch_create_calls(db, uid, password, models, parent_model_batch, attribute_lines_batch)
+                        parent_model_batch = []
+                        product_ids = []
+                        attribute_lines_batch = []
+                        curr_product_id = -1
+                    
+                    if col != "value" and col != "attribute":
+                        col = col.lower()
+                        print(product_field_information.keys())
+                        if 'internal reference' not in product_field_information.keys():
+                            print("KEY NOT FOUNDDDDJDKJDKJDKJDKJD")
+
+                        # print('printing in loop')
+                        # print(col == 'internal reference')
+                        # print(product_field_information)
+                        print("Pre retrieval")
+                        field_name = product_field_information[col]['name']
+                        field_type = product_field_information[col]['type']
+                        field_val = output_df[col][row]
+                        print("Line breaking")
+                        if field_type != 'many2many' and field_type != 'one2many':
+                            new_product_fields[field_name] = self.convert_field_data_type(field_type, field_val)
+                        else:
+                            if field_name in new_product_fields:
+                                if 'internal reference' not in product_field_information.keys():
+                                    print("KEY NOT FOUNDDDDJDKJDKJDKJDKJD1")
+                                new_product_fields[field_name].append(self.link_field_to_model(db, uid, password, models, field_val, product_field_information[col]['relation']))                    
+                            else:
+                                if 'internal reference' not in product_field_information.keys():
+                                    print("KEY NOT FOUNDDDDJDKJDKJDKJDKJD2")
+                                new_product_fields[field_name] = [self.link_field_to_model(db, uid, password, models, field_val, product_field_information[col]['relation'])]
+                parent_model_batch.append(new_product_fields)
+                    
+
+            attribute_external_id = output_df['attribute'][row]
+            if not pd.isna(attribute_external_id) and curr_product_id != -1:
+                
+                attribute_id_number = database_ids[attribute_external_id]
+
+                value_external_ids_list = output_df["value"][row].split(',')
+
+                for val in range(0, len(value_external_ids_list)):
+                    value_external_ids_list[val] = (4, database_ids[value_external_ids_list[val]], 0)
+
+                attribute_lines_batch.append({
+                    'product_tmpl_id': curr_product_id,
+                    'attribute_id': attribute_id_number,
+                    'value_ids': value_external_ids_list
+                })
+
+                product_ids.append(curr_product_id)
+            
+            #TODO: remove for dev
+            
+
+            
+    ##################################################
+    # Helper function that casts data to match odoo field data types
+    # Only called in add_attributes_and_values
+    # Does not handle many2many or one2many fields. That is handled in link_field_to_model
+    # Input:
+    # 1. field_type, which is the type of data the odoo field takes as a string
+    # 2. data, which is read from the csv file 
+    # Output: the data case into the data type.
+    # If data type is float, monetary, or integer and the data cannot be parsed into a number, returns 0
+    # returns the data as a string by default
+    ##################################################
+
+    def convert_field_data_type(self, field_type, field_val):
+        if field_type == 'integer':
+            try:
+                return int(field_val.replace(' $',''))
+            except:
+                return 0  
+        elif field_type == 'monetary' or field_type =='float':
+            try:
+                return float(field_val.replace(' $',''))
+            except:
+                return 0.0
+        elif field_type == 'boolean':
+            return str(field_val).lower() == 'true'
+        else:
+            return str(field_val)
+        #TODO: add more cases for different field types
+
+
+    ##################################################
+    # Helper function to handle one2many and many2many fields
+    # This will try to match to an existing record by comparing the name from the csv file 
+    # to the name of the record via case insensitive string match. If no match can be found, then it will 
+    # create a new record with the name from the csv file.
+    # This function is only called in add_attributes_and_values.
+    # Input:
+    # 1. db: See main for documentation.
+    # 2. uid: See main for documentation.
+    # 3. password: See main for documentation.
+    # 4. field_val: Value of the cell in the csv file. 
+    # 5. comodel: Name of the comodel for the field. This the model that the funcion will search for/create.
+    # Output:
+    # 1. A tuple that represents a link command. It will be of the form (4, model_id, 0). This will then be appended into the fields.
+    ###################################################
+
+    def link_field_to_model(self, db, uid, password, models, field_val, comodel):
+        existing_model_records = models.execute(db, uid, password, comodel, 'search_read')
+        record_match = None
+        for record in existing_model_records:
+            if record['name'].lower() == str(field_val).lower():
+                record_match = record['id']
+                break
+        if record_match:
+            return (4, record_match, 0)
+        else:
+            new_record = models.execute_kw(db, uid, password, comodel, 'create', {
+                'name': field_val
+            })
+            return (4, new_record, 0)
+
+
+    #######################################################
+    # Helper function to make create api calls. Implements batching to improve runtime.
+    # Input:
+    # 1. db: See main for documentation.
+    # 2. uid: db. See main for documentation.
+    # 3. password: See main for documentation.
+    # 4. models: See main for documentation.
+    # 5. parent_model_batch: a list of dictionaries. Each dictionary is turned into a record of the given model i.e. product.template
+    # The keys in the dictionary are the field technical names,
+    # and the values in the dictionary are the values of the corresponding fields. 
+    # 6. product_ids: a list of integers representing database ids of records of the given model.
+    # 7. attribute_lines_batch: a list of dictionaries. Each dictionary is turned into a record of product.attribute.line.
+    # Each key in the dictionary is a field in product.attribute.line, and it's value is the fields corresponding value.
+    # Output: this function has no output
+    #
+    # 
+    # The 'product_tmpl_id' in the attr_line objects are not actual database ids. They are placeholders that represent the index in 
+    # product_db_ids that contains the database id that represents the corresponding product.template attribute.
+    #######################################################
+
+    def batch_create_calls(self, db, uid, password, models, parent_model_batch, attribute_lines_batch):
+                
+        product_db_ids = models.execute_kw(db, uid, password, 'product.template', 'create', [parent_model_batch])
+        for attr_line in attribute_lines_batch:
+            attr_line['product_tmpl_id'] = product_db_ids[attr_line['product_tmpl_id']]
+        attribute_lines_ids = models.execute_kw(db, uid, password, 'product.template.attribute.line', 'create', [attribute_lines_batch])
+
+
+
+    def get_field_information(self, db, uid, password, models, fields, columns):
+
+        product_template_fields = models.execute_kw(db, uid, password, 'product.template', 'fields_get', [])
+        product_field_information = {}
+
+        for i in range(0, len(columns)):
+            if not fields[i]:      
+                print('Error: field could not be matched')
+                #TODO: how to handle mismatch columns?
+            else:
+                columns[i].strip()
+                if columns[i] == 'Attribute' or columns[i] == 'Value':
+                    continue
+                curr_col = columns[i]
+                product_field_information[curr_col] = {}
+                product_field_information[curr_col]['name'] = fields[i]
+                field_type = product_template_fields[fields[i]]['type']
+                product_field_information[curr_col]['type'] = field_type
+                if field_type == 'many2many' or field_type == 'one2many':
+                    product_field_information[curr_col]['relation'] = product_template_fields[fields[i]]['relation']
+
+        return product_field_information
+
+
+
+    #TODO
+    #importable fields => readonly = false
+    #ui to match fields
+    #dont create new comodels, unknown all required fields. maybe ui?
+    #check for required fields
+
+    #TODO for leo
+    #unhardcode product.template, allow for model input
+    #fix batching error end of loop
+    #implement batching for attributes and values 
+    #add external ids to attribute and value records
+    #unhardcode file paths
+    
+    
+
