@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="bsa_import_wizard_form" model="ir.ui.view">
+        <field name="name">bsa.import.wizard.form</field>
+        <field name="model">bsa.import.wizard</field>
+        <field name="arch" type="xml">
+        <form string="Import a csv file">
+            <group>
+                <group string="Input Parent List" />
+                    <field name="parent_list" colspan="4" nolabel="1" />
+                <group />
+                <group string="Input Child List" />
+                    <field name="child_list" colspan="4" nolabel="1" />
+            </group>
+        
+            <footer>
+                    <button name="custom_parse" type="object"
+                            string="Custom parsing" class="oe_highlight"/>
+                    <button name="custom_upload" type="object"
+                            string="Custom upload" class="oe_highlight"/>
+                    <button special="cancel" string="Cancel"/>
+            </footer>
+    
+        </form>
+        </field>
+    </record>
+
+    <record id="bsa_import_wizard" model="ir.actions.act_window">
+        <field name="name">Import a csv file</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bsa.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="my_wizard_menu"
+            parent="sale.sale_menu_root"
+            action="odoo_data_cleaning.bsa_import_wizard"
+                sequence="15" />
+</odoo>
