@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+
+
+
 {
     'name': 'Data Cleaning Enhacement Module',
     'version': '1.0',
@@ -7,5 +11,13 @@
     'summary': 'Add additional functionality to the data cleaning module',
     'description': """
     """,
-    'depends': ['base'],
+    # 'assets': {
+    #     'web.assets_qweb': [
+    #         'odoo_data_cleaning/static/src/**/*.xml',
+    #     ],
+    # },
+    'depends': ['sale','base_import','web'],
+    'data': ['security/ir.model.access.csv',
+             'views/bsa_import_wizard.xml',],
+             
 }
