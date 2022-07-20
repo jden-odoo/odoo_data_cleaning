@@ -10,10 +10,12 @@ from odoo.tools import misc
 
 
 
-class ImportController(http.Controller):
+class CustomImportController(http.Controller):
 
-    @http.route('/web/dataset/call_kw/bsa.import.wizard/read', methods=['POST'])
-    def set_file(self, file, import_id, jsonp='callback'):
+    @http.route('/base_import/set_file', methods=['POST'])
+    def custom_set_file(self, file, import_id, jsonp='callback'):
+
+        print("Calling set_file")
         import_id = int(import_id)
 
         written = request.env['base_import.import'].browse(import_id).write({
@@ -21,5 +23,7 @@ class ImportController(http.Controller):
             'file_name': file.filename,
             'file_type': file.content_type,
         })
+
+
 
         return 'window.top.%s(%s)' % (misc.html_escape(jsonp), json.dumps({'result': written}))

@@ -1,4 +1,4 @@
-Item,Name, Sales Price , Cost ,Product Category,Attribute,Value
+Internal Reference,Name, Sales Price , Cost ,Product Category,Attribute,Value
 BD-17632-B01-15,Tone on Tone - White - 15-yard bolt, $ 49.20 , $ 27.75 ,Units,attribute_manufacturer,manufacturer_1
 ,,,,,attribute_collection,collection_1
 ,,,,,attribute_color,color_1

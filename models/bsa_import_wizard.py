@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models,fields, api
-# from odoo_data_cleaning.controllers import BSAImportController  
 # from ../controllers/BSAImportController import ImportController
 
 # class ImportTemplate(models.Model):
@@ -35,10 +34,10 @@ class bsa_import_wizard(models.TransientModel):
     _description="Module for BSA data import and cleaning"
     parent_list = fields.Char(string="Parent List",required=True)
     child_list = fields.Char(string="Child List",required=True)
-    def custom_parse(self):
-        # IC = ImportController.ImportController()
+    
 
-        # IC.set_file(self.file)
+    def custom_parse(self):
+        self.parse_preview()
         print(":................................................")
     def custom_upload(self):
         print("At custom upload")
@@ -61,20 +60,5 @@ class bsa_import_wizard(models.TransientModel):
 
     # POST /web/dataset/call_kw/bsa.import.wizard/read HTTP/1.1
 
-class ImportController(http.Controller):
 
-    @http.route('/web/dataset/call_kw/bsa.import.wizard/read', methods=['POST'])
-    def set_file(self, file, import_id, jsonp='callback'):
-
-        print("Calling set_file")
-        import_id = int(import_id)
-
-        written = request.env['base_import.import'].browse(import_id).write({
-            'file': file.read(),
-            'file_name': file.filename,
-            'file_type': file.content_type,
-        })
-
-
-
-        return 'window.top.%s(%s)' % (misc.html_escape(jsonp), json.dumps({'result': written}))
+# {"id":201,"jsonrpc":"2.0","method":"call","params":{"args":[{"res_model":"product.template"}],"model":"base_import.import","method":"create","kwargs":{"context":{"lang":"en_US","tz":"America/New_York","uid":2,"allowed_company_ids":[1]}}}}
