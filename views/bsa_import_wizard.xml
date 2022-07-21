@@ -29,6 +29,7 @@
         <field name="name">Import a csv file</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">bsa.import.wizard</field>
+        
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
