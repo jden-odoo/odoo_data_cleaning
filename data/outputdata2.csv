@@ -1,0 +1,461 @@
+Product ID,Product Name,Product Type,Sellable,Purchasable,Taxable,Type,Attribute,Value
+28025381,CBDfx - CBD Oil Vape Additive,CBD,TRUE,TRUE,7%,Storable Product,attribute_cbd_level,"cbd_level_1,cbd_level_2,cbd_level_3,cbd_level_4"
+,,,,,,,attribute_color,color_1
+28025287,TKO Hemp Pre Roll,CBD,TRUE,TRUE,7%,Storable Product,attribute_cbd_level,"cbd_level_1,cbd_level_5,cbd_level_6,cbd_level_7,cbd_level_8"
+38298468,Green Roads CBD Muscle & Joint Heat Relief Roll On,CBD,TRUE,TRUE,7%,Storable Product,attribute_cbd_level,"cbd_level_9,cbd_level_10,cbd_level_3,cbd_level_11"
+36545173,The Kind Hemp Oil Tinture 30ml,CBD,TRUE,TRUE,7%,Storable Product,attribute_cbd_level,"cbd_level_12,cbd_level_13,cbd_level_14,cbd_level_15"
+31975764,V12 Mini Glass Blunt,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_2"
+28025219,Gold Star Mini - 14 Pumpkin Cage,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_5,color_6,color_7"
+32358657,Gold Star M13 Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_7"
+32358658,Gold Star M9 Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_6,color_7,color_8"
+32358659,Gold Star M11 Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_7"
+32358660,Gold Star SAR140 Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_7"
+38032541,Gold Star AGS - 14250 Cage Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_6,color_7"
+38059337,Gold Star Disposable Hookah Hose,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_6,color_7,color_9"
+40620098,Gold Star Fancy Gold Hookah (EG26),Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_10,color_7"
+40620113,Gold Star Eye Hookah (BL-D),Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_11,color_6,color_7"
+40799280,Swift Lite  2-Hose Hookah - Middle Heart (37-2),Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_11,color_6,color_7"
+40799327,Swift Lite 2-Hose Hookah - Floral (38-2),Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_11,color_6,color_7"
+40801272,Swift Lite 2-Hose Hookah - Berries (138-2),Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_4,color_6,color_7"
+40801306,Swift Lite 1-Hose Hookah - Heart (108),Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_11,color_6,color_7"
+40801347,Swift Lite 1-Hose Hookah -  Diamond (109),Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_11,color_6,color_7"
+28025290,Pumpkin Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_6,color_7,color_12"
+28025338,Acrylic Hose,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_11,color_7,color_9"
+28025497,Mya Cage Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_13,color_14,color_15,color_6,color_16"
+28025505,Mya Freeze Hose,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_17,color_4,color_11,color_7,color_9"
+28025515,Mya Wood Hose,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_17,color_14,color_4,color_11,color_7,color_9"
+28025550,Venice Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_4,color_7"
+42421517,Deezer Java Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_11,color_6,color_7,color_9,color_12"
+42421644,Vapor Nova Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_7"
+42421727,Vapor Lumi Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_11,color_6,color_7"
+28025191,Plastic Dice Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_9"
+28025202,Plastic Small Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_13,color_4,color_7,color_12"
+28025296,Grooved Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_2,color_6,color_7,color_8"
+28025312,Topsy Turvy Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_2,color_4,color_6"
+28025325,Rick and Morty Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_4,color_18,color_7,color_8"
+28025332,Camo Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_4,color_7"
+28025398,Electric Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_19,color_1,color_3,color_7,color_8"
+28025408,Handle Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_20,color_2,color_4,color_7,color_8"
+28025440,Neon Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_11,color_12"
+28025447,Spiked Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_4"
+28025506,Side Door Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_20,color_4,color_8"
+30251569,Iris Large Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_17,color_12"
+30251572,Small Iris Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_17,color_12"
+30251574,Prometheus Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_2,color_4"
+33270614,Industrial Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_8"
+34856796,Marble Slab Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_2,color_7,color_8,color_9"
+34856797,Funnel Grinder Large,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_7"
+34856798,Funnel Grinder Small,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_6"
+34856799,Genie Drum Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_17,color_4,color_21"
+34856800,Lightning Strike Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_2,color_8"
+34856801,Colored Trim Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_2,color_8"
+42264829,Pumpkin Hookah w/ Case,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_11,color_7,color_12"
+28025488,Mya Bowl,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_11"
+35964620,DUD Arma Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_6,color_7,color_9,color_12"
+35964638,Zebra 2 Hose Luxor Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_11,color_6,color_7"
+35964642,Zebra 1 Hose Wood Stem Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_11,color_6,color_7"
+31553638,Premium Tongs,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_22,color_23"
+31553639,Premium Basic Bowl,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_24,color_7"
+31553640,Premium Silicone Bowl,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_6,color_25,color_7"
+31553641,Premium Bowl w Wind Cover,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_7"
+31553643,Premium Pumpkin Hose,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_7,color_9"
+31553644,Premium Silicone Hose,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_7,color_8"
+32029594,Premium Disposable Hose,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_13,color_4,color_11,color_6,color_7,color_12"
+41014742,Portable LED Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_4,color_21,color_11,color_9"
+40802641,Pharaohs Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_26,color_27,color_28,color_29,color_30,color_31,color_32,color_33,color_34,color_35,color_36,color_37,color_38"
+28025187,Marble & Diamond Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_color,"color_2,color_39,color_8"
+28025204,Bracelet Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_40,color_41,color_42,color_43"
+28025205,Three Stripe Diamond Studded Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_color,"color_2,color_39,color_8"
+28025208,Marble Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_color,"color_2,color_39,color_8"
+28025300,Toke Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_4,color_7,color_8,color_12"
+28025362,Half Diamond Half Metal Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_color,"color_3,color_44,color_8"
+28025380,Rasta Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_color,"color_45,color_46"
+28025388,Monkey Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_7"
+28025435,Royal Crown Diamond Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_color,"color_2,color_39,color_8"
+28025514,Silicon Gandalf Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_color,"color_47,color_48,color_49"
+42951659,BYO Stone Hookah Bowl,Hookah,TRUE,TRUE,7%,Storable Product,attribute_color,"color_1,color_3,color_50,color_51,color_52,color_53,color_7,color_54,color_12"
+28025183,Zebra Coconut Charcoal - Green Edition,Charcoal,TRUE,TRUE,7%,Storable Product,attribute_count,"count_1,count_2"
+39014301,Vapor Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_design,"design_1,design_2,design_3,design_4,design_5,design_6,design_7,design_8"
+28025450,Engraved Metal Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_design,"design_9,design_10,design_11,design_12"
+30251570,Pop Up Swirl Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_design,"design_13,design_14,design_15,design_16,design_17,design_18"
+30251571,Pop Up Abstract Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_design,"design_13,design_14,design_15,design_16,design_17,design_18"
+30251573,Genie Blade Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_design,"design_19,design_20,design_21,design_22,design_23,design_24"
+32991074,Peruvian Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_design,"design_25,design_26,design_27,design_28,design_29"
+39341964,Pharaohs Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_design,"design_30,design_31,design_32,design_33,design_34,design_35,design_36,design_37,design_38"
+42518502,Syndicate Glass Ashtray,Ashtray,TRUE,TRUE,7%,Storable Product,attribute_design,"design_39,design_40,design_41,design_42,design_43,design_44"
+42518513,Syndicate Tin Ashtray,Ashtray,TRUE,TRUE,7%,Storable Product,attribute_design,"design_45,design_39,design_46,design_41,design_47,design_44"
+28025173,Gold Star Hookah Tobacco 200g,Hookah Tobacco,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_1,flavor_2,flavor_3,flavor_4,flavor_5,flavor_6,flavor_7,flavor_8"
+28025189,Gold Star Hookah Tobacco 50g,Hookah Tobacco,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_9,flavor_10,flavor_3,flavor_11,flavor_12"
+40619955,Al Fakhamah Tobacco 250g,Hookah Tobacco,TRUE,TRUE,7%,Storable Product,attribute_flavor,flavor_13
+40799068,Amazing Hookah Tobacco 200g,Hookah Tobacco,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_14,flavor_15"
+33270284,10mg CBD Suckers,CBD,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_16,flavor_17,flavor_18"
+28025431,Al Fakher Hookah Tobacco 250g,Hookah Tobacco,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_19,flavor_20,flavor_21,flavor_22,flavor_23,flavor_24,flavor_16,flavor_3,flavor_25,flavor_5,flavor_26,flavor_27"
+28025443,Al Fakher Hookah Tobacco 50g,Hookah Tobacco,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_20,flavor_21,flavor_28,flavor_22,flavor_29,flavor_3,flavor_25,flavor_30,flavor_31"
+28025456,Al Waha Hookah Tobacco 200g,Hookah Tobacco,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_32,flavor_33,flavor_34,flavor_35,flavor_36,flavor_37,flavor_38,flavor_39,flavor_40,flavor_41,flavor_6,flavor_42,flavor_43,flavor_44,flavor_45,flavor_46"
+28025520,Starbuzz Hookah Tobacco 100g,Hookah Tobacco,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_47,flavor_48"
+28025533,Starbuzz Hookah Tobacco 250g,Hookah Tobacco,TRUE,TRUE,7%,Storable Product,attribute_flavor,flavor_47
+38779537,Lolli-Tips,Hookah,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_49,flavor_50,flavor_51,flavor_52,flavor_53,flavor_54,flavor_55"
+38914276,Adalya Hookah Tobacco 50g,Hookah Tobacco,TRUE,TRUE,7%,Storable Product,attribute_flavor,flavor_56
+28025549,Myle Pods,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_57,flavor_58,flavor_59,flavor_60,flavor_27,flavor_61,flavor_18,flavor_62"
+31654598,Just Mango - Juul Compatible - 5%,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_flavor,flavor_63
+36424442,Puff Bar - Disposable 1.3ml 5%,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_64,flavor_65,flavor_66,flavor_67,flavor_27,flavor_68,flavor_69,flavor_18,flavor_70"
+38818851,Puff Bar Plus 3.2ML 800 Puffs 550mAh,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_71,flavor_72,flavor_73,flavor_69,flavor_74,flavor_75"
+32355326,Terp Nation 500MG CBD 1.0ml Tank,CBD,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_76,flavor_27,flavor_77,flavor_78,flavor_79,flavor_80"
+32355377,Terp Nation CBD 100MG Pet Treats,CBD,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_81,flavor_82,flavor_83,flavor_84,flavor_85,flavor_86"
+40505249,CBD Nerds Rope 200mg,CBD,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_87,flavor_88"
+40505433,TKO CBD Shisha,CBD,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_89,flavor_90,flavor_91,flavor_92,flavor_93,flavor_94"
+42546460,TKO D-8 Carts 800mg 1ml,CBD,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_95,flavor_96,flavor_97,flavor_79,flavor_98,flavor_99"
+28025464,Salt Bae - 30ml / 25mg,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_100,flavor_17,flavor_101,flavor_102,flavor_103,flavor_104"
+30627640,Wild Hemp - Hempettes - 20ct,CBD,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_105,flavor_106"
+32497969,Lava 2 Pods 5% (Pack of 4),E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_107,flavor_108,flavor_109,flavor_27,flavor_61,flavor_110,flavor_111,flavor_112"
+32502469,RXO CBD Pod 250mg,CBD,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_19,flavor_27"
+33178016,Secret Nature Artisan CBD Pre-Rolls 2 Pack,CBD,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_113,flavor_114,flavor_115,flavor_116,flavor_117"
+35036741,Myle Mini Disposable,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_58,flavor_118,flavor_119,flavor_8,flavor_110,flavor_120"
+35036742,Lava Stik Disposable,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_107,flavor_20,flavor_121,flavor_27"
+36891415,Mr vapor Disposable,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_122,flavor_123,flavor_124,flavor_66,flavor_125,flavor_67,flavor_126,flavor_127"
+38297683,Side Bae Disposable Device 5%,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_128,flavor_129,flavor_130,flavor_131,flavor_132,flavor_133"
+38914104,Salt Bae 30mL,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_134,flavor_135,flavor_136,flavor_137,flavor_138"
+40802413,Dr Hemp Pre-roll 1.2g,CBD,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_107,flavor_139,flavor_20,flavor_140,flavor_141,flavor_142,flavor_96,flavor_143,flavor_144,flavor_145,flavor_146,flavor_147"
+42209156,Ultra Salt Halo 30ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_148,flavor_149"
+39229128,Starlight Flavor Charcoal 33mm,Charcoal,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_31,flavor_61,flavor_150,flavor_151,flavor_152,flavor_18,flavor_147"
+40299979,Fume Extra - Disposable 6ml 5%,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_64,flavor_1,flavor_153,flavor_68,flavor_74,flavor_154,flavor_155,flavor_156"
+42242912,Fume Ultra Disposable 5%,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_flavor,"flavor_64,flavor_157,flavor_153,flavor_67,flavor_27,flavor_68,flavor_158,flavor_74,flavor_154,flavor_159,flavor_18,flavor_160"
+28024458,Reds - Apple Watermelon Ice Salt - 30ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_1,nicotine_2"
+28025206,Reds Apple - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025224,Reds Apple Berries - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025243,Reds Apple Berries Ice - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025260,Reds Apple Grape - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025275,Reds Apple Grape Ice - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025288,Reds Apple Ice - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025301,Reds Apple Watermelon - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025313,Reds Apple Watermelon Ice - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+32358434,Reds Apple Guava - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+32358444,Reds Apple Guava Iced - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+32358446,Reds - Apple Guava Salt - 30ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_1,nicotine_2"
+32358448,Reds - Apple Guava Iced Salt - 30ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_1,nicotine_2"
+31210149,Pacha Mama - Strawberry Guava Jackfruit - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+31210151,Pacha Mama - Peach Papaya Coconut Cream - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+31210152,Pacha Mama - Mango Pitaya Pineapple - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+31210153,Pacha Mama - The Mint Leaf - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+31210154,Pacha Mama - Fuji Apple Strawberry Nectarine - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+31210155,Pacha Mama - Huckleberry Pear Acai - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+31210156,Pacha Mama - Blood Orange Banana Gooseberry - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+31210157,Pacha Mama - Passion Fruit Raspberry Yuzu - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+31210158,Charlies Chalk Dust - Dream Cream - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+31210159,Charlies Chalk Dust - Slamberry - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025170,The Grind - Cappuccino/No Cap - 100ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025178,The Grind - Caramel Macchiato - 100ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025185,The Grind - Mochaccino - 100ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025194,The Grind - Vanilla Latte/Off-White  - 100ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025200,House Party - Raspberry Gummy/Raspberry - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025216,House Party - Tropical - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025235,House Party - Watermelon - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025256,Country Clouds - Banana Bread - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025270,By The Pound - Coco - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025276,Country Clouds - Chocolate Puddin Pie - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025285,By The Pound - Lemon Berry - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025298,By The Pound - Milk - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025302,Smooth-E Criminal - A-Peel - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025309,By The Pound - Peaches and Cream - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025327,Country Clouds - Corn Bread Pudding/C.B.P. - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025329,Smooth-E Criminal - Adultry - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025341,Smooth-E Criminal - Subpina - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025348,Country Clouds - Lemon Puddin Pie - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025364,Crumbs - Apple Cinnamon Muffin - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025369,Smooth-E Criminal - Usual Suspects - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025383,Crumbs - Banana Nut Muffin - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025409,Crumbs - Blueberry Muffin - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025444,Crumbs - Strawberry Muffin - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025449,Mr. Cannoli - Cannoli/Little Italy - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025459,Sqeez - Berryade - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025473,Sqeez - Limeade - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025482,Chill - Cool Lime - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025484,Sqeez - Strawberry Lemonade - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025494,Chill - Cool Mango - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025507,Chill - Cool Melon - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025519,Chill - Tropi-Cool - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+31653540,Hit That Donut - Boston Cream - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+31653563,Hit That Donut - Strawberry - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+31653574,Hit That Donut - Chocolate - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025474,Sapphyre Nic,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_6,nicotine_7,nicotine_8,nicotine_9"
+28025168,Naked - Euro Gold - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_10,nicotine_4,nicotine_5"
+28025192,Naked - Hawaiian Pog - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_10,nicotine_4,nicotine_5"
+28025201,Naked - Lava Flow - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_10,nicotine_4,nicotine_5"
+28025213,Naked - Maui Sun - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025217,Zenith - Draco - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025228,Naked - Polar Breeze / Melon - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_10,nicotine_4,nicotine_5"
+28025231,Zenith - Draco on Ice - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025237,Naked - Really Berry - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_10,nicotine_4,nicotine_5"
+28025245,Zenith - Lyra - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025253,Zenith - Lyra on Ice - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025257,Naked - Very Cool / Berry - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025269,Zenith - Orion - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025283,Zenith - Orion on Ice - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025358,Nasty - ASAP Grape - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025391,Nasty - Bad Blood - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025404,Nasty - Cush Man - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025419,Nasty - Slow Blow - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025448,Ruthless - Ez Duz It On Ice - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+31648188,Zenith Salts Draco - 30ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_11,nicotine_2"
+31648304,Vapetasia Salt Killer Kustard Strawberry 30ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_12,nicotine_13"
+33177784,Mighty Vapors Salts - Frozen Hulk Tears - 30ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_14,nicotine_2"
+34785700,Naked - Sour Sweet (Green Lemon) - 60ml,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_10,nicotine_4,nicotine_5"
+35036743,Glas Basix - Banana Cream Pie - 60ml /,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+35036744,Glas Basix - Fizzy Lemonade - 60ml /,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+35036745,Glas Basix - Strawberry Blast - 60ml /,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+35036746,Nasty - Wicked Haze - 60ml /,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+35036747,Tailored House - Strawberry Crunch - 100ml /,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+35036748,The One - Strawberry - 100ml /,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+35036749,The One - Marshmallow - 100ml /,E-Liquid,TRUE,TRUE,7%,Storable Product,attribute_nicotine,"nicotine_3,nicotine_4,nicotine_5"
+28025547,Starlight Charcoal,Charcoal,TRUE,TRUE,7%,Storable Product,attribute_size,"size_1,size_2"
+40718988,Amazing Hookah Plastic,Hookah,TRUE,TRUE,7%,Storable Product,attribute_size,"size_3,size_4,size_5"
+40445581,Adalya Hookah Tobacco 250g,Hookah Tobacco,TRUE,TRUE,7%,Storable Product,attribute_size,"size_6,size_7"
+42421786,Dream Memphis Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_size,"size_8,size_9,size_10,size_11,size_12,size_13"
+42421882,Dream Y Hookah,Hookah,TRUE,TRUE,7%,Storable Product,attribute_size,"size_8,size_9,size_10,size_11,size_12,size_13"
+41959668,TKO D-8 Gummies 300mg,CBD,TRUE,TRUE,7%,Storable Product,attribute_size,"size_14,size_15,size_16,size_17,size_18,size_19"
+31553645,Premium Hookah Tips,Hookah,TRUE,TRUE,7%,Storable Product,attribute_size,"size_20,size_21"
+33178071,FlavRX CBD Chocolate Bar 100mg,CBD,TRUE,TRUE,7%,Storable Product,attribute_size,"size_22,size_23"
+35412686,California Gold CBD Flower 750mg 4g,CBD,TRUE,TRUE,7%,Storable Product,attribute_size,"size_24,size_25,size_26,size_27"
+39092669,Leonara Tips,Hookah,TRUE,TRUE,7%,Storable Product,attribute_size,"size_28,size_29,size_30"
+28025452,Character Standing Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product,attribute_style,"style_1,style_2,style_3"
+34856795,3D Bob Marley Grinder,Grinder,TRUE,TRUE,7%,Storable Product,attribute_style,"style_4,style_5,style_6,style_7,style_8"
+41959661,TKO D-8 Flower 7 Grams,CBD,TRUE,TRUE,7%,Storable Product,attribute_style,"style_9,style_10,style_11,style_12,style_13"
+41959672,TKO D-8 Gummies 600mg,CBD,TRUE,TRUE,7%,Storable Product,attribute_style,"style_14,style_15,style_16,style_17,style_18,style_19"
+34017778,Hookah Tips (5 Pack),Hookah,TRUE,TRUE,7%,Storable Product,attribute_style,"style_20,style_21"
+35407244,California Gold Pre-Rolled 250mg 1.2g,CBD,TRUE,TRUE,7%,Storable Product,attribute_style,"style_22,style_23"
+38311702,USA Hemp Co Dailies,CBD,TRUE,TRUE,7%,Storable Product,attribute_style,"style_24,style_25"
+38782510,Sunlight Disposable Hose,Hookah,TRUE,TRUE,7%,Consumable
+38782511,Apple Hookah Bowl,Hookah,TRUE,TRUE,7%,Consumable
+38782512,Glass Hookah Bowl,Hookah,TRUE,TRUE,7%,Consumable
+38782513,Sunlight Hookah,Hookah,TRUE,TRUE,7%,Consumable
+38782514,Egypt Hookah Red or Blue,Hookah,TRUE,TRUE,7%,Consumable
+38782515,Musadaf Hookah,Hookah,TRUE,TRUE,7%,Consumable
+38782516,Dream Hookah Times Square Hookah,Hookah,TRUE,TRUE,7%,Consumable
+38782517,Fountain Dream Hookah,Hookah,TRUE,TRUE,7%,Consumable
+28025556,Aspire Glass Hookah - GH5 + Proteus Bundle,Hookah,TRUE,TRUE,7%,Consumable
+28025570,Aspire Proteus Coil,Hookah,TRUE,TRUE,7%,Consumable
+28025335,Rick Silicone Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+28025437,Morty Silicone Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+28025536,Hemp Bombs - 1oz Pain Freeze Gel - 50MG,CBD,TRUE,TRUE,7%,Consumable
+28025562,Hemp Bombs - 25 CBD Gummies - 375MG,CBD,TRUE,TRUE,7%,Consumable
+28025266,Egypt Bowl,Hookah,TRUE,TRUE,7%,Consumable
+28025289,Egypt Bowl XL,Hookah,TRUE,TRUE,7%,Storable Product
+28025557,Silicone Heads w/ Cover PVC,Hookah,TRUE,TRUE,7%,Storable Product
+32358661,MYA Hookah 580A,Hookah,TRUE,TRUE,7%,Consumable
+32358662,MYA Hookah MYA5745,Hookah,TRUE,TRUE,7%,Consumable
+32358663,MYA Hookah MYA572,Hookah,TRUE,TRUE,7%,Consumable
+34777436,Gold Star Flat Heater,Hookah,TRUE,TRUE,7%,Consumable
+38032740,Swift Light Hookah 165,Hookah,TRUE,TRUE,7%,Consumable
+40799208,Swift Lite 1-Hose Hookah - Industrial Silver (WD60),Hookah,TRUE,TRUE,7%,Storable Product
+40799217,Swift Lite Hookah - Crystal - (WD101),Hookah,TRUE,TRUE,7%,Consumable
+28025111,Hookah Starter,Hookah,TRUE,TRUE,7%,Storable Product
+28025316,Egypt Hose,Hookah,TRUE,TRUE,7%,Consumable
+35407068,Charco Flare Funnel  Tips (Zebra),Hookah,TRUE,TRUE,7%,Storable Product
+39014304,Pharoahs Nile Hookah,Hookah,TRUE,TRUE,7%,Consumable
+39014310,Rosah Hookah 2115,Hookah,TRUE,TRUE,7%,Consumable
+41885370,Paradise Coconut Charcoal,Charcoal,TRUE,TRUE,7%,Storable Product
+43284687,Raw Metal Ashtray,Ashtray,TRUE,TRUE,7%,Storable Product
+28024453,Glass Pipe (001),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025176,Glass Pipe (002),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025193,Glass Pipe (003),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025195,Marble Metal Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+28025212,Glass Pipe (004),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025229,Glass Pipe (005),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025240,Glass Pipe (006),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025261,Glass Pipe (007),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025282,Glass Pipe (1),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025305,Pumpkin Hookah Hose,Hookah,TRUE,TRUE,7%,Storable Product
+28025311,Glass Pipe (10),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025339,Glass Pipe (11),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025354,Glass Pipe (12),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025373,Glass Pipe (13),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025385,Hammer Shark Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+28025394,Glass Pipe (14),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025417,Glass Pipe (15),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025461,Glass Pipe (16),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025486,Glass Pipe (17),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025528,Glass Pipe (18),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025554,Glass Pipe (19),Hand Pipe,TRUE,TRUE,7%,Storable Product
+28025564,Steam Roller 001 White,Hand Pipe,TRUE,TRUE,7%,Consumable
+34856816,Monkey Glass Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+34856817,Mini Rimmed Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+34856818,Mini Spotted Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+34856819,Mini Swirl Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+34856820,Mini Solid Swirl Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+34856821,Mini Mushroom Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+34856822,Small Colored Lines Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+38774857,Black Grinder (806A),Grinder,TRUE,TRUE,7%,Consumable
+38774858,Black Grinder (806J),Grinder,TRUE,TRUE,7%,Consumable
+38774859,Black Grinder (806B),Grinder,TRUE,TRUE,7%,Consumable
+38774860,Black Grinder (806C),Grinder,TRUE,TRUE,7%,Consumable
+38774861,Black Grinder (806K),Grinder,TRUE,TRUE,7%,Consumable
+38774862,Black Grinder (806H),Grinder,TRUE,TRUE,7%,Consumable
+38774863,Black Grinder (806I),Grinder,TRUE,TRUE,7%,Consumable
+38774864,Fully Wrapped Grinder Med (400B),Grinder,TRUE,TRUE,7%,Consumable
+38774865,Fully Wrapped Grinder Med (50XX),Grinder,TRUE,TRUE,7%,Consumable
+38774866,Neochrome Grinder Large (XL-4),Grinder,TRUE,TRUE,7%,Storable Product
+38774867,Neochrome Grinder Small (004XC),Grinder,TRUE,TRUE,7%,Consumable
+38774868,Glass Skull Grinder (024-5),Grinder,TRUE,TRUE,7%,Consumable
+38774869,Pokeball Grinder (076),Grinder,TRUE,TRUE,7%,Consumable
+38774870,Fully Wrapped Grinder Small (2099-1),Grinder,TRUE,TRUE,7%,Consumable
+38774871,Fully Wrapped Grinder Small (2099-2),Grinder,TRUE,TRUE,7%,Consumable
+38774872,Mini Black Grinder (854),Grinder,TRUE,TRUE,7%,Consumable
+38774873,Golden Grinder Small (066GT),Grinder,TRUE,TRUE,7%,Storable Product
+38774874,Neochrome Grinder Mini (096),Grinder,TRUE,TRUE,7%,Consumable
+38774875,Wooden Grinder,Grinder,TRUE,TRUE,7%,Consumable
+38774876,Colorful Plastic Grinder (052-24),Grinder,TRUE,TRUE,7%,Consumable
+38774877,Golden Grinder (071),Grinder,TRUE,TRUE,7%,Consumable
+38774878,Fully Wrapped Grinder Large (63-1),Grinder,TRUE,TRUE,7%,Consumable
+38774879,Fully Wrapped Grinder Large (63-2),Grinder,TRUE,TRUE,7%,Consumable
+38774880,Fully Wrapped Grinder Large (63-4),Grinder,TRUE,TRUE,7%,Consumable
+38774881,Fully Wrapped Grinder Large (63-5),Grinder,TRUE,TRUE,7%,Consumable
+38774882,Luminous Butt Bucket,Ashtray,TRUE,TRUE,7%,Storable Product
+38774883,Glass Ashtray,Ashtray,TRUE,TRUE,7%,Consumable
+38774884,Flat Sugar Skull Ashtray (6188),Ashtray,TRUE,TRUE,7%,Consumable
+38774885,Alien Head Ashtray (YG002),Ashtray,TRUE,TRUE,7%,Consumable
+38774886,Silicone Ash Tray (YG001),Ashtray,TRUE,TRUE,7%,Consumable
+38774887,Skull Hammock Ashtray (6139),Ashtray,TRUE,TRUE,7%,Consumable
+38774888,Leaf Round Ashtray (3032),Ashtray,TRUE,TRUE,7%,Consumable
+38774889,Leaf Round Ashtray (3031),Ashtray,TRUE,TRUE,7%,Consumable
+38774890,Skull Round Ashtray (3038),Ashtray,TRUE,TRUE,7%,Consumable
+38774891,Silver Dragon Ashtray Sm (6126),Ashtray,TRUE,TRUE,7%,Consumable
+38774894,Butt Bucket Cupholder Ashtray,Ashtray,TRUE,TRUE,7%,Consumable
+38774895,Cracked Skull Ashtray (3036),Ashtray,TRUE,TRUE,7%,Consumable
+38774896,Silver Dragon Ashtray Large (6123),Ashtray,TRUE,TRUE,7%,Storable Product
+38774897,Skeleton DJ Ashtray (6176),Ashtray,TRUE,TRUE,7%,Consumable
+38779593,Ozzy All Glass Hookah and Case,Hookah,TRUE,TRUE,7%,Consumable
+42263742,Bart Cartoon Grinder (50-4),Grinder,TRUE,TRUE,7%,Storable Product
+42263812,Ceramic Grinder (40149),Grinder,TRUE,TRUE,7%,Storable Product
+42263886,Double Window Grinder (63030),Grinder,TRUE,TRUE,7%,Consumable
+42263946,Rubber Grip Grinder (63150),Grinder,TRUE,TRUE,7%,Storable Product
+42264007,Swirl Grinder (63161),Grinder,TRUE,TRUE,7%,Storable Product
+42264011,Genie Ceramic Grinder w/ Case (63149),Grinder,TRUE,TRUE,7%,Storable Product
+42264014,Large Golden Grinder (63-4),Grinder,TRUE,TRUE,7%,Storable Product
+42264015,King Crusher Grinder (5920),Grinder,TRUE,TRUE,7%,Storable Product
+42264019,Revolver Chamber Grinder (240),Grinder,TRUE,TRUE,7%,Storable Product
+42264023,Semi Circle Grinder (92),Grinder,TRUE,TRUE,7%,Storable Product
+43073299,Mo Money Grinder (52MB),Grinder,TRUE,TRUE,7%,Consumable
+43073333,3D Mini Grinder (5045),Grinder,TRUE,TRUE,7%,Consumable
+43073350,Window Swirl Grinder (63169),Grinder,TRUE,TRUE,7%,Consumable
+43073367,Single Window Grinder (038),Grinder,TRUE,TRUE,7%,Consumable
+43073392,Genie Wooden Grinder (63148),Grinder,TRUE,TRUE,7%,Consumable
+43073394,Future Eye Grinder (50YJ),Grinder,TRUE,TRUE,7%,Storable Product
+43073403,Glow In The Dark Skull Ashtray (GA-002),Ashtray,TRUE,TRUE,7%,Consumable
+43073407,Sugar Skull Glass Jar (69),Ashtray,TRUE,TRUE,7%,Consumable
+28025209,Zebra Pistol Hookah - Black,Hookah,TRUE,TRUE,7%,Consumable
+28025566,Silicone Hookah Bowl,Hookah,TRUE,TRUE,7%,Consumable
+35964643,Replacement Hookah Base Blue,Hookah,TRUE,TRUE,7%,Consumable
+28024452,Xikar Outdoorsman Combo Travel Humidor,Cigar,TRUE,TRUE,7%,Consumable
+28024456,Macanudo Montego Y Cia (3-pack),Cigar,TRUE,TRUE,7%,Consumable
+28025171,Macanudo Vintage 97 Perfecto Maduro,Cigar,TRUE,TRUE,7%,Consumable
+28025186,Bolivar - Cofradia No. 754,Cigar,TRUE,TRUE,7%,Consumable
+28025196,Boveda Large Humidity Brick 72,Cigar,TRUE,TRUE,7%,Consumable
+28025250,Humidor C-15 20 Count Burl,Cigar,TRUE,TRUE,7%,Consumable
+28025267,Humidor VG-100 100 Count,Cigar,TRUE,TRUE,7%,Consumable
+28025314,Punch - After Dinner,Cigar,TRUE,TRUE,7%,Consumable
+28025328,Punch - Rothschild,Cigar,TRUE,TRUE,7%,Consumable
+28025342,El Rey del Mundo - Flor de Llaneza Pyramid,Cigar,TRUE,TRUE,7%,Consumable
+28025345,CAO - Gold Robusto (JR Alternative),Cigar,TRUE,TRUE,7%,Consumable
+28025347,H. Upmann - 1844 Reserve Belicoso,Cigar,TRUE,TRUE,7%,Consumable
+28025350,Rocky Patel - The Edge Toro,Cigar,TRUE,TRUE,7%,Consumable
+28025355,Casa Blanca - De Luxe (5 Pack),Cigar,TRUE,TRUE,7%,Consumable
+28025359,ACID - Kuba Kuba Maduro Robusto,Cigar,TRUE,TRUE,7%,Consumable
+28025361,Romeo y Julieta - 1875 Bully,Cigar,TRUE,TRUE,7%,Consumable
+28025368,Casa Blanca - Magnum,Cigar,TRUE,TRUE,7%,Consumable
+28025372,ACID Blue Blondie,Cigar,TRUE,TRUE,7%,Consumable
+28025375,Romeo y Julieta - 1875 Love Story,Cigar,TRUE,TRUE,7%,Consumable
+28025384,Romeo y Julieta - 1875 Mini Blue Mild (5 Pack),Cigar,TRUE,TRUE,7%,Consumable
+28025392,ACID Blue Blondie Belicoso,Cigar,TRUE,TRUE,7%,Consumable
+28025395,Romeo y Julieta - 1875 Mini Red Aroma (5 Pack),Cigar,TRUE,TRUE,7%,Consumable
+28025397,Cedar Room - Connecticut Ecuadorian Short Magnum,Cigar,TRUE,TRUE,7%,Consumable
+28025400,Montecristo - DR No. 2 (JR Alternative),Cigar,TRUE,TRUE,7%,Consumable
+28025403,Romeo y Julieta - Romeo Aging Room Cantaor,Cigar,TRUE,TRUE,7%,Consumable
+28025406,Montecristo - Half Corona,Cigar,TRUE,TRUE,7%,Consumable
+28025407,Cedar Room Morron,Cigar,TRUE,TRUE,7%,Consumable
+28025416,Romeo y Julieta 1875 Romeos (6 Pack),Cigar,TRUE,TRUE,7%,Consumable
+28025421,Montecristo - Monte,Cigar,TRUE,TRUE,7%,Consumable
+28025428,Montecristo - White Robusto (JR Alternative),Cigar,TRUE,TRUE,7%,Consumable
+28025466,Cuban Aristocrat - Connecticut Toro,Cigar,TRUE,TRUE,7%,Consumable
+28025490,Cuban Cohiba - Robusto (JR Alternative),Cigar,TRUE,TRUE,7%,Consumable
+28025496,Shock and Awe (Barracks Buster),Cigar,TRUE,TRUE,7%,Consumable
+28025503,Arturo Fuente - Especiales Cazadores,Cigar,TRUE,TRUE,7%,Consumable
+28025513,Arturo Fuente DOUBLE CHATEAU,Cigar,TRUE,TRUE,7%,Consumable
+28025529,Ashton - Cabinet No. 6,Cigar,TRUE,TRUE,7%,Consumable
+32224855,Bull Design Unique Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224856,Egg Shape Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224857,Marvel on Side Frit art Hand Pipe Blue,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224858,Marvel on Side Frit art Hand Pipe Red,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224859,Twisted Frit Inside Mid Rim Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224860,Water Filter Head Line Design Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224861,Animal On body Color Glass Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224862,Fumed Spoon Double Rim Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224863,Black Sherlock Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224864,Hammer Face and Tail Bubbler,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224865,Fancy Artistic Fish Bubbler,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224866,Egg Shaped Colorful Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224867,Frit Fumed Middle Rim Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224868,Shinny Skull Horn Face Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224869,Ocean Spotted Colored Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224870,Standing Double Horn Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224871,Pink Helix Rimmed Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224872,Double Glass Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224873,Side Eye Frit Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224874,Deep Space Spotted Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224875,Swirly Color Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224877,Blue Glass Helix Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224878,Droplet Single Rim Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224879,Black Glass Twisted Art Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224880,Double Glass Ocean Blue Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224881,Blue Frid Sherlock,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224882,Red Frid Sherlock,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224883,Teal Frid Sherlock,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224884,Spotted Twister Multi Color Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224885,Sea Creature Face Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224886,Octopus Spiral Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224887,Wide turtle Shell Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224888,Long Skull Face Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224889,Smiling Face Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224890,Veiny Steam Roller,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224891,Body Cutting Frit Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224892,Blue Webbed Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224893,Clear Red Spotted Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224894,See Through Swirly Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224895,Double Marble Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224896,Single Hump Transparent Blue Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224897,Hammer Head Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224898,Side Horn Spotted Bowl Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224899,DNA Helix Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224900,Single Rim Blue to Spotted Hand PIpe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224901,Revolver Gun Glass Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224902,Rim Spotted Trail Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224903,Standing Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224904,Heavy Hammer Bubbler,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224905,Hammer and Nails Evil Eye Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224906,Spiked and Spotted Tall Bubbler,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224907,Ultimate Twisted Bubbler,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224908,Angry Animal Head Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32224909,Spike Art Sherlock Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product
+32224910,Dotted Colored One Hitter Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+32355349,Terp Nation 250MG CBD Pain Cream,CBD,TRUE,TRUE,7%,Storable Product
+32355364,Terp Nation 500MG CBD Pain Cream,CBD,TRUE,TRUE,7%,Storable Product
+32355395,Terp Nation CBD 10MG Honey Sticks,CBD,TRUE,TRUE,7%,Consumable
+34017786,Hookah Hose Grommet (2 Pack),Hookah,TRUE,TRUE,7%,Consumable
+36891583,Redwood Reserve Loosie Single Smokes,CBD,TRUE,TRUE,7%,Consumable
+38298600,Green Roads CBD World Capsules 750mg,CBD,TRUE,TRUE,7%,Consumable
+28025210,Colored Wood Pipe w/ Swivel,Hand Pipe,TRUE,TRUE,7%,Consumable
+28025223,Metal Bat,Hand Pipe,TRUE,TRUE,7%,Consumable
+28025259,Metal Dugout,Hand Pipe,TRUE,TRUE,7%,Consumable
+28025273,Metal Rainbow Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product
+28025318,Mini Wood Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+28025429,Chamber Pipe & Grinder,Hand Pipe,TRUE,TRUE,7%,Storable Product
+28025442,Glass Pipe (152),Hand Pipe,TRUE,TRUE,7%,Consumable
+28025477,Mushroom Keychain,Hand Pipe,TRUE,TRUE,7%,Consumable
+28025524,Silicone Hand Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+34663440,Pipe Case - Medium,Hand Pipe,TRUE,TRUE,7%,Consumable
+38059348,Multi-Head Hookah Bowl,Hookah,TRUE,TRUE,7%,Consumable
+41064988,LOVE Rose glass,Hand Pipe,TRUE,TRUE,7%,Storable Product
+38609920,The Seasha Floating Hookah,Hookah,TRUE,TRUE,7%,Consumable
+40776368,Character Art Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+40776405,Marker Pipe,Hand Pipe,TRUE,TRUE,7%,Storable Product
+40776410,Solo Pipe,Hand Pipe,TRUE,TRUE,7%,Consumable
+40776425,Rasta steel pipe (Large),Hand Pipe,TRUE,TRUE,7%,Consumable

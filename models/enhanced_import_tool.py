@@ -6,34 +6,38 @@ import time
 
 
 #requires --limit-time-real=100000
+#requires openpyxl
 #python odoo-bin --addons-path=../enterprise,../,addons -d import-script --log-level warn --limit-time-real=100000
 
 class EnhancedImport(models.TransientModel):
     _name = 'base_import.import'
     _inherit = 'base_import.import'
-
-        
+    #8613 products
+    #16794 products
     def execute_import(self, fields, columns, options, dryrun=False):
 
         start = time.time()
 
         url = 'http://localhost:8069' #TODO: explain how to get
-        db = 'import-script-2'
+        db = 'import-script3'
         user = 'admin'
-        password = '5e22a33c69f690b95af215581f757c68288aeb63'
+        password = 'a4ec29ea9ae2510a6ed316b6896e5406468ad35f'
 
+        print("Entering execute import")
         common = client.ServerProxy('{}/xmlrpc/2/common'.format(url))
         uid = common.authenticate(db, user, password, {})
         models = client.ServerProxy('{}/xmlrpc/2/object'.format(url))
 
+        print("connection to server secured")
         attr_val_dict = self.create_attr_val_dict()
         database_ids = self.create_attribute_records(db, uid, password, models, attr_val_dict)
         product_field_information = self.get_field_information(db, uid, password, models, fields, columns)
+        print("working here")
         self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information)
 
         end = time.time()
         print(end - start)
-
+        #10minutes for 65650 rows, 2hours before
         return []
 
 
@@ -119,7 +123,7 @@ class EnhancedImport(models.TransientModel):
     #     return database_ids
 
     def create_attribute_records(self, db, uid, password, models, attr_val_dict):
-
+        print("creating attribute records")
         CREATE_VARIANT_DEFAULT = 'always'
         DISPLAY_TYPE_DEFAULT = 'radio'
         VISIBILITY_DEFAULT = 'visibile'
@@ -284,7 +288,7 @@ class EnhancedImport(models.TransientModel):
 
     def create_attr_val_dict(self):
 
-        attr_val_df = pd.read_excel('/home/jden/data-cleaning-enhanced/data/attr-val.xlsx')
+        attr_val_df = pd.read_excel('/home/leo/odoo/dev/odoo_data_cleaning/data/attr-val.xlsx')
 
         attr_val_dict = {}
         curr_attribute = None
@@ -322,7 +326,7 @@ class EnhancedImport(models.TransientModel):
     ############################################################
 
     def add_attributes_and_values(self, db, uid, password, models, database_ids, attr_val_dict, product_field_information):
-        output_df = pd.read_csv('/home/jden/data-cleaning-enhanced/data/outputdata.csv')
+        output_df = pd.read_csv('/home/leo/odoo/dev/odoo_data_cleaning/data/outputdata.csv')
         output_df.rename(columns = lambda x: x.strip().lower(), inplace=True)
 
         parent_model_batch = [] 
@@ -347,7 +351,6 @@ class EnhancedImport(models.TransientModel):
                         curr_product_id = -1
                 
                 new_product_fields = {} 
-                new_product_attr_vals = {}
                 curr_product_id += 1
                 
                 for col in output_df.columns:      
