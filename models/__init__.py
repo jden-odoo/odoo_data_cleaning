@@ -1,2 +1,2 @@
 # -*- coding: utf-8 -*-
-from . import bsa_import_wizard
+from . import enhanced_import_tool

@@ -173,73 +173,25 @@ class EnhancedImport(models.TransientModel):
         return database_ids
 
 
-    # def attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids):
-    #     attribute_id_numbers = models.execute_kw(db, uid, password, 'product.attribute', 'create', [attribute_id_batch])
-    #     for i in range(len(attribute_id_numbers)):
-    #         attribute_id_number = attribute_id_numbers[i]
-    #         attribute = attribute_ordered[i]
-    #         attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
-    #         database_ids[attribute_external_id] = attribute_id_number
-
-    #         val_dict = attr_val_dict[attribute]['values']
-    #         for val in val_dict.keys():
-    #             value_external_id = val_dict[val]
-    #             value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
-    #                 'name': val,
-    #                 'attribute_id': attribute_id_number,
-    #             }])
-    #             models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
-    #                 'value_ids': [(4, value_id_number, 0)]
-    #             }])
-    #             database_ids[value_external_id] = value_id_number
     def attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids):
         attribute_id_numbers = models.execute_kw(db, uid, password, 'product.attribute', 'create', [attribute_id_batch])
-        value_batch = []
-        MAX_BATCH_SIZE = 100
-        val_external_id_list = []
-
         for i in range(len(attribute_id_numbers)):
             attribute_id_number = attribute_id_numbers[i]
             attribute = attribute_ordered[i]
             attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
             database_ids[attribute_external_id] = attribute_id_number
 
-
             val_dict = attr_val_dict[attribute]['values']
             for val in val_dict.keys():
-                if len(value_batch) >= MAX_BATCH_SIZE:
-                    self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list)
-                    value_batch = []
-                    val_external_id_list = []
-
                 value_external_id = val_dict[val]
-                val_external_id_list.append(value_external_id)
-                value_batch.append({
+                value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
                     'name': val,
                     'attribute_id': attribute_id_number,
-                })
-                # value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
-                #     'name': val,
-                #     'attribute_id': attribute_id_number,
-                # }])
-                # models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
-                #     'value_ids': [(4, value_id_number, 0)]
-                # }])
-                # database_ids[value_external_id] = value_id_number
-        if len(value_batch) > 0:
-            self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list)
-
-    def val_batch_calls(self, db, uid, password, models, value_id_batch,attr_val_dict,database_ids,val_extern_id_list):
-        value_id_numbers = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [value_id_batch])
-        for i in range(len(value_id_numbers)):
-            value_id_number = value_id_numbers[i]
-            attribute_id_number = value_id_batch[i]['attribute_id']
-            models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
+                }])
+                models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
                     'value_ids': [(4, value_id_number, 0)]
                 }])
-            value_external_id = val_extern_id_list[i]
-            database_ids[value_external_id] = value_id_number
-
+                database_ids[value_external_id] = value_id_number
 
 
 
@@ -529,6 +481,3 @@ class EnhancedImport(models.TransientModel):
 
     #7/20
     #missing end of batch
-    
-    
-
