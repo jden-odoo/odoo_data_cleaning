@@ -1,3 +1,4 @@
+from pyparsing import col
 from odoo import models
 import sys
 from xmlrpc import client
@@ -18,18 +19,18 @@ class EnhancedImport(models.TransientModel):
         start = time.time()
 
         url = 'http://localhost:8069' #TODO: explain how to get
-        db = 'import-script-2'
-        user = 'admin'
-        password = '5e22a33c69f690b95af215581f757c68288aeb63'
+        db = 'import-script3'
+        password = 'ad27df3ba14c6c999a23f39463c72e4bb8b1ff70'
 
+        user = 'admin'
         common = client.ServerProxy('{}/xmlrpc/2/common'.format(url))
         uid = common.authenticate(db, user, password, {})
         models = client.ServerProxy('{}/xmlrpc/2/object'.format(url))
 
-        attr_val_dict = self.create_attr_val_dict()
+        attr_val_dict = self.create_attr_val_dict(fields, columns)
         database_ids = self.create_attribute_records(db, uid, password, models, attr_val_dict)
         product_field_information = self.get_field_information(db, uid, password, models, fields, columns)
-        self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information)
+        self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns)
 
         end = time.time()
         print(end - start)
@@ -282,13 +283,15 @@ class EnhancedImport(models.TransientModel):
     # }
     ##################################################
 
-    def create_attr_val_dict(self):
+    def create_attr_val_dict(self,fields,columns):
 
-        attr_val_df = pd.read_excel('/home/jden/data-cleaning-enhanced/data/attr-val.xlsx')
+        attr_val_df = pd.read_excel('/home/leo/odoo/dev/odoo_data_cleaning/data/attr-val2.xlsx')
 
         attr_val_dict = {}
         curr_attribute = None
 
+
+        
         for row in range(0, len(attr_val_df)):
             if not pd.isna(attr_val_df['name'][row]):            
                 curr_attribute = str(attr_val_df['name'][row]).replace(' ','_').lower()
@@ -321,8 +324,8 @@ class EnhancedImport(models.TransientModel):
     #
     ############################################################
 
-    def add_attributes_and_values(self, db, uid, password, models, database_ids, attr_val_dict, product_field_information):
-        output_df = pd.read_csv('/home/jden/data-cleaning-enhanced/data/outputdata.csv')
+    def add_attributes_and_values(self, db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns):
+        output_df = pd.read_csv('/home/leo/odoo/dev/odoo_data_cleaning/data/outputdata2.csv')
         output_df.rename(columns = lambda x: x.strip().lower(), inplace=True)
 
         parent_model_batch = [] 
@@ -333,12 +336,17 @@ class EnhancedImport(models.TransientModel):
 
         curr_product_id = -1
 
+        col_name = None
+        for i in range(len(fields)):
+            if fields[i].lower() == 'name':
+                col_name = columns[i].lower()
+                break
         for row in range(0, len(output_df)):
             #TODO: implement duplicate checking
             if row % 50 == 0:
                 print(row)
 
-            if not pd.isna(output_df['name'][row]):
+            if not pd.isna(output_df[col_name][row]):
                 if len(parent_model_batch) > BATCH_SIZE:
                         self.batch_create_calls(db, uid, password, models, parent_model_batch, attribute_lines_batch)
                         parent_model_batch = []

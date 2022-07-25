@@ -14,7 +14,7 @@ def read_data(dirty_data):
 
 # creates an excel file using dataframe
 def create_csv(df):
-    df.to_excel(excel_writer = "../../data/attr-val2.xlsx")
+    df.to_excel(excel_writer = "./data/attr-val2.xlsx")
 
 
 # returns all attributes in a given column

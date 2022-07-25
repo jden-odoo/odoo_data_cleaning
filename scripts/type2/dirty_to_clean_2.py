@@ -41,7 +41,7 @@ import pandas as pd
 
 def create_attr_val_dict():
 
-    attr_val_df = pd.read_excel('../../data/attr-val2.xlsx')
+    attr_val_df = pd.read_excel('./data/attr-val2.xlsx')
 
     attr_val_dict = {}
     curr_attribute = None
@@ -132,7 +132,7 @@ def create_item_dict(inHeader,inRows,parents,product_id):
 
 #id_dict: {Product ID: {Attributes : [Value1, Value2]}}
 def output_clean_data(item_dict,outHeader,id_dict,val_to_id):
-    f = open('../../data/outputdata2.csv','w')
+    f = open('./data/outputdata2.csv','w')
     writer = csv.writer(f)
     writer.writerow(outHeader)
     for key in item_dict.keys():
