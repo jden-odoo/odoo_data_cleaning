@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Odoo Internal Data Import Tool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            var data = urlParams.get('data')
+            data = JSON.parse(data)
+            var importable_fields = data['importable_fields']
+            var columns = data['columns']
+
+            for (var i = 0; i < columns.length; i++){
+                var form = document.getElementById("field_column_match")
+                var new_select = document.createElement("select")
+                new_select.name = columns[i]
+                new_select.text = columns[i]
+                for (var j = 0; j < importable_fields.length; j++){
+                    var new_option = document.createElement("option")
+                    new_option.value = importable_fields[j]
+                    new_option.text = importable_fields[j]
+                    new_select.appendChild(new_option)
+                }
+                form.appendChild(new_select)
+            }
+        })
+    </script>
+</head>
+<body>
+    <form id = "field_column_match" method="POST" action="/validate">
+        
+        <input type="submit"> <!-- change to button, function call-->
+    </form>
+</body>
+</html>
