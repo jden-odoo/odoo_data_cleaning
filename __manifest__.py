@@ -17,7 +17,6 @@
     #     ],
     # },
     'depends': ['sale','base_import','web'],
-    'data': ['security/ir.model.access.csv',
-             'views/bsa_import_wizard.xml',],
+    'data': [],
              
 }
