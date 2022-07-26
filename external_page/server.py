@@ -109,8 +109,8 @@ def clean_data():
 @app.route("/validate", methods=["GET", "POST"])
 def validate_columns():
     if request.method == "GET":
-        return current_app.send_static_file("validate.html")
-        #return render_template('validate.html')
+        #return current_app.send_static_file("validate.html")
+        return render_template('validate.html')
     else:
         print(request.form)
         fields = []
@@ -159,8 +159,3 @@ def parseArgs(filename, parent_columns, children_columns,productid,attribute,val
         foo2 = importlib.util.module_from_spec(spec2)
         spec2.loader.exec_module(foo2)
         foo2.main(filename,parentlist,productid,attribute,value)
-
-# def render_validate(fields, columns, head):
-#     elements = []
-#     columnFieldMatch = None
-#     for 

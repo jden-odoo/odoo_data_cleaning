@@ -57,13 +57,17 @@
 </head>
 <body>
     <form id = "field_column_match" method="POST" action="/validate"> 
-        {% set data = request.args.get('data') | tojson %}
-        {{ data }}
-        <br>
-        <br>
-        <br>
-        {% set columns = data['columns']%}
-        {{columns}}
+        @csrf
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Select the fields to import</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="field_column_match">
+                <option disabled selected>Select an option</option>
+                @foreach ($importable_fields as $importable_field)
+                    <option value="{{ $importable_field }}">{{ $importable_field }}</option>
+                @endforeach
+            </select>
+        </div>
+        <input type="submit" value="Submit">
     </form>
 </body>
 </html>

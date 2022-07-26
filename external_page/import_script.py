@@ -7,7 +7,7 @@ import time
 
 #requires --limit-time-real=100000
 #python odoo-bin --addons-path=../enterprise,../,addons -d import-script --log-level warn --limit-time-real=100000
-
+#ir.model.data
 class ExternalImport():
         
     def main(self, user, password, db, url, fields, columns):
@@ -20,9 +20,8 @@ class ExternalImport():
         attr_val_dict = self.create_attr_val_dict(fields, columns)
         database_ids = self.create_attribute_records(db, uid, password, models, attr_val_dict)
         product_field_information = self.get_field_information(db, uid, password, models, fields, columns)
-        keys = list(product_field_information.keys())
-        for i in range(0, 5):
-            print(keys[i], product_field_information[keys[i]])
+        if not product_field_information:
+            return None
         self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns)
 
         end = time.time()
@@ -41,41 +40,6 @@ class ExternalImport():
     # Output:
     # 1. database_ids: This is a dictionary that maps attribute and value external ids to their database ids.
     ##################################################
-    # def create_attribute_records(self, db, uid, password, models, attr_val_dict):
-
-    #     CREATE_VARIANT_DEFAULT = 'always'
-    #     DISPLAY_TYPE_DEFAULT = 'radio'
-    #     VISIBILITY_DEFAULT = 'visibile'
-
-    #     database_ids = {}
-    #     #TODO: implement duplicate checking
-
-    #     for attribute in attr_val_dict.keys():
-            
-    #         attribute_id_number = models.execute_kw(db, uid, password, 'product.attribute', 'create', [{
-    #             'name': attribute,
-    #             'create_variant': CREATE_VARIANT_DEFAULT,
-    #             'display_type': DISPLAY_TYPE_DEFAULT,
-    #         }]) 
-
-    #         attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
-
-    #         # TODO: no visibility field in model?
-    #         database_ids[attribute_external_id] = attribute_id_number
-            
-    #         val_dict = attr_val_dict[attribute]['values']
-    #         for val in val_dict.keys():
-    #             value_external_id = val_dict[val]
-    #             value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
-    #                 'name': val,
-    #                 'attribute_id': attribute_id_number,
-    #             }])
-    #             models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
-    #                 'value_ids': [(4, value_id_number, 0)]
-    #             }])
-    #             database_ids[value_external_id] = value_id_number
-        
-    #     return database_ids
 
     def create_attribute_records(self, db, uid, password, models, attr_val_dict):
 
@@ -107,26 +71,6 @@ class ExternalImport():
             self.attribute_batch_calls(db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids)
         return database_ids
 
-
-    # def attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids):
-    #     attribute_id_numbers = models.execute_kw(db, uid, password, 'product.attribute', 'create', [attribute_id_batch])
-    #     for i in range(len(attribute_id_numbers)):
-    #         attribute_id_number = attribute_id_numbers[i]
-    #         attribute = attribute_ordered[i]
-    #         attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
-    #         database_ids[attribute_external_id] = attribute_id_number
-
-    #         val_dict = attr_val_dict[attribute]['values']
-    #         for val in val_dict.keys():
-    #             value_external_id = val_dict[val]
-    #             value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
-    #                 'name': val,
-    #                 'attribute_id': attribute_id_number,
-    #             }])
-    #             models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
-    #                 'value_ids': [(4, value_id_number, 0)]
-    #             }])
-    #             database_ids[value_external_id] = value_id_number
     def attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids):
         attribute_id_numbers = models.execute_kw(db, uid, password, 'product.attribute', 'create', [attribute_id_batch])
         value_batch = []
@@ -153,14 +97,7 @@ class ExternalImport():
                     'name': val,
                     'attribute_id': attribute_id_number,
                 })
-                # value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
-                #     'name': val,
-                #     'attribute_id': attribute_id_number,
-                # }])
-                # models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
-                #     'value_ids': [(4, value_id_number, 0)]
-                # }])
-                # database_ids[value_external_id] = value_id_number
+
         if len(value_batch) > 0:
             self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list)
 
@@ -435,12 +372,10 @@ class ExternalImport():
 
         for i in range(0, len(columns)):
             columns[i].strip() 
-            print(columns[i])
             if columns[i] == 'attribute' or columns[i] == 'value':
-                    continue
+                continue
             elif not fields[i]:      
-                print('Error: field could not be matched')
-                #TODO: how to handle mismatch columns?
+                return None
             else:                    
                 curr_col = columns[i]
                 product_field_information[curr_col] = {}
