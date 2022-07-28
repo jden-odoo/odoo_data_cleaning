@@ -40,7 +40,7 @@ def create_attr_val_dict():
 
 
     #Testing
-    attr_val_df = pd.read_excel('./data/attr-val.xlsx')
+    attr_val_df = pd.read_excel('../data/attr-val.xlsx')
 
     attr_val_dict = {}
     currDict = {}
@@ -106,7 +106,7 @@ def create_item_dict(inHeader,inRows,parents,children):
 
 
 def output_clean_data(item_set,outHeader,id_dict):
-    f = open('./data/outputdata.csv','w')
+    f = open('../data/outputdata.csv','w')
     writer = csv.writer(f)
     writer.writerow(outHeader)
     count = 0
@@ -188,4 +188,4 @@ def main(dirtydata,parents,children):
     output_clean_data(item_set,outheader,id_dict)
 
 
-main(sys.argv[1],sys.argv[2].split(','),sys.argv[3].split(','))
+# main(sys.argv[1],sys.argv[2].split(','),sys.argv[3].split(','))   
