@@ -109,8 +109,8 @@ def clean_data():
 @app.route("/validate", methods=["GET", "POST"])
 def validate_columns():
     if request.method == "GET":
-        #return current_app.send_static_file("validate.html")
-        return render_template('validate.html')
+        return current_app.send_static_file("validate.html")
+        # return render_template('validate.html')
     else:
         print(request.form)
         fields = []
