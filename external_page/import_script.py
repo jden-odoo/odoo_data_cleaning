@@ -10,7 +10,7 @@ import time
 #ir.model.data
 class ExternalImport():
         
-    def main(self, user, password, db, url, fields, columns):
+    def main(self, user, password, db, url, fields, columns, model_name):
 
         start = time.time()
         common = client.ServerProxy('{}/xmlrpc/2/common'.format(url))
@@ -18,7 +18,7 @@ class ExternalImport():
         models = client.ServerProxy('{}/xmlrpc/2/object'.format(url))
 
         attr_val_dict = self.create_attr_val_dict(fields, columns)
-        database_ids = self.create_attribute_records(db, uid, password, models, attr_val_dict)
+        database_ids = self.create_attribute_records(db, uid, password, models, attr_val_dict, model_name)
         product_field_information = self.get_field_information(db, uid, password, models, fields, columns)
         if not product_field_information:
             return None
@@ -41,7 +41,7 @@ class ExternalImport():
     # 1. database_ids: This is a dictionary that maps attribute and value external ids to their database ids.
     ##################################################
 
-    def create_attribute_records(self, db, uid, password, models, attr_val_dict):
+    def create_attribute_records(self, db, uid, password, models, attr_val_dict, model_name):
 
         CREATE_VARIANT_DEFAULT = 'always'
         DISPLAY_TYPE_DEFAULT = 'radio'
@@ -53,7 +53,7 @@ class ExternalImport():
         attribute_ordered = [] #storing the attributes for each attribute in the same order as the keys of the dictionary
         for attribute in attr_val_dict.keys():
             if len(attribute_id_batch) >= MAX_BATCH_SIZE:
-                self.attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids)
+                self.attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids, model_name)
                 attribute_id_batch = []
                 attribute_ordered = []
 
@@ -68,26 +68,33 @@ class ExternalImport():
             attribute_ordered.append(attribute)
 
         if len(attribute_id_batch) > 0:
-            self.attribute_batch_calls(db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids)
+            self.attribute_batch_calls(db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids, model_name)
         return database_ids
 
-    def attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids):
+    def attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids,model_name):
         attribute_id_numbers = models.execute_kw(db, uid, password, 'product.attribute', 'create', [attribute_id_batch])
         value_batch = []
         MAX_BATCH_SIZE = 100
         val_external_id_list = []
 
+        attribute_model_metadata = []
         for i in range(len(attribute_id_numbers)):
             attribute_id_number = attribute_id_numbers[i]
             attribute = attribute_ordered[i]
             attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
             database_ids[attribute_external_id] = attribute_id_number
 
+            attribute_model_metadata.append({
+                'model': 'product.attribute',
+                'module': 'base',
+                'res_id': attribute_id_number,
+                'name': attribute_external_id
+            })
 
             val_dict = attr_val_dict[attribute]['values']
             for val in val_dict.keys():
                 if len(value_batch) >= MAX_BATCH_SIZE:
-                    self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list)
+                    self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list,model_name)
                     value_batch = []
                     val_external_id_list = []
 
@@ -99,10 +106,15 @@ class ExternalImport():
                 })
 
         if len(value_batch) > 0:
-            self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list)
+            self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list,model_name)
 
-    def val_batch_calls(self, db, uid, password, models, value_id_batch,attr_val_dict,database_ids,val_extern_id_list):
+        models.execute_kw(db, uid, password, models, 'ir.model.data', 'create', [attribute_model_metadata])
+
+    def val_batch_calls(self, db, uid, password, models, value_id_batch,attr_val_dict,database_ids,val_extern_id_list, model_name):
         value_id_numbers = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [value_id_batch])
+
+        value_model_metadata = []
+
         for i in range(len(value_id_numbers)):
             value_id_number = value_id_numbers[i]
             attribute_id_number = value_id_batch[i]['attribute_id']
@@ -111,6 +123,15 @@ class ExternalImport():
                 }])
             value_external_id = val_extern_id_list[i]
             database_ids[value_external_id] = value_id_number
+
+            value_model_metadata.append({
+                'model': 'product.attribute.value',
+                'module': 'base',
+                'name': value_external_id,
+                'res_id': value_id_number
+            })
+        
+        models.execute_kw(db, uid, password, models, 'ir.model.data', 'create', [value_model_metadata])
 
 
 
@@ -394,25 +415,5 @@ class ExternalImport():
             return models.execute_kw(db, uid, password, product_field_information[col]['relation'], 'create', [{
                 'name': field_val
             }])
-
-
-
-    #TODO
-    #importable fields => readonly = false
-    #ui to match fields
-    #dont create new comodels, unknown all required fields. maybe ui?
-    #check for required fields
-
-    #TODO for leo
-    #unhardcode product.template, allow for model input
-    #fix batching error end of loop
-    #implement batching for attributes and values 
-    #add external ids to attribute and value records
-    #unhardcode file paths
-    
-
-    #7/20
-    #missing end of batch
-    
     
 

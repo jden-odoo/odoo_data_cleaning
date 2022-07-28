@@ -119,7 +119,7 @@ def validate_columns():
             columns.append(key.lower().strip())
             fields.append(request.form[key].lower().strip())
         importer = ExternalImport()
-        importer.main(session['user'], session['password'], session['db'], session['url'], fields, columns)
+        importer.main(session['user'], session['password'], session['db'], session['url'], fields, columns, session['model'])
 
     
 
