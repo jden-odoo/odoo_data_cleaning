@@ -30,9 +30,12 @@ def list_all_columns(dirty_data):
 # Future implementation will be drop down XML
 def get_attribute_names(input_array, all_columns):
     array = []
+    print('input_array: ', input_array)
+    print('all_columns: ', all_columns)
     for value in input_array:
         value = ord(value.lower())-97
         array.append(all_columns[value])
+    print('array: ', array)
     return array
 
 
@@ -103,4 +106,5 @@ def parse(input_array, dirtydata):
 
 
 
-# parse(sys.argv[3].split(","), sys.argv[1])
+
+#parse(sys.argv[3].split(","), sys.argv[1])
