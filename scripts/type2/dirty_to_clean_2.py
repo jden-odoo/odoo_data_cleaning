@@ -4,23 +4,8 @@ import pandas as pd
 
 
 #############################################################################################
-#input: data of inrows, and a comma separated list of the column letter of the fields in the following order :
-#        [Name,Manufacturer,Collection,Color,Vendor_SKU,Designer,Fabric_Type,Fiber_Contents,Fabric Width,Putup_Format, Sales Price, Cost, Product Categry]
-# for instance, in the example file DEV | 01 Client Dirty Data, input would be ['d','b','c','e','f','g','h','i','j','k','l','m','n'] (not case-sensitive)
 
-#output: a dictionary of the following format:
-# Dictionary:{Item: [Name,[(Manufacturer,value),
-#                         (Collection,value),
-#                         (Color,value),
-#                         (Vendor_SKU,value),
-#                         (Designer,value),
-#                         (Fabric_Type,value),
-#                         (Fiber_Contents,value),
-#                         (Fabric Width,value),
-#                         (Putup_Format,value)],
-#                      [Sales Price, Cost, Product,Category]]}
-
-# create_attr_val_dict() will return:
+# create_attr_val_dict() will return dictionary of the following format:
 # {
 #     'color_of_car_body', {
 #         'attribute_external_id': 'car_body_color',
@@ -37,7 +22,6 @@ import pandas as pd
 #         }
 #     }
 # }
-##################################################
 
 def create_attr_val_dict():
 
@@ -60,7 +44,7 @@ def create_attr_val_dict():
 
     return attr_val_dict
 
-
+#create the id_dictionary to keep track of the attribute and value ids
 def create(inRows, id, attributes, values):
     # {Product ID: {Attributes: [Value1, Value2]}}
     id = ord(id.lower())-97
@@ -85,22 +69,8 @@ def create(inRows, id, attributes, values):
             id_dict[productID] = temp
     return id_dict
 #############################################################################################
-#input: data of inrows, and a comma separated list of the column letter of the fields in the following order :
-#        [Name,Manufacturer,Collection,Color,Vendor_SKU,Designer,Fabric_Type,Fiber_Contents,Fabric Width,Putup_Format, Sales Price, Cost, Product Categry]
-# for instance, in the example file DEV | 01 Client Dirty Data, input would be ['d','b','c','e','f','g','h','i','j','k','l','m','n'] (not case-sensitive)
-
-#output: a dictionary of the following format:
-# Dictionary:{Item: [Name,[(Manufacturer,value),
-#                         (Collection,value),
-#                         (Color,value),
-#                         (Vendor_SKU,value),
-#                         (Designer,value),
-#                         (Fabric_Type,value),
-#                         (Fiber_Contents,value),
-#                         (Fabric Width,value),
-#                         (Putup_Format,value)],
-#                      [Sales Price, Cost, Product,Category]]}
-
+# input: the headers of the input, the rest of the csv data in inRows, parent column letters as passed in arguments, and product_id column letter
+# output: dictionary that contains the product id as key and the list of parent column values as value
 # dict = {productID:[parent1,parent2,....,
         #             
         #         ]
@@ -131,6 +101,8 @@ def create_item_dict(inHeader,inRows,parents,product_id):
 
 
 #id_dict: {Product ID: {Attributes : [Value1, Value2]}}
+# writing clean data to the output, ensures that the attribute and value column are to the right most of the output file,
+# if for some attribute, there are more than one values, ensures they are in a comma separated string 
 def output_clean_data(item_dict,outHeader,id_dict,val_to_id):
     f = open('../data/outputdata.csv','w')
     writer = csv.writer(f)
@@ -183,11 +155,10 @@ def output_clean_data(item_dict,outHeader,id_dict,val_to_id):
         
         
 #Input: 1: '[dirtydata].csv', replace dirtydata with actual file name
-#       2: letter of columns inputed in the following order: 
-#         [Name,Manufacturer,Collection,Color,Vendor_SKU,Designer,Fabric_Type,Fiber_Contents,Fabric Width,Putup_Format, Sales Price, Cost, Product Categry]
-#         for instance, in the example file DEV | 01 Client Dirty Data, input would be ['d','b','c','e','f','g','h','i','j','k','l','m','n'] (not case-sensitive)
-#       3: unit needed, for instance: 'yard'
-
+#       2: parentlist (list of parent column letters)
+#       3: productid (column letter of product id)
+#       4: attribute (column letter of attribute)
+#       5: value    (column letter of value)
 
 #Output: outputdata.csv
 def main(dirtydata,parents,product_id,attributes,values):
