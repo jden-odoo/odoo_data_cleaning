@@ -35,45 +35,9 @@ def get_all_addresses(index, df):
     return new_df.iloc[:,0]
 
 
-# returns a list of [latitude, longitude]
-def get_lat_lon(bounds):
-    return [bounds["lat"], bounds["lng"]]
-
-
-# returns a list of dictionaries [{Address: [Latitude, Longitude]}, ..] (google maps api)
-def get_address_info(addresses):
-    data = []
-    for address in addresses:
-        each_address = {}
-        # url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input= " + address + "&inputtype=textquery&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&key=" + config.api_key
-        payload = {}
-        headers = {}
-        request = None # some call
-        # request = requests.request("GET", url, headers=headers, data=payload)
-        # request_data = json.load(request)
-        # change below request -> request_data
-        lat_lon = get_lat_lon(request["candidates"][0]["geometry"]["location"])
-        each_address[request["candidates"][0]["formatted_address"]] = lat_lon
-        data.append(each_address)
-    return data
-
-
-# same as get_address_info() but uses locationiq api 
-def get_address_info_2(addresses):
-    data = []
-    for address in addresses:
-        each_address = {}
-        url = "https://us1.locationiq.com/v1/search?key=" + config.locationiq_api_key + "&q=" + address + "&format=json"
-        response = requests.get(url)
-        result = response.json()
-        lat_lon = [result[0]["lat"], result[0]["lon"]]
-        each_address[result[0]["display_name"]] = lat_lon
-        data.append(each_address)
-    return data
-
-
+# returns a list of dictionaries [{Address: [Latitude, Longitude]}, ..]
 # same as get_address_info() but uses geocode earth api
-def get_address_info_3(addresses):
+def get_address_info(addresses):
     data = []
     for address in addresses:
         each_address = {}
@@ -89,11 +53,11 @@ def get_address_info_3(addresses):
                 data.append(each_address)
             else:
                 lat_lon = ["N/A", "N/A"]
-                each_address["N/A"] = lat_lon
+                each_address[address] = lat_lon
                 data.append(each_address) 
         else:
             lat_lon = ["N/A", "N/A"]
-            each_address["N/A"] = lat_lon
+            each_address[address] = lat_lon
             data.append(each_address)
     return data
 
@@ -115,7 +79,7 @@ def create_csv(df):
 def create(dirty_data, index):
     df = read_data(dirty_data)
     all_addresses = get_all_addresses(index, df)
-    data = get_address_info_3(all_addresses)
+    data = get_address_info(all_addresses)
     values = dict_to_list(data)
     new_df = pd.DataFrame(values, columns=["Addresses", "Latitude", "Longitude"]).iloc[1: , :].set_index("Addresses")
     create_csv(new_df)
