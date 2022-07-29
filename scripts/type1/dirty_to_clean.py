@@ -1,13 +1,10 @@
 #############################################################################################
-#Usage: python3 dirty_to_clean.py dirtydata.csv columns companyname unit    
+#Usage: python3 dirty_to_clean.py dirtydata.csv parentcolumns children collumns (space separated)
 # Input (Space separated): 1: [dirtydata].csv, replace dirtydata with actual file name
-#       2: letter of columns inputed in the following order: 
-#         Name,Manufacturer,Collection,Color,Vendor_SKU,Designer,Fabric_Type,Fiber_Contents,Fabric Width,Putup_Format, Sales Price, Cost, Product Categry
+#       2: letter of parent columns 
 #         for instance, in the example file DEV | 01 Client Dirty Data, input would be d,b,c,e,f,g,h,i,j,k,l,m,n (not case-sensitive)
-#       3: company name(ignored)
-#       4: unit needed, for instance: yard
-#Commandline input example: python3 dirty_to_clean.py dirtydata.csv d,b,c,e,f,g,h,i,j,k,l,m,n odoo yard
-
+#       3: letter of children columns
+#Commandline input example: python3 dirty_to_clean.py dirtydata.csv d,b,c,e,f,g,h,i,j,k,l,m,n a,o
 
 #Output: outputdata.csv                                                                                       
 
@@ -18,23 +15,9 @@ import sys
 import pandas as pd
 #TODO: CHANGE FILE PATHS FOR INPUT/OUTPUT
 
-
+ 
 #############################################################################################
-#input: data of inrows, and a comma separated list of the column letter of the fields in the following order :
-#        [Name,Manufacturer,Collection,Color,Vendor_SKU,Designer,Fabric_Type,Fiber_Contents,Fabric Width,Putup_Format, Sales Price, Cost, Product Categry]
-# for instance, in the example file DEV | 01 Client Dirty Data, input would be ['d','b','c','e','f','g','h','i','j','k','l','m','n'] (not case-sensitive)
-
-#output: a dictionary of the following format:
-# Dictionary:{Item: [Name,[(Manufacturer,value),
-#                         (Collection,value),
-#                         (Color,value),
-#                         (Vendor_SKU,value),
-#                         (Designer,value),
-#                         (Fabric_Type,value),
-#                         (Fiber_Contents,value),
-#                         (Fabric Width,value),
-#                         (Putup_Format,value)],
-#                      [Sales Price, Cost, Product,Category]]}
+#Reads from a hard coded excel file path and returns a dictionary that stores the value/id pairs
 
 def create_attr_val_dict():
 
@@ -60,21 +43,9 @@ def create_attr_val_dict():
 
     return attr_val_dict
 #############################################################################################
-#input: data of inrows, and a comma separated list of the column letter of the fields in the following order :
-#        [Name,Manufacturer,Collection,Color,Vendor_SKU,Designer,Fabric_Type,Fiber_Contents,Fabric Width,Putup_Format, Sales Price, Cost, Product Categry]
-# for instance, in the example file DEV | 01 Client Dirty Data, input would be ['d','b','c','e','f','g','h','i','j','k','l','m','n'] (not case-sensitive)
-
+#input: headers from the input file, data of the rest of the rows, and the parents and children column numbers
 #output: a dictionary of the following format:
-# Dictionary:{Item: [Name,[(Manufacturer,value),
-#                         (Collection,value),
-#                         (Color,value),
-#                         (Vendor_SKU,value),
-#                         (Designer,value),
-#                         (Fabric_Type,value),
-#                         (Fiber_Contents,value),
-#                         (Fabric Width,value),
-#                         (Putup_Format,value)],
-#                      [Sales Price, Cost, Product,Category]]}
+# Dictionary:{ItemName: [parentVal1, parentVal2,...]
 
 def create_item_dict(inHeader,inRows,parents,children):
     parent_cols = []
@@ -98,6 +69,7 @@ def create_item_dict(inHeader,inRows,parents,children):
         #looping through the attributes, add attribute and value to dictionary
         
         attr_pairs = []
+        #cleaning all the input strings, and replacing spaces with underscores, converting to lowercase for all letters
         for i in range(0,len(attributes)):
             attr_pairs.append((str(attributes[i]).replace(' ','_').lower(),str(item[children_cols[i]]).replace(' ','_').lower() ))
         data.append(attr_pairs)
@@ -105,6 +77,10 @@ def create_item_dict(inHeader,inRows,parents,children):
     return item_set
 
 
+#input: item_set: dictionary consisting of item name as key and parent col values as value
+#       outHeader: the selected header from the original input file that should go into the output
+#       id_dict: dictionary consists of the attribute name as key and the id as value
+#output: writing to outputdata.csv for a clean output
 def output_clean_data(item_set,outHeader,id_dict):
     f = open('../data/outputdata.csv','w')
     writer = csv.writer(f)
@@ -156,11 +132,9 @@ def output_clean_data(item_set,outHeader,id_dict):
         
         
 #Input: 1: '[dirtydata].csv', replace dirtydata with actual file name
-#       2: letter of columns inputed in the following order: 
-#         [Name,Manufacturer,Collection,Color,Vendor_SKU,Designer,Fabric_Type,Fiber_Contents,Fabric Width,Putup_Format, Sales Price, Cost, Product Categry]
+#       2: letter of parent columns in a comma separated list
 #         for instance, in the example file DEV | 01 Client Dirty Data, input would be ['d','b','c','e','f','g','h','i','j','k','l','m','n'] (not case-sensitive)
-#       3: unit needed, for instance: 'yard'
-
+#       3: letter of children columns in a comma separated list
 
 #Output: outputdata.csv
 def main(dirtydata,parents,children):
