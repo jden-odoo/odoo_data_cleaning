@@ -16,7 +16,7 @@ def main(dirty_data, address_columns):
     df = cs.read_data(dirty_data)
     all_addresses = fm.get_all_addresses(address_columns, df)
     addresses_responses = api.get_address_info(all_addresses)
-    addresses_dict = asse.create_address_dict(all_addresses, addresses_responses)
+    addresses_dict = asse.create_address_list(all_addresses, addresses_responses)
     addresses_list = fm.get_address_list(addresses_dict)
     new_df = pd.DataFrame(addresses_list, columns=["Original Address", "Formatted Address", "Street1", "Street2", "City", "State", "Country", "Postal Code"]).set_index("Original Address")
     cs.create_csv(new_df, dirty_data)

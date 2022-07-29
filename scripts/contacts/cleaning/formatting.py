@@ -5,8 +5,15 @@
 import pandas as pd
 
 
-# gets all addresses from dirty data based on given letter indexes
 def get_all_addresses(index, df):
+    """Returns all address columns combined.
+    
+    :param list index: Index array
+    :param df df: Dataframe of data
+    :return: Addresses combined
+    :rtype: list
+    """
+    
     rows = len(df)
     data = []
     for i in range(rows):
@@ -22,8 +29,14 @@ def get_all_addresses(index, df):
     return new_df.iloc[:,0]
 
 
-# returns address dictionary as a 2d list
 def get_address_list(addresses):
+    """Returns an address dictionary as a 2D list.
+    
+    :param dict addresses: Addresses dictionary
+    :return: 2D list of addresses
+    :rtype: list
+    """
+
     data = []
     for address in addresses:
         data.append([address["original"], address["address"], address["address_1"], address["address_2"], address["city"], address["state"], address["country"], address["postcode"]])
@@ -31,9 +44,16 @@ def get_address_list(addresses):
     return data
 
 
-# converts value of csv column to an index
-# ex. A -> 0, AA -> 27
 def get_value(value):
+    """
+    Converts value of a csv column to an index.
+    ex. A -> 0, AA -> 27
+
+    :param str value: Value of column
+    :return: Integer of column value
+    :rtype: int
+    """
+
     total = 0
     count = 0
     value = value.lower()

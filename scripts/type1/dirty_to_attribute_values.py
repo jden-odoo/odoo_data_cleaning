@@ -9,26 +9,43 @@
 
 
 import pandas as pd
-import sys
+# import sys
 
-
+# Default values
 display_type = "Radio"
 create_variant = "Instantly"
 visibility = "Visible"
 
 
-# Gets dirty data from dirty data csv
 def get_dirty_data(dirtydata):
+    """Returns dirty data csv into a dataframe.
+
+    :param str dirtydata: String of file name 
+    """
+
     return pd.read_csv(dirtydata)
 
 
-# Returns list of column names ordered by dirty data csv
 def list_all_columns(dirty_data):
+    """Returns list of all columns in the dirty data dataframe.
+    
+    :param df dirty_data: Dataframe of dirty data
+    :return: List of all columns
+    :rtype: list
+    """
+
     return dirty_data.columns
 
 
-# Future implementation will be drop down XML
 def get_attribute_names(input_array, all_columns):
+    """Get column name of all_columns in specified input_array.
+    
+    :param list input_array: All indexes of attributes
+    :param list all_columns: List of all colummns in a dataframe
+    :return: All column names of a list of columns
+    :rtype: list
+    """
+
     array = []
     for value in input_array:
         value = ord(value.lower())-97
@@ -36,8 +53,13 @@ def get_attribute_names(input_array, all_columns):
     return array
 
 
-# Create ids for name_list
 def get_external_ids(name_list):
+    """Creates external IDs for all names.
+    
+    :param list name_list: List of all names
+    :return: List of all external IDs
+    :rtype: list
+    """
     ids_list = []
     for cell in name_list:
         if cell in ids_list and cell != " ":
@@ -47,8 +69,15 @@ def get_external_ids(name_list):
     return ids_list
 
 
-# Get value_id/name from dirty data
 def get_value_id_name(column_name, dirty_data):
+    """Creates value_id/name.
+    
+    :param str column_name: Name of a column in dirty_data
+    :param df dirty_data: Dirty data dataframe
+    :return: List of value_id/names for a given column_name
+    :rtype: list
+    """
+
     value_id_names = []
     for value in dirty_data[column_name].tolist():
         if value not in value_id_names:
@@ -56,8 +85,11 @@ def get_value_id_name(column_name, dirty_data):
     return value_id_names
 
 
-# Creates a csv for the output
-def create_csv(df):
+def create_excel(df):
+    """Converts dataframe into a excel file.
+    
+    :param df df: Dataframe to convert
+    """
     df.to_excel(excel_writer = '../data/attr-val.xlsx')
 
 
@@ -98,7 +130,7 @@ def create(input_array, dirtydata):
 # Creates csv for dataframe
 def parse(input_array, dirtydata):
     df = create(input_array, dirtydata)
-    create_csv(df)
+    create_excel(df)
 
 
 

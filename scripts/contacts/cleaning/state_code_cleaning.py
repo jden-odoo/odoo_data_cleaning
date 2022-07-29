@@ -5,13 +5,21 @@ import pandas as pd
 import sys
 
 
-# read data from csv
 def read_data(dirty_data):
+    """Returns dirty data csv into a dataframe.
+
+    :param str dirtydata: String of file name 
+    """
+
     return pd.read_csv(dirty_data, header=None)
 
 
-# creates a state dict for state codes
 def create_dict():
+    """Creates a dictionay for state codes.
+    
+    :return: {Country: {State: Code}}
+    ;rtype: dict
+    """
     df = read_data("../../../data/country_state_code_dirty.csv")
     data = {}
     for state, code, country in zip(df.iloc[:,0], df.iloc[:,1], df.iloc[:,2]):
@@ -23,16 +31,25 @@ def create_dict():
     return data
 
 
-# match state codes in a specified country
 def match(state, country, data):
+    """Matches state code with data within a specified country.
+    
+    :return: State code
+    :rtype: str
+    """
     if country in data:
         if state in data[country]:
             return data[country][state]
     return ""
+    
 
 
-# creates a country dict from odoo data
 def country_dict():
+    """Creates a dictionay for country codes.
+    
+    :return: {Country: Code}
+    ;rtype: dict
+    """
     df = read_data("../../../data/country_code_dirty.csv")
     data = {}
     for country, code in zip(df.iloc[:,0], df.iloc[:,1]):
@@ -40,8 +57,12 @@ def country_dict():
     return data
     
 
-# match country name to country
 def match_country(country_name, data):
+    """Matches country code with data.
+    
+    :return: Country code
+    :rtype: str
+    """
     if country_name in data:
         return data[country_name]
     return country_name
