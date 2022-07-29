@@ -1,4 +1,3 @@
-from pyparsing import col
 from odoo import models
 import sys
 from xmlrpc import client
@@ -19,18 +18,18 @@ class EnhancedImport(models.TransientModel):
         start = time.time()
 
         url = 'http://localhost:8069' #TODO: explain how to get
-        db = 'import-script3'
-        password = 'ad27df3ba14c6c999a23f39463c72e4bb8b1ff70'
-
+        db = 'import-script-2'
         user = 'admin'
+        password = '5e22a33c69f690b95af215581f757c68288aeb63'
+
         common = client.ServerProxy('{}/xmlrpc/2/common'.format(url))
         uid = common.authenticate(db, user, password, {})
         models = client.ServerProxy('{}/xmlrpc/2/object'.format(url))
 
-        attr_val_dict = self.create_attr_val_dict(fields, columns)
+        attr_val_dict = self.create_attr_val_dict()
         database_ids = self.create_attribute_records(db, uid, password, models, attr_val_dict)
         product_field_information = self.get_field_information(db, uid, password, models, fields, columns)
-        self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns)
+        self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information)
 
         end = time.time()
         print(end - start)
@@ -174,73 +173,25 @@ class EnhancedImport(models.TransientModel):
         return database_ids
 
 
-    # def attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids):
-    #     attribute_id_numbers = models.execute_kw(db, uid, password, 'product.attribute', 'create', [attribute_id_batch])
-    #     for i in range(len(attribute_id_numbers)):
-    #         attribute_id_number = attribute_id_numbers[i]
-    #         attribute = attribute_ordered[i]
-    #         attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
-    #         database_ids[attribute_external_id] = attribute_id_number
-
-    #         val_dict = attr_val_dict[attribute]['values']
-    #         for val in val_dict.keys():
-    #             value_external_id = val_dict[val]
-    #             value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
-    #                 'name': val,
-    #                 'attribute_id': attribute_id_number,
-    #             }])
-    #             models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
-    #                 'value_ids': [(4, value_id_number, 0)]
-    #             }])
-    #             database_ids[value_external_id] = value_id_number
     def attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids):
         attribute_id_numbers = models.execute_kw(db, uid, password, 'product.attribute', 'create', [attribute_id_batch])
-        value_batch = []
-        MAX_BATCH_SIZE = 100
-        val_external_id_list = []
-
         for i in range(len(attribute_id_numbers)):
             attribute_id_number = attribute_id_numbers[i]
             attribute = attribute_ordered[i]
             attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
             database_ids[attribute_external_id] = attribute_id_number
 
-
             val_dict = attr_val_dict[attribute]['values']
             for val in val_dict.keys():
-                if len(value_batch) >= MAX_BATCH_SIZE:
-                    self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list)
-                    value_batch = []
-                    val_external_id_list = []
-
                 value_external_id = val_dict[val]
-                val_external_id_list.append(value_external_id)
-                value_batch.append({
+                value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
                     'name': val,
                     'attribute_id': attribute_id_number,
-                })
-                # value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
-                #     'name': val,
-                #     'attribute_id': attribute_id_number,
-                # }])
-                # models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
-                #     'value_ids': [(4, value_id_number, 0)]
-                # }])
-                # database_ids[value_external_id] = value_id_number
-        if len(value_batch) > 0:
-            self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list)
-
-    def val_batch_calls(self, db, uid, password, models, value_id_batch,attr_val_dict,database_ids,val_extern_id_list):
-        value_id_numbers = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [value_id_batch])
-        for i in range(len(value_id_numbers)):
-            value_id_number = value_id_numbers[i]
-            attribute_id_number = value_id_batch[i]['attribute_id']
-            models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
+                }])
+                models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
                     'value_ids': [(4, value_id_number, 0)]
                 }])
-            value_external_id = val_extern_id_list[i]
-            database_ids[value_external_id] = value_id_number
-
+                database_ids[value_external_id] = value_id_number
 
 
 
@@ -283,15 +234,13 @@ class EnhancedImport(models.TransientModel):
     # }
     ##################################################
 
-    def create_attr_val_dict(self,fields,columns):
+    def create_attr_val_dict(self):
 
-        attr_val_df = pd.read_excel('/home/leo/odoo/dev/odoo_data_cleaning/data/attr-val2.xlsx')
+        attr_val_df = pd.read_excel('/home/jden/data-cleaning-enhanced/data/attr-val.xlsx')
 
         attr_val_dict = {}
         curr_attribute = None
 
-
-        
         for row in range(0, len(attr_val_df)):
             if not pd.isna(attr_val_df['name'][row]):            
                 curr_attribute = str(attr_val_df['name'][row]).replace(' ','_').lower()
@@ -324,8 +273,8 @@ class EnhancedImport(models.TransientModel):
     #
     ############################################################
 
-    def add_attributes_and_values(self, db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns):
-        output_df = pd.read_csv('/home/leo/odoo/dev/odoo_data_cleaning/data/outputdata2.csv')
+    def add_attributes_and_values(self, db, uid, password, models, database_ids, attr_val_dict, product_field_information):
+        output_df = pd.read_csv('/home/jden/data-cleaning-enhanced/data/outputdata.csv')
         output_df.rename(columns = lambda x: x.strip().lower(), inplace=True)
 
         parent_model_batch = [] 
@@ -336,17 +285,12 @@ class EnhancedImport(models.TransientModel):
 
         curr_product_id = -1
 
-        col_name = None
-        for i in range(len(fields)):
-            if fields[i].lower() == 'name':
-                col_name = columns[i].lower()
-                break
         for row in range(0, len(output_df)):
             #TODO: implement duplicate checking
             if row % 50 == 0:
                 print(row)
 
-            if not pd.isna(output_df[col_name][row]):
+            if not pd.isna(output_df['name'][row]):
                 if len(parent_model_batch) > BATCH_SIZE:
                         self.batch_create_calls(db, uid, password, models, parent_model_batch, attribute_lines_batch)
                         parent_model_batch = []
@@ -537,6 +481,3 @@ class EnhancedImport(models.TransientModel):
 
     #7/20
     #missing end of batch
-    
-    
-

@@ -1,5 +1,4 @@
 from pyparsing import col
-from odoo import models
 import sys
 from xmlrpc import client
 import pandas as pd
@@ -8,67 +7,25 @@ import time
 
 #requires --limit-time-real=100000
 #python odoo-bin --addons-path=../enterprise,../,addons -d import-script --log-level warn --limit-time-real=100000
-
-class EnhancedImport(models.TransientModel):
-    _name = 'base_import.import'
-    _inherit = 'base_import.import'
-
+#ir.model.data
+class ExternalImport():
         
-    def execute_import(self, fields, columns, options, dryrun=False):
+    def main(self, user, password, db, url, fields, columns, model_name):
 
         start = time.time()
-
-        url = 'http://localhost:8069' #TODO: explain how to get
-        db = 'import-script3'
-        password = 'ad27df3ba14c6c999a23f39463c72e4bb8b1ff70'
-
-        user = 'admin'
         common = client.ServerProxy('{}/xmlrpc/2/common'.format(url))
         uid = common.authenticate(db, user, password, {})
         models = client.ServerProxy('{}/xmlrpc/2/object'.format(url))
 
         attr_val_dict = self.create_attr_val_dict(fields, columns)
-        database_ids = self.create_attribute_records(db, uid, password, models, attr_val_dict)
+        database_ids = self.create_attribute_records(db, uid, password, models, attr_val_dict, model_name)
         product_field_information = self.get_field_information(db, uid, password, models, fields, columns)
+        if not product_field_information:
+            return None
         self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns)
 
         end = time.time()
         print(end - start)
-
-        return []
-
-
-
-
-       
-    ########################################
-    # This script requires the sale module
-    #
-    # Main driver function for this script. 
-    # Inputs:
-    # 1. url: This is the url for the database to import into.
-    # 2. db: This is the name of the database that will be accessed.
-    # 3. user: This is the username that will be used to access the database.
-    # 4. password: This is the api key that will be used to access the database.
-    # This function does not have an output.
-    #
-    # Example command to run script
-    # python import.py http://localhost:8069 import-script admin 5326200ebea7bdb285c6b25023fe67f16200ba75 fields columns
-    ########################################
-    # def main(url, db, user, password, fields, columns):   
-    #     #TODO: take url, user, db and pass as user inputs
-    #     # url = sys.argv[1]
-    #     # db = sys.argv[2]
-    #     # user = sys.argv[3]
-    #     # password = sys.argv[4]
-
-    #     common = client.ServerProxy('{}/xmlrpc/2/common'.format(url))
-    #     uid = common.authenticate(db, user, password, {})
-    #     models = client.ServerProxy('{}/xmlrpc/2/object'.format(url))
-
-    #     attr_val_dict = create_attr_val_dict()
-    #     database_ids = create_attribute_records(db, uid, password, models, attr_val_dict)
-    #     add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict)
 
         
     ##################################################
@@ -83,43 +40,8 @@ class EnhancedImport(models.TransientModel):
     # Output:
     # 1. database_ids: This is a dictionary that maps attribute and value external ids to their database ids.
     ##################################################
-    # def create_attribute_records(self, db, uid, password, models, attr_val_dict):
 
-    #     CREATE_VARIANT_DEFAULT = 'always'
-    #     DISPLAY_TYPE_DEFAULT = 'radio'
-    #     VISIBILITY_DEFAULT = 'visibile'
-
-    #     database_ids = {}
-    #     #TODO: implement duplicate checking
-
-    #     for attribute in attr_val_dict.keys():
-            
-    #         attribute_id_number = models.execute_kw(db, uid, password, 'product.attribute', 'create', [{
-    #             'name': attribute,
-    #             'create_variant': CREATE_VARIANT_DEFAULT,
-    #             'display_type': DISPLAY_TYPE_DEFAULT,
-    #         }]) 
-
-    #         attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
-
-    #         # TODO: no visibility field in model?
-    #         database_ids[attribute_external_id] = attribute_id_number
-            
-    #         val_dict = attr_val_dict[attribute]['values']
-    #         for val in val_dict.keys():
-    #             value_external_id = val_dict[val]
-    #             value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
-    #                 'name': val,
-    #                 'attribute_id': attribute_id_number,
-    #             }])
-    #             models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
-    #                 'value_ids': [(4, value_id_number, 0)]
-    #             }])
-    #             database_ids[value_external_id] = value_id_number
-        
-    #     return database_ids
-
-    def create_attribute_records(self, db, uid, password, models, attr_val_dict):
+    def create_attribute_records(self, db, uid, password, models, attr_val_dict, model_name):
 
         CREATE_VARIANT_DEFAULT = 'always'
         DISPLAY_TYPE_DEFAULT = 'radio'
@@ -131,7 +53,7 @@ class EnhancedImport(models.TransientModel):
         attribute_ordered = [] #storing the attributes for each attribute in the same order as the keys of the dictionary
         for attribute in attr_val_dict.keys():
             if len(attribute_id_batch) >= MAX_BATCH_SIZE:
-                self.attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids)
+                self.attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids, model_name)
                 attribute_id_batch = []
                 attribute_ordered = []
 
@@ -142,74 +64,37 @@ class EnhancedImport(models.TransientModel):
                 'display_type': DISPLAY_TYPE_DEFAULT,
             })
 
-            # attribute_id_number = models.execute_kw(db, uid, password, 'product.attribute', 'create', [{
-            #     'name': attribute,
-            #     'create_variant': CREATE_VARIANT_DEFAULT,
-            #     'display_type': DISPLAY_TYPE_DEFAULT,
-            # }]) 
-
 
             attribute_ordered.append(attribute)
-            # attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
 
-           
-            # attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
-
-
-            # database_ids[attribute_external_id] = attribute_id_number
-            
-            # val_dict = attr_val_dict[attribute]['values']
-            # for val in val_dict.keys():
-            #     value_external_id = val_dict[val]
-            #     value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
-            #         'name': val,
-            #         'attribute_id': attribute_id_number,
-            #     }])
-            #     models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
-            #         'value_ids': [(4, value_id_number, 0)]
-            #     }])
-            #     database_ids[value_external_id] = value_id_number
         if len(attribute_id_batch) > 0:
-            self.attribute_batch_calls(db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids)
+            self.attribute_batch_calls(db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids, model_name)
         return database_ids
 
-
-    # def attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids):
-    #     attribute_id_numbers = models.execute_kw(db, uid, password, 'product.attribute', 'create', [attribute_id_batch])
-    #     for i in range(len(attribute_id_numbers)):
-    #         attribute_id_number = attribute_id_numbers[i]
-    #         attribute = attribute_ordered[i]
-    #         attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
-    #         database_ids[attribute_external_id] = attribute_id_number
-
-    #         val_dict = attr_val_dict[attribute]['values']
-    #         for val in val_dict.keys():
-    #             value_external_id = val_dict[val]
-    #             value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
-    #                 'name': val,
-    #                 'attribute_id': attribute_id_number,
-    #             }])
-    #             models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
-    #                 'value_ids': [(4, value_id_number, 0)]
-    #             }])
-    #             database_ids[value_external_id] = value_id_number
-    def attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids):
+    def attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids,model_name):
         attribute_id_numbers = models.execute_kw(db, uid, password, 'product.attribute', 'create', [attribute_id_batch])
         value_batch = []
         MAX_BATCH_SIZE = 100
         val_external_id_list = []
 
+        attribute_model_metadata = []
         for i in range(len(attribute_id_numbers)):
             attribute_id_number = attribute_id_numbers[i]
             attribute = attribute_ordered[i]
             attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
             database_ids[attribute_external_id] = attribute_id_number
 
+            attribute_model_metadata.append({
+                'model': 'product.attribute',
+                'module': 'base',
+                'res_id': attribute_id_number,
+                'name': attribute_external_id
+            })
 
             val_dict = attr_val_dict[attribute]['values']
             for val in val_dict.keys():
                 if len(value_batch) >= MAX_BATCH_SIZE:
-                    self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list)
+                    self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list,model_name)
                     value_batch = []
                     val_external_id_list = []
 
@@ -219,19 +104,17 @@ class EnhancedImport(models.TransientModel):
                     'name': val,
                     'attribute_id': attribute_id_number,
                 })
-                # value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
-                #     'name': val,
-                #     'attribute_id': attribute_id_number,
-                # }])
-                # models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
-                #     'value_ids': [(4, value_id_number, 0)]
-                # }])
-                # database_ids[value_external_id] = value_id_number
-        if len(value_batch) > 0:
-            self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list)
 
-    def val_batch_calls(self, db, uid, password, models, value_id_batch,attr_val_dict,database_ids,val_extern_id_list):
+        if len(value_batch) > 0:
+            self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list,model_name)
+
+        models.execute_kw(db, uid, password, 'ir.model.data', 'create', [attribute_model_metadata])
+
+    def val_batch_calls(self, db, uid, password, models, value_id_batch,attr_val_dict,database_ids,val_extern_id_list, model_name):
         value_id_numbers = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [value_id_batch])
+
+        value_model_metadata = []
+
         for i in range(len(value_id_numbers)):
             value_id_number = value_id_numbers[i]
             attribute_id_number = value_id_batch[i]['attribute_id']
@@ -240,6 +123,15 @@ class EnhancedImport(models.TransientModel):
                 }])
             value_external_id = val_extern_id_list[i]
             database_ids[value_external_id] = value_id_number
+
+            value_model_metadata.append({
+                'model': 'product.attribute.value',
+                'module': 'base',
+                'name': value_external_id,
+                'res_id': value_id_number
+            })
+        
+        models.execute_kw(db, uid, password, 'ir.model.data', 'create', [value_model_metadata])
 
 
 
@@ -285,7 +177,7 @@ class EnhancedImport(models.TransientModel):
 
     def create_attr_val_dict(self,fields,columns):
 
-        attr_val_df = pd.read_excel('/home/leo/odoo/dev/odoo_data_cleaning/data/attr-val2.xlsx')
+        attr_val_df = pd.read_excel('../data/attr-val.xlsx')
 
         attr_val_dict = {}
         curr_attribute = None
@@ -325,14 +217,14 @@ class EnhancedImport(models.TransientModel):
     ############################################################
 
     def add_attributes_and_values(self, db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns):
-        output_df = pd.read_csv('/home/leo/odoo/dev/odoo_data_cleaning/data/outputdata2.csv')
+        output_df = pd.read_csv('../data/outputdata.csv')
         output_df.rename(columns = lambda x: x.strip().lower(), inplace=True)
 
         parent_model_batch = [] 
         attribute_lines_batch = []
         product_ids = [] 
 
-        BATCH_SIZE = 100
+        BATCH_SIZE = 1000
 
         curr_product_id = -1
 
@@ -393,7 +285,14 @@ class EnhancedImport(models.TransientModel):
                 })
 
                 product_ids.append(curr_product_id)
-            
+
+        if len(parent_model_batch) > 0:
+            self.batch_create_calls(db, uid, password, models, parent_model_batch, attribute_lines_batch)
+            parent_model_batch = []
+            product_ids = []
+            attribute_lines_batch = []
+            curr_product_id = -1
+
             
 
             
@@ -494,12 +393,10 @@ class EnhancedImport(models.TransientModel):
 
         for i in range(0, len(columns)):
             columns[i].strip() 
-            print(columns[i])
             if columns[i] == 'attribute' or columns[i] == 'value':
-                    continue
+                continue
             elif not fields[i]:      
-                print('Error: field could not be matched')
-                #TODO: how to handle mismatch columns?
+                return None
             else:                    
                 curr_col = columns[i]
                 product_field_information[curr_col] = {}
@@ -518,25 +415,5 @@ class EnhancedImport(models.TransientModel):
             return models.execute_kw(db, uid, password, product_field_information[col]['relation'], 'create', [{
                 'name': field_val
             }])
-
-
-
-    #TODO
-    #importable fields => readonly = false
-    #ui to match fields
-    #dont create new comodels, unknown all required fields. maybe ui?
-    #check for required fields
-
-    #TODO for leo
-    #unhardcode product.template, allow for model input
-    #fix batching error end of loop
-    #implement batching for attributes and values 
-    #add external ids to attribute and value records
-    #unhardcode file paths
-    
-
-    #7/20
-    #missing end of batch
-    
     
 
