@@ -21,10 +21,14 @@ app.config['UPLOAD_FOLDER'] = '../data'
 
 @app.route("/", methods=["GET", "POST"]) #type="json" TODO
 def clean_data():
+    """
+    get route sends home page
+    post route cleans the data that was uploaded and redirects to the validation page
+    """
     if request.method == "GET":
-        return current_app.send_static_file('index.html')
+        return current_app.render_template('index.html')
     else:
-        pattern = re.compile(r"^(\w+)(,\s*\w+)*$") #regex to check if input is comma seperated list
+        pattern = re.compile(r"^(\w+)(,\s*\w+)*$") #regex to check if input is comma seperated list TODO: fix this regex, regex is incorrect
         parent_columns = request.form['parent_columns']
         children_columns = request.form['children_columns']
         if pattern.match(parent_columns) == None or pattern.match(children_columns) == None:
@@ -70,7 +74,6 @@ def clean_data():
                 attribute = request.form['attribute']
                 value = request.form['value']
                 productid = request.form['productid']
-                print(productid)
                 parseArgs(file_path, parent_columns, children_columns,productid,attribute,value,fileType)
             
             
@@ -103,14 +106,16 @@ def clean_data():
             }
             data = json.dumps(data)
             return redirect(url_for('validate_columns', data = data))
-        
-        #TODO: ask leo for help with calling script
+
 
 @app.route("/validate", methods=["GET", "POST"])
 def validate_columns():
+    """
+    get route sends the validation page that allows user to match the columns with the model fields
+    post route imports the data into the database
+    """
     if request.method == "GET":
         return current_app.send_static_file("validate.html")
-        # return render_template('validate.html')
     else:
         print(request.form)
         fields = []
@@ -120,6 +125,8 @@ def validate_columns():
             fields.append(request.form[key].lower().strip())
         importer = ExternalImport()
         importer.main(session['user'], session['password'], session['db'], session['url'], fields, columns, session['model'])
+
+        #TODO: add return page
 
     
 
