@@ -9,8 +9,14 @@ import urllib.request
 import config
 
 
-# returns address info as a dictionary
 def get_address_info(addresses):
+    """Creates a list of addresses from Geoapify responses.
+    
+    :param list addresses: List of addresses
+    :return: Json responses as a list from Geaopify calls
+    :rtype: list
+    """
+    
     temp = []
     for address in addresses:
         if address.replace(" ","") != "":

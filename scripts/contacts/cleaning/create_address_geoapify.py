@@ -8,9 +8,14 @@ import config
 import state_code_cleaning as sc
 
 
-# address_line1 -> housenumber, street -> parsed(house,housenumber,streeet) -> none
-# results[0][address_line1], [query][parsed]
 def get_address1(response):
+    """Gets address 1.
+    
+    :param dict response: Json response of an API output
+    :return: Address 1
+    :rtype: str
+    """
+
     if response["results"]:
         results = response["results"][0]
         if "housenumber" in results or "street" in results:
@@ -40,8 +45,14 @@ def get_address1(response):
     return ""
 
 
-#[query][text]
 def get_address2(response):
+    """Gets address 2.
+    
+    :param dict response: Json response of an API output
+    :return: Address 2
+    :rtype: str
+    """
+
     url = "https://api.postgrid.com/v1/addver/parses"
 
     payload='address=' + response["query"]["text"]
@@ -60,9 +71,14 @@ def get_address2(response):
     return ""
 
 
-# maybe district
-# city -> parsed(city) -> none
 def get_city(response):
+    """Gets city.
+    
+    :param dict response: Json response of an API output
+    :return: City
+    :rtype: str
+    """
+
     if response["results"]:
         if "city" in response["results"][0]:
             return response["results"][0]["city"]
@@ -74,8 +90,14 @@ def get_city(response):
     return ""
 
 
-# state_code -> state -> parsed(state) -> none
 def get_state(response, country, data):
+    """Gets state.
+    
+    :param dict response: Json response of an API output
+    :return: State
+    :rtype: str
+    """
+
     if response["results"]:
         results = response["results"][0]
         if "state" in results:
@@ -96,8 +118,14 @@ def get_state(response, country, data):
     return ""
 
 
-# gets country name 
 def get_country(response):
+    """Gets country.
+    
+    :param dict response: Json response of an API output
+    :return: Country
+    :rtype: str
+    """
+
     if response["results"]:
         results = response["results"][0]
         if "country" in results:
@@ -114,8 +142,14 @@ def get_country(response):
     return ""
 
 
-# postcode -> parsed(postcode) -> none
 def get_postcode(response):
+    """Gets postcode.
+    
+    :param dict response: Json response of an API output
+    :return: Post code
+    :rtype: str
+    """
+
     if response["results"]:
         if "postcode" in response["results"][0]:
             return response["results"][0]["postcode"]

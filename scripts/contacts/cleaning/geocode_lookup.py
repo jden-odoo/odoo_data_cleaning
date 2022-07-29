@@ -7,8 +7,14 @@ import urllib.request
 import config
 
 
-# gets address info individually
 def get_address_info(address):
+    """Creates an addresses from Geocode Earth responses.
+    
+    :param list addresses: An address
+    :return: Json response of a Geocode Earth request
+    :rtype: dict
+    """
+
     if address.replace(" ","") != "":
         updated_address = re.sub('[^a-zA-z0-9 \n\.]', '', address)
         updated_address = updated_address.replace("\n", " ")
