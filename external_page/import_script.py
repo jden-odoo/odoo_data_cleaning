@@ -50,8 +50,14 @@ class ExternalImport():
         MAX_BATCH_SIZE = 100
         database_ids = {}
         #TODO: implement duplicate checking
-        attribute_ordered = [] #storing the attributes for each attribute in the same order as the keys of the dictionary
+        attribute_ordered = [] #storing the attributes for each attribute in the same order as the keys of the dictionary\
+        existent_attribute_to_overwrite = []
         for attribute in attr_val_dict.keys():
+            check, id = self.check_attribute_existence(attr_val_dict,attribute,db,uid,password,models)
+            if check:
+                existent_attribute_to_overwrite.append((attribute,id))
+                continue
+            #check attribute['attribute_external_id'], do a read, if exist, append to to_write array, continue
             if len(attribute_id_batch) >= MAX_BATCH_SIZE:
                 self.attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids, model_name)
                 attribute_id_batch = []
@@ -66,16 +72,58 @@ class ExternalImport():
 
 
             attribute_ordered.append(attribute)
-
+        
         if len(attribute_id_batch) > 0:
             self.attribute_batch_calls(db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids, model_name)
+        self.overwrite_existing_records(db,uid,password,models,existent_attribute_to_overwrite,attr_val_dict,database_ids)
         return database_ids
 
+    def overwrite_existing_records(db,uid,password,models,to_write,attr_val_dict,database_ids):
+        for (attribute,attribute_id_number) in to_write:
+            #overwrite the name of the attribute
+            models.excute_kw(db,uid,password,'product.attribute','write',[[attribute_id_number],{'name':attribute}])
+            #overwrite the values of the attribute
+            val_dict = attr_val_dict[attribute]['values']
+            for val in val_dict.keys():
+                try:
+                    value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
+                        'name': val,
+                        'attribute_id': attribute_id_number,
+                    }])
+
+                    models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
+                        'value_ids': [(4, value_id_number, 0)]
+                    }])
+                    #:TODO: check if this external id needs to be kept in the database
+                    # value_external_id = val_dict[val]
+                    # database_ids[value_external_id] = value_id_number
+
+                    
+
+            #create this
+                except:
+
+        print("overwriting succeed")
+        return
+
+
+    def check_attribute_existence(self,attr_val_dict,attribute,db,uid,password,models):
+        attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
+        
+        [record] = models.execute_kw(db,uid,password,'product.attribute','read',[attribute_external_id])
+        if len(record) > 0:
+            return True,record['id']
+        else:
+            return False, None
+
+
     def attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids,model_name):
+
         attribute_id_numbers = models.execute_kw(db, uid, password, 'product.attribute', 'create', [attribute_id_batch])
         value_batch = []
         MAX_BATCH_SIZE = 100
         val_external_id_list = []
+
 
         attribute_model_metadata = []
         for i in range(len(attribute_id_numbers)):
@@ -109,6 +157,9 @@ class ExternalImport():
             self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list,model_name)
 
         models.execute_kw(db, uid, password, 'ir.model.data', 'create', [attribute_model_metadata])
+
+       
+
 
     def val_batch_calls(self, db, uid, password, models, value_id_batch,attr_val_dict,database_ids,val_extern_id_list, model_name):
         value_id_numbers = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [value_id_batch])
@@ -167,6 +218,7 @@ class ExternalImport():
     #     }
     #     'color_of_car_trim', {
     #         'attribute_external_id': 'car_trim_color'
+    
     #         'values': {
     #             'white': 'car_trim_white',
     #             'green': 'car_trim_green'
