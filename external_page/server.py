@@ -26,7 +26,7 @@ def clean_data():
     post route cleans the data that was uploaded and redirects to the validation page
     """
     if request.method == "GET":
-        return current_app.render_template('index.html')
+        return render_template('index.html')
     else:
         pattern = re.compile(r"^(\w+)(,\s*\w+)*$") #regex to check if input is comma seperated list TODO: fix this regex, regex is incorrect
         parent_columns = request.form['parent_columns']
