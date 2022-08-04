@@ -24,8 +24,10 @@ class ExternalImport():
             return None
         self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns)
 
+        #self.export_product_variants(db, uid, password, models, 'default_code,name,standard_price')
         end = time.time()
         print(end - start)
+
 
         
     ##################################################
@@ -416,4 +418,19 @@ class ExternalImport():
                 'name': field_val
             }])
     
+
+    def export_product_variants(self, db, uid, password, models, fields):
+        self.odoo.addons.web.controllers.main.get_fields('product.product', False)
+        export_fields = []
+        fields = fields.split(',')
+        for f in fields:
+            temp = [0,0]
+            temp.append({'name': f})
+            export_fields.append(temp)
+        export_id = models.execute_kw(db, uid, password, 'ir.exports', 'create', ['template', 'product.product', export_fields])
+        print(export_id)
+        models.execute_kw(db, uid, password, 'product.product', 'read')
+
+        
+
 
