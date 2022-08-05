@@ -79,19 +79,22 @@ class ExternalImport():
         self.overwrite_existing_records(db,uid,password,models,existent_attribute_to_overwrite,attr_val_dict,database_ids)
         return database_ids
 
-    def overwrite_existing_records(db,uid,password,models,to_write,attr_val_dict,database_ids):
+    def overwrite_existing_records(self,db,uid,password,models,to_write,attr_val_dict,database_ids):
         for (attribute,attribute_id_number) in to_write:
             #overwrite the name of the attribute
-            models.excute_kw(db,uid,password,'product.attribute','write',[[attribute_id_number],{'name':attribute}])
+            models.execute_kw(db,uid,password,'product.attribute','write',[[attribute_id_number],{'name':attribute}])
             #overwrite the values of the attribute
             val_dict = attr_val_dict[attribute]['values']
             for val in val_dict.keys():
                 value_external_id = val_dict[val]
-                [record] = models.execute_kw(db,uid,password,'product.attribute.value','read',[value_external_id])
-                print("Record read is ", record)
-                if len(record) > 0:
+                [val_record] = models.execute_kw(db,uid,password,'ir.model.data','search_read',[[['name','=',value_external_id]]],{'fields':['res_id']})
+                
+                print("Record read is ", val_record)
+                if len(val_record) > 0:
                     #overwrite v
-                    value_id_number = record['id']
+                    value_id_number = val_record['res_id']
+                    print('val is num is', value_id_number)
+                    print('attr id num is', attribute_id_number)
                     models.execute_kw(db, uid, password, 'product.attribute.value', 'write', [[value_id_number],{
                         'name': val,
                         'attribute_id': attribute_id_number,
@@ -119,10 +122,12 @@ class ExternalImport():
 
     def check_attribute_existence(self,attr_val_dict,attribute,db,uid,password,models):
         attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
-        
-        [record] = models.execute_kw(db,uid,password,'product.attribute','read',[attribute_external_id])
-        if len(record) > 0:
-            return True,record['id']
+        [attr_record] = models.execute_kw(db,uid,password,'ir.model.data','search_read',[[['name','=',attribute_external_id]]], {'fields': ['res_id']})
+
+        print('priting record', attr_record)
+        #[record] = models.execute_kw(db,uid,password,'product.attribute','read',[attribute_external_id])
+        if len(attr_record) > 0:
+            return True,attr_record['res_id']
         else:
             return False, None
 
