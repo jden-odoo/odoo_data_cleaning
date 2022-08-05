@@ -19,10 +19,11 @@ class ExternalImport():
 
         attr_val_dict = self.create_attr_val_dict(fields, columns)
         database_ids = self.create_attribute_records(db, uid, password, models, attr_val_dict, model_name)
-        product_field_information = self.get_field_information(db, uid, password, models, fields, columns)
-        if not product_field_information:
-            return None
-        self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns)
+        print("##################attr val succeed#####################")
+        # product_field_information = self.get_field_information(db, uid, password, models, fields, columns)
+        # if not product_field_information:
+        #     return None
+        # self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns)
 
         end = time.time()
         print(end - start)
@@ -85,7 +86,21 @@ class ExternalImport():
             #overwrite the values of the attribute
             val_dict = attr_val_dict[attribute]['values']
             for val in val_dict.keys():
-                try:
+                value_external_id = val_dict[val]
+                [record] = models.execute_kw(db,uid,password,'product.attribute.value','read',[value_external_id])
+                print("Record read is ", record)
+                if len(record) > 0:
+                    #overwrite v
+                    value_id_number = record['id']
+                    models.execute_kw(db, uid, password, 'product.attribute.value', 'write', [[value_id_number],{
+                        'name': val,
+                        'attribute_id': attribute_id_number,
+                    }])
+                    models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
+                        'value_ids': [(4, value_id_number, 0)]
+                    }])
+                else:
+                    print("######################creating\n\n\n\n")
                     value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
                         'name': val,
                         'attribute_id': attribute_id_number,
@@ -95,13 +110,8 @@ class ExternalImport():
                         'value_ids': [(4, value_id_number, 0)]
                     }])
                     #:TODO: check if this external id needs to be kept in the database
-                    # value_external_id = val_dict[val]
-                    # database_ids[value_external_id] = value_id_number
-
-                    
-
-            #create this
-                except:
+                value_external_id = val_dict[val]
+                database_ids[value_external_id] = value_id_number
 
         print("overwriting succeed")
         return
