@@ -1,0 +1,17 @@
+<templates>
+    <t t-extend="ImportView.side_panel">
+        <t t-jquery=".oe_import_box" t-operation="append">
+            <label class="mb-1" for="oe_user">User Email</label>
+            <input class="w-100" id="oe_user"/>
+            <label class="mb-1" for="oe_user">API Key</label>
+            <input class="w-100" id="oe_api_key"/>
+            <label class="mb-1" for="oe_db_name">Database Name</label>
+            <input class="w-100" id="oe_db_name"/>
+            <label class="mb-1" for="oe_db_url">Database URL</label>
+            <input class="w-100" id="oe_db_url"/>
+        </t>
+        <t t-jquery=".o_import_batch" t-operation="replace"></t>
+        <t t-jquery=".oe_import_debug_option" t-operation="replace"></t>
+        <t t-jquery=".oe_import_has_multiple_sheets" t-operation="replace"></t>
+    </t>
+</templates>

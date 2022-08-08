@@ -24,3 +24,6 @@ running type1 file : ./cleaning.sh filename parentlist childrenlist
 running type2 file: ./cleaning.sh filename parentlist productid attribute value 
 
 To use the external page front end, simply cd into the external page folder, use the command 'export FLASK_APP=server', and then 'flask run'.
+
+72b6797819c3458821324c143422352834b97c25
+
