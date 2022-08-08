@@ -20,10 +20,10 @@ class ExternalImport():
         attr_val_dict = self.create_attr_val_dict(fields, columns)
         database_ids = self.create_attribute_records(db, uid, password, models, attr_val_dict, model_name)
         print("##################attr val succeed#####################")
-        # product_field_information = self.get_field_information(db, uid, password, models, fields, columns)
-        # if not product_field_information:
-        #     return None
-        # self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns)
+        product_field_information = self.get_field_information(db, uid, password, models, fields, columns)
+        if not product_field_information:
+            return None
+        self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns)
 
         end = time.time()
         print(end - start)
@@ -292,7 +292,8 @@ class ExternalImport():
         product_ids = [] 
 
         BATCH_SIZE = 1000
-
+        overwrite_model_batch = []
+        overwrite_attr_lines_batch = []
         curr_product_id = -1
 
         col_name = None
@@ -306,6 +307,10 @@ class ExternalImport():
                 print(row)
 
             if not pd.isna(output_df[col_name][row]):
+                #check if exists
+                curr_item_name = output_df[col_name][row]
+ 
+                
                 if len(parent_model_batch) > BATCH_SIZE:
                         self.batch_create_calls(db, uid, password, models, parent_model_batch, attribute_lines_batch)
                         parent_model_batch = []
@@ -331,8 +336,10 @@ class ExternalImport():
                             if field_name in new_product_fields:
                                 new_product_fields[field_name].append(self.link_field_to_model(db, uid, password, models, field_val, product_field_information[col]['relation']))                    
                             else:
-                                new_product_fields[field_name] = [self.link_field_to_model(db, uid, password, models, field_val, product_field_information[col]['relation'])]
-                parent_model_batch.append(new_product_fields)
+                                new_product_fields[field_name] = [self.link_field_to_model(db, uid, password, models, field_val, product_field_information[col]['relation'])] 
+                exist = self.check_product_existence(models,db,uid,password,curr_item_name,overwrite_model_batch,overwrite_attr_lines_batch,new_product_fields)
+                if not exist:
+                    parent_model_batch.append(new_product_fields)
                     
 
             attribute_external_id = output_df['attribute'][row]
@@ -344,14 +351,31 @@ class ExternalImport():
 
                 for val in range(0, len(value_external_ids_list)):
                     value_external_ids_list[val] = (4, database_ids[value_external_ids_list[val]], 0)
-
-                attribute_lines_batch.append({
+                to_append = {
                     'product_tmpl_id': curr_product_id,
                     'attribute_id': attribute_id_number,
                     'value_ids': value_external_ids_list
-                })
-
+                }
+                if not exist:
+                    attribute_lines_batch.append(to_append)
+                else:
+                    overwrite_attr_lines_batch.append(to_append)
                 product_ids.append(curr_product_id)
+
+            if exist:
+                new_p_fields, internal_id = overwrite_model_batch.pop()
+                models.execute_kw(db,uid,password,'product.template','write',[[internal_id],new_p_fields])
+
+                for attr_to_check in overwrite_attr_lines_batch:
+                    curr_attr_id = attr_to_check['attribute_id']
+                    [attr_record] = models.execute_kw(db,uid,password,'product.template.attribute.line','search_read',[[['id','=',curr_attr_id]]])
+                    if len(attr_record) > 0:
+                        models.execute_kw(db,uid,password,'product.template.attribute.line','write',[[internal_id],attr_to_check])
+                    else:
+                        models.execute_kw(db,uid,password,'product.template.attribute.line','create',[attr_to_check])
+                #write here
+                #
+
 
         if len(parent_model_batch) > 0:
             self.batch_create_calls(db, uid, password, models, parent_model_batch, attribute_lines_batch)
@@ -361,7 +385,13 @@ class ExternalImport():
             curr_product_id = -1
 
             
-
+    def check_product_existence(self,models,db,uid,password,curr_item_name,overwrite_model_batch,overwrite_attr_lines_batch, new_product_fields):
+        [item_record] = models.execute_kw(db,uid,password,'product.template','search_read',[[['name','=',curr_item_name]]], {'fields': ['id']})
+        if len(item_record) > 0:
+            overwrite_model_batch.append((new_product_fields,item_record['id']))
+            return True
+        else:
+            return False            
             
     ##################################################
     # Helper function that casts data to match odoo field data types
@@ -419,10 +449,16 @@ class ExternalImport():
         if record_match:
             return (4, record_match, 0)
         else:
-            new_record = models.execute_kw(db, uid, password, comodel, 'create', {
-                'name': field_val
-            })
-            return (4, new_record, 0)
+            # Raise exception
+            # new_record = models.execute_kw(db, uid, password, comodel, 'create', {
+            #     'name': field_val
+            # })
+            # return (4, new_record, 0)
+            error_dict = {}
+            error_dict['type'] = "error"
+            error_dict['message'] = str(field_val)+" failed to match"
+            error_dict['record'] = field_val
+            return error_dict
 
 
     #######################################################
@@ -479,8 +515,14 @@ class ExternalImport():
         if len(record_id) > 0:
             return record_id[0]['id']
         else:
-            return models.execute_kw(db, uid, password, product_field_information[col]['relation'], 'create', [{
-                'name': field_val
-            }])
+            # return models.execute_kw(db, uid, password, product_field_information[col]['relation'], 'create', [{
+            #     'name': field_val
+            # }])
+            # raise(exception)
+            error_dict = {}
+            error_dict['type'] = "error"
+            error_dict['message'] = str(field_val)+" m2o record not found"
+            error_dict['record'] = field_val
+            return error_dict
     
 
