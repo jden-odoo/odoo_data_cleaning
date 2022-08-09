@@ -736,9 +736,11 @@ class DirtyToClean():
     #output: writing to outputdata.csv for a clean output
     def output_clean_data(self, item_set,outHeader,id_dict):
         # buffer = BytesIO()
-        f = open('../data/outputdata.csv','w')
-        writer = csv.writer(f)
-        writer.writerow(outHeader)
+        # f = open('../data/outputdata.csv','w')
+        # writer = csv.writer(f)
+        # writer.writerow(outHeader)
+        output_rows = []
+        # output_rows.append(outHeader)
         count = 0
         for item in item_set:
             row = []
@@ -762,7 +764,8 @@ class DirtyToClean():
                     row.append("attribute_"+str(attr0).replace(' ','_').lower())
                     row.append(id_dict[attr0][val0])
             
-            writer.writerow(row)
+            # writer.writerow(row)
+            output_rows.append(row)
             count+=1
             
             
@@ -776,10 +779,16 @@ class DirtyToClean():
                     temprow.append('')
                 temprow.append("attribute_"+str(attr).replace(' ','_').lower())
                 temprow.append(id_dict[attr][val])
-                writer.writerow(temprow)
+                # writer.writerow(temprow)
+                output_rows.append(row)
                 count+=1
-        f.close()
-        return f
+        df = pd.DataFrame(output_rows, outHeader).set_index(outHeader[0])
+        writer = BytesIO()
+        df.to_excel(writer, engine='openpyxl')
+        writer.seek(0)
+        return writer.read()
+        # return df
+        
  
             
             
