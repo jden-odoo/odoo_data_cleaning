@@ -65,7 +65,7 @@ class BSAImport(models.TransientModel):
 
         #TESTS
         pd.options.display.max_columns = None
-        clean_df = pd.read_csv(BytesIO(clean_file), engine='openpyxl')
+        clean_df = pd.read_excel(BytesIO(clean_file), engine='openpyxl')
         print(clean_df.head(50))
 
         attr_val_dict = self.create_attr_val_dict(fields, columns)
@@ -799,11 +799,19 @@ class DirtyToClean():
 
     #Output: outputdata.csv
     def main(self,dirtydata,parents,children):
-        buffer = BytesIO(dirtydata)
-        
-        csvreader=csv.reader(BytesIO(dirtydata).decode('utf-8'))
+        # csv_data = base64.b64decode('your binary field')
+        # data_file = io.StringIO(csv_data.decode("utf-8"))
+        # data_file.seek(0) 
+        input_file = BytesIO(dirtydata)
+        # byte_str = buffer.getvalue().decode('utf-8')
+        # print(byte_str)
+        csvreader=csv.reader(input_file, delimiter=',')        # byte_str = buffer.getvalue().decode('utf-8')
+        # print(byte_str)
         inHeader = []
         inHeader = next(csvreader)
+        print("\n\n\n")
+        print("inheader is ", inHeader)
+        print("\n\n\n")
         inRows = []
         parent_cols = []
         outheader = []
