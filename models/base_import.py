@@ -805,10 +805,10 @@ class DirtyToClean():
         input_file = BytesIO(dirtydata)
         # byte_str = buffer.getvalue().decode('utf-8')
         # print(byte_str)
-        csvreader=csv.reader(input_file, delimiter=',')        # byte_str = buffer.getvalue().decode('utf-8')
+        df = pd.read_csv(input_file)        
         # print(byte_str)
         inHeader = []
-        inHeader = next(csvreader)
+        
         print("\n\n\n")
         print("inheader is ", inHeader)
         print("\n\n\n")
@@ -818,14 +818,16 @@ class DirtyToClean():
         # converting columns in letter to index of array
         for letter in parents:
             parent_cols.append(ord(letter.lower())-97)
-    
-        for row in csvreader:
-            inRows.append(row)
+        inHeader = df.iloc[0].to_numpy()
+        for i in range (1,len(df)):
+            
+            inRows.append(df.iloc[i].to_numpy())
+ 
         for i in parent_cols:
             outheader.append(inHeader[i]) 
         outheader.append('Attribute')
         outheader.append('Value')
-        file.close()
+        # file.close()
         item_set = self.create_item_dict(inHeader,inRows,parents,children)
         id_dict = self.create_attr_val_dict()
         return self.output_clean_data(item_set,outheader,id_dict)
