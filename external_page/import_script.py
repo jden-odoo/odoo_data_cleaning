@@ -54,9 +54,10 @@ class ExternalImport():
         attribute_ordered = [] #storing the attributes for each attribute in the same order as the keys of the dictionary\
         existent_attribute_to_overwrite = []
         for attribute in attr_val_dict.keys():
-            check, id = self.check_attribute_existence(attr_val_dict,attribute,db,uid,password,models)
+            check, id = self.check_attribute_existence(attr_val_dict,attribute,db,uid,password,models,database_ids)
             if check:
                 existent_attribute_to_overwrite.append((attribute,id))
+                
                 continue
             #check attribute['attribute_external_id'], do a read, if exist, append to to_write array, continue
             if len(attribute_id_batch) >= MAX_BATCH_SIZE:
@@ -119,15 +120,17 @@ class ExternalImport():
         print("overwriting succeed")
         return
 
-
-    def check_attribute_existence(self,attr_val_dict,attribute,db,uid,password,models):
+    def check_attribute_existence(self,attr_val_dict,attribute,db,uid,password,models,database_ids):
         attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
-        [attr_record] = models.execute_kw(db,uid,password,'ir.model.data','search_read',[[['name','=',attribute_external_id]]], {'fields': ['res_id']})
+        print("\n\n aatr_id is ",attr_val_dict[attribute])
+        attr_record = models.execute_kw(db,uid,password,'ir.model.data','search_read',[[['name','=',attribute_external_id]]], {'fields': ['res_id']})
 
         print('priting record', attr_record)
         #[record] = models.execute_kw(db,uid,password,'product.attribute','read',[attribute_external_id])
         if len(attr_record) > 0:
-            return True,attr_record['res_id']
+            print(attr_record)
+            database_ids[attribute_external_id] = attr_record[0]['res_id']
+            return True,attr_record[0]['res_id']
         else:
             return False, None
 
@@ -386,9 +389,9 @@ class ExternalImport():
 
             
     def check_product_existence(self,models,db,uid,password,curr_item_name,overwrite_model_batch,overwrite_attr_lines_batch, new_product_fields):
-        [item_record] = models.execute_kw(db,uid,password,'product.template','search_read',[[['name','=',curr_item_name]]], {'fields': ['id']})
+        item_record = models.execute_kw(db,uid,password,'product.template','search_read',[[['name','=',curr_item_name]]], {'fields': ['id']})
         if len(item_record) > 0:
-            overwrite_model_batch.append((new_product_fields,item_record['id']))
+            overwrite_model_batch.append((new_product_fields,item_record[0]['id']))
             return True
         else:
             return False            
