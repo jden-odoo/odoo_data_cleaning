@@ -49,16 +49,26 @@ class BSAImport(models.TransientModel):
 
         #TODO: handle different types of file upload
 
+        test_df = pd.read_csv(BytesIO(self.file))
+        # print(test_df.head())
+        # return
+
         #Generates attr-val file
         attr_val_generator = DirtyToAttributeValues()
         attr_val_file = attr_val_generator.main(self.file, ['b','c','e','f','g','h','i','j','k'])
 
-        #Generates clean file
-        clean_generator = DirtyToClean()
-        clean_file = clean_generator.main(self.file, ['a','d','l','m','n'], ['b','c','e','f','g','h','i','j','k'])
-
         self.write({
             'attr_val_file': attr_val_file,
+        })
+
+        attr_val_dict = self.create_attr_val_dict(fields, columns)
+
+
+        #Generates clean file
+        clean_generator = DirtyToClean()
+        clean_file = clean_generator.main(self.file, attr_val_dict, ['a','d','l','m','n'], ['b','c','e','f','g','h','i','j','k'])
+
+        self.write({
             'clean_file': clean_file
         })
 
@@ -68,7 +78,7 @@ class BSAImport(models.TransientModel):
         clean_df = pd.read_excel(BytesIO(clean_file), engine='openpyxl')
         print(clean_df.head(50))
 
-        attr_val_dict = self.create_attr_val_dict(fields, columns)
+        
         database_ids = self.create_attribute_records(db, uid, password, models, attr_val_dict, model_name)
         product_field_information = self.get_field_information(db, uid, password, models, fields, columns)
         if not product_field_information:
@@ -125,7 +135,7 @@ class BSAImport(models.TransientModel):
         }
         """
 
-        attr_val_df = pd.read_excel('../data/attr-val.xlsx')
+        attr_val_df = pd.read_excel(BytesIO(self.attr_val_file), engine='openpyxl')
 
         attr_val_dict = {}
         curr_attribute = None
@@ -578,12 +588,9 @@ class DirtyToAttributeValues():
         """
 
         array = []
-        print('input_array: ', input_array)
-        print('all_columns: ', all_columns)
         for value in input_array:
             value = ord(value.lower())-97
             array.append(all_columns[value])
-        print('array: ', array)
         return array
 
 
@@ -674,27 +681,7 @@ class DirtyToAttributeValues():
 
 
 class DirtyToClean():
-    def create_attr_val_dict(self):
-        #Testing
-        attr_val_df = pd.read_excel('../data/attr-val.xlsx')
 
-        attr_val_dict = {}
-        currDict = {}
-        currCategory = None
-
-        for row in range(0, len(attr_val_df)): 
-            if not pd.isna(attr_val_df['name'][row]):  
-                if currCategory:
-                    attr_val_dict[currCategory] = currDict
-                currCategory = str(attr_val_df['name'][row]).replace(' ','_').lower() #Replace space with underscore for consistency
-                currDict = {}
-
-            currDict[str(attr_val_df['value_ids/name'][row]).replace(' ','_').lower()] = str(attr_val_df['value_ids/id'][row])
-
-        if currCategory:
-            attr_val_dict[currCategory] = currDict
-
-        return attr_val_dict
     #############################################################################################
     #input: headers from the input file, data of the rest of the rows, and the parents and children column numbers
     #output: a dictionary of the following format:
@@ -704,11 +691,9 @@ class DirtyToClean():
         parent_cols = []
         children_cols = []
         # converting columns in letter to index of array
-        for letter in parents:
-            
+        for letter in parents:         
             parent_cols.append(ord(letter.lower())-97)
         for letter in children:
-            
             children_cols.append(ord(letter.lower())-97)
         attributes = []
         for col in children_cols:
@@ -743,10 +728,12 @@ class DirtyToClean():
         # output_rows.append(outHeader)
         count = 0
         for item in item_set:
+            print('item is', item)
             row = []
             parents = item[0:-1]
             parent_len = len(parents)
             attributes = item[-1]
+            print('attributes list: ', attributes)
             attr_len = len(attributes)
             attr_start = 0
             for val in parents:
@@ -761,8 +748,17 @@ class DirtyToClean():
                     attr0,val0 = attributes[attr_start]
 
                 if val0 != '':
-                    row.append("attribute_"+str(attr0).replace(' ','_').lower())
-                    row.append(id_dict[attr0][val0])
+                    print(' hi mom')
+                    # row.append(id_dict[attr0][val0])attr0).replace(' ','_').lower()
+                    # print('newval is', newval)
+                    # row.append(newval)
+                    # print('attr is', attr0)
+                    # print('val is', val0)
+                    # for key in id_dict.keys():
+                    #     print(id_dict[key])
+                    #     break
+                    # row.append(id_dict[attr0][val0])
+                    #TODO: fix
             
             # writer.writerow(row)
             output_rows.append(row)
@@ -798,7 +794,7 @@ class DirtyToClean():
     #       3: letter of children columns in a comma separated list
 
     #Output: outputdata.csv
-    def main(self,dirtydata,parents,children):
+    def main(self,dirtydata,attr_val_dict,parents,children):
         # csv_data = base64.b64decode('your binary field')
         # data_file = io.StringIO(csv_data.decode("utf-8"))
         # data_file.seek(0) 
@@ -808,26 +804,24 @@ class DirtyToClean():
         df = pd.read_csv(input_file)        
         # print(byte_str)
         inHeader = []
-        
-        print("\n\n\n")
-        print("inheader is ", inHeader)
-        print("\n\n\n")
+
         inRows = []
         parent_cols = []
         outheader = []
         # converting columns in letter to index of array
         for letter in parents:
             parent_cols.append(ord(letter.lower())-97)
-        inHeader = df.iloc[0].to_numpy()
-        for i in range (1,len(df)):
+        for i in range (len(df)):
             
-            inRows.append(df.iloc[i].to_numpy())
+            inRows.append(df.iloc[i].to_numpy().tolist())
  
+        print("inrows is ", inRows[0])
+        print("inrows is ", inRows[1])
         for i in parent_cols:
             outheader.append(inHeader[i]) 
         outheader.append('Attribute')
         outheader.append('Value')
         # file.close()
         item_set = self.create_item_dict(inHeader,inRows,parents,children)
-        id_dict = self.create_attr_val_dict()
-        return self.output_clean_data(item_set,outheader,id_dict)
+        # id_dict = self.create_attr_val_dict(attr_val_file)
+        return self.output_clean_data(item_set,outheader,attr_val_dict)
