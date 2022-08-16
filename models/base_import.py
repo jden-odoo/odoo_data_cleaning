@@ -10,6 +10,7 @@ import openpyxl
 
 #TODO: remove extra param from execute_Import and from rpc call in base_import_actions.js
 #TODO: add external dependencies in manifest
+#Requires limit-time-real 99999 flag
 
 class BSAImport(models.TransientModel):
     _inherit = 'base_import.import'
@@ -40,6 +41,13 @@ class BSAImport(models.TransientModel):
         
         """
 
+        # hardcoded dev values
+        # user = 'admin'
+        # password = 'b7964650d8424f40dee5bbbc21fe77af060b05dc'
+        # db = 'import-script'
+        # url = 'http://localhost:8069'
+        
+
         start = time.time()
         #TODO: change js state if error
 
@@ -52,10 +60,13 @@ class BSAImport(models.TransientModel):
         
         fields, columns, parents, children = self.parse_inputs(fields, columns)
 
-        print('fields: ', fields)
-        print('columns: ', columns)
-        print('parents: ', parents)
-        print('children: ', children)
+        # parents = [0, 3, 4, 5, 11, 12, 13]
+        # children = [1, 2, 6, 7, 8, 9, 10]
+
+        # print('fields: ', fields)
+        # print('columns: ', columns)
+        # print('parents: ', parents)
+        # print('children: ', children)
 
         #Generates attr-val file
         attr_val_generator = DirtyToAttributeValues()
@@ -525,20 +536,20 @@ class BSAImport(models.TransientModel):
         :param string comodel: Name of the comodel for the field. This the model that the funcion will search for/create.
         :rtype (int, int, int): A tuple that represents a link command. It will be of the form (4, model_id, 0). 
         """
-
+        print('comodel is', comodel)
         existing_model_records = models.execute(db, uid, password, comodel, 'search_read')
         record_match = None
         for record in existing_model_records:
+            name = record['name'][1]
+            print('\n \n \n name is ', name)
             if record['name'].lower() == str(field_val).lower():
                 record_match = record['id']
                 break
         if record_match:
             return (4, record_match, 0)
         else:
-            new_record = models.execute_kw(db, uid, password, comodel, 'create', {
-                'name': field_val
-            })
-            return (4, new_record, 0)
+            print('Record not found')
+            #TODO: add error raising
 
 
     def batch_create_calls(self, db, uid, password, models, parent_model_batch, attribute_lines_batch):
@@ -732,6 +743,7 @@ class DirtyToClean():
         for col in children:
             attributes.append(inHeader[col])
         item_set = []
+        
         for item in inRows:
             data = []
             for i in parents:
@@ -762,7 +774,10 @@ class DirtyToClean():
         # output_rows.append(outHeader)
         count = 0
         for item in item_set:
-            # print('item is', item)
+            if count < 20:
+                print("\n")
+                print('item is', item)
+                print("\n")
             row = []
             parents = item[0:-1]
             parent_len = len(parents)
@@ -771,12 +786,15 @@ class DirtyToClean():
             attr_start = 0
             for val in parents:
                 row.append(val)
-            
+            if count < 20:
+                print("\n")
+                print("row after parents", row)
+                print("\n")
             if len(attributes) > 0:
                 # print('attributes is', attributes)
                 attr0,val0 = attributes[attr_start]
                 
-                while val0 == '' and attr_start < attr_len:
+                while val0 == 'nan' and attr_start < attr_len:
                     attr_start+=1
                     attr0,val0 = attributes[attr_start]
 
@@ -789,12 +807,18 @@ class DirtyToClean():
                     
                     row.append(id_dict[attr0]['values'][val0])
                     #TODO: fix
-            
+            if count < 20:
+                print("\n")
+                print("row after attr pairs", row)
+                print("\n")
             # writer.writerow(row)
             output_rows.append(row)
             count+=1
             
-            
+            if count < 20:
+                print("\n")
+                print("output rows before children rows", output_rows)
+                print("\n")
             for i in range(attr_start+1,len(attributes)):
                 attr,val = attributes[i]
                 #skipping empty value rows
@@ -808,11 +832,17 @@ class DirtyToClean():
                 # temp
                 temprow.append(id_dict[attr]['values'][val])
                 # writer.writerow(temprow)
-                output_rows.append(row)
+                output_rows.append(temprow)
                 count+=1
+            if count < 20:
+                print("\n")
+                print("output row is", output_rows)
+                print("\n")
+        # print("outputing row is", output_rows[0:10])
         df = pd.DataFrame(output_rows, columns=outHeader)
+        print("Parsed data frame ", df.head())
         writer = BytesIO()
-        df.to_excel(writer, engine='openpyxl')
+        df.to_excel(writer, engine='openpyxl', index=False)
         writer.seek(0)
         return writer.read()
         # return df
@@ -851,6 +881,12 @@ class DirtyToClean():
         outheader.append('Attribute')
         outheader.append('Value')
         # file.close()
+        print("First ten lines of inrows ", inRows[0:10])
+        print("length of the inrows  is ", len(inRows))
         item_set = self.create_item_dict(inHeader,inRows,parents,children)
+        print("Item set is ", item_set[0:10])
         # id_dict = self.create_attr_val_dict(attr_val_file)
         return self.output_clean_data(item_set,outheader,attr_val_dict)
+
+#e6897cc4a67426d503cb5feaf6eb69e0788d0586
+#TODO: fix attribute underscores
