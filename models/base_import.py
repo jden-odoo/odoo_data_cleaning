@@ -10,6 +10,9 @@ import openpyxl
 
 #TODO: remove extra param from execute_Import and from rpc call in base_import_actions.js
 #TODO: add external dependencies in manifest
+#TODO: add support for excel upload
+#TODO: option to ignore field
+#TODO: update js state machine transition
 #Requires limit-time-real 99999 flag
 
 class BSAImport(models.TransientModel):
@@ -55,8 +58,11 @@ class BSAImport(models.TransientModel):
         uid = common.authenticate(db, user, password, {})
         models = client.ServerProxy('{}/xmlrpc/2/object'.format(url))
 
-        #TODO: handle different types of file upload
 
+        ALLOWED_FILE_TYPES = ['csv', 'xlsx', 'xls']
+        print(self.file_type)
+        # if (self.file_type not in ALLOWED_FILE_TYPES):
+        #     raise ValueError("File type not allowed. Only .csv, .xlsx and .xls files are allowed")
         
         fields, columns, parents, children = self.parse_inputs(fields, columns)
 
@@ -190,8 +196,168 @@ class BSAImport(models.TransientModel):
 
         return attr_val_dict
 
-
     def create_attribute_records(self, db, uid, password, models, attr_val_dict, model_name):
+
+            CREATE_VARIANT_DEFAULT = 'always'
+            DISPLAY_TYPE_DEFAULT = 'radio'
+            VISIBILITY_DEFAULT = 'visibile'
+            attribute_id_batch = [] #keeping the batch
+            MAX_BATCH_SIZE = 100
+            database_ids = {}
+            #TODO: implement duplicate checking
+            attribute_ordered = [] #storing the attributes for each attribute in the same order as the keys of the dictionary\
+            existent_attribute_to_overwrite = []
+            for attribute in attr_val_dict.keys():
+                check, id = self.check_attribute_existence(attr_val_dict,attribute,db,uid,password,models,database_ids)
+                if check:
+                    existent_attribute_to_overwrite.append((attribute,id))
+                    
+                    continue
+                #check attribute['attribute_external_id'], do a read, if exist, append to to_write array, continue
+                if len(attribute_id_batch) >= MAX_BATCH_SIZE:
+                    self.attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids, model_name)
+                    attribute_id_batch = []
+                    attribute_ordered = []
+
+                #list of dictionary ids
+                attribute_id_batch.append({
+                    'name': attribute,
+                    'create_variant': CREATE_VARIANT_DEFAULT,
+                    'display_type': DISPLAY_TYPE_DEFAULT,
+                })
+
+
+                attribute_ordered.append(attribute)
+            
+            if len(attribute_id_batch) > 0:
+                self.attribute_batch_calls(db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids, model_name)
+            self.overwrite_existing_records(db,uid,password,models,existent_attribute_to_overwrite,attr_val_dict,database_ids)
+            return database_ids
+
+
+    def overwrite_existing_records(self,db,uid,password,models,to_write,attr_val_dict,database_ids):
+        for (attribute,attribute_id_number) in to_write:
+            #overwrite the name of the attribute
+            models.execute_kw(db,uid,password,'product.attribute','write',[[attribute_id_number],{'name':attribute}])
+            #overwrite the values of the attribute
+            val_dict = attr_val_dict[attribute]['values']
+            for val in val_dict.keys():
+                value_external_id = val_dict[val]
+                [val_record] = models.execute_kw(db,uid,password,'ir.model.data','search_read',[[['name','=',value_external_id]]],{'fields':['res_id']})
+                
+                # print("Record read is ", val_record)
+                if len(val_record) > 0:
+                    #overwrite v
+                    value_id_number = val_record['res_id']
+                    # print('val is num is', value_id_number)
+                    # print('attr id num is', attribute_id_number)
+                    models.execute_kw(db, uid, password, 'product.attribute.value', 'write', [[value_id_number],{
+                        'name': val,
+                        'attribute_id': attribute_id_number,
+                    }])
+                    models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
+                        'value_ids': [(4, value_id_number, 0)]
+                    }])
+                else:
+                    # print("######################creating\n\n\n\n")
+                    value_id_number = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [{
+                        'name': val,
+                        'attribute_id': attribute_id_number,
+                    }])
+
+                    models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
+                        'value_ids': [(4, value_id_number, 0)]
+                    }])
+                    #:TODO: check if this external id needs to be kept in the database
+                value_external_id = val_dict[val]
+                database_ids[value_external_id] = value_id_number
+
+        print("overwriting succeed")
+        return
+
+
+    def check_attribute_existence(self,attr_val_dict,attribute,db,uid,password,models,database_ids):
+        attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
+        # print("\n\n aatr_id is ",attr_val_dict[attribute])
+        attr_record = models.execute_kw(db,uid,password,'ir.model.data','search_read',[[['name','=',attribute_external_id]]], {'fields': ['res_id']})
+
+        # print('priting record', attr_record)
+        #[record] = models.execute_kw(db,uid,password,'product.attribute','read',[attribute_external_id])
+        if len(attr_record) > 0:
+            # print(attr_record)
+            database_ids[attribute_external_id] = attr_record[0]['res_id']
+            return True,attr_record[0]['res_id']
+        else:
+            return False, None
+
+
+    def attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids,model_name):
+
+        attribute_id_numbers = models.execute_kw(db, uid, password, 'product.attribute', 'create', [attribute_id_batch])
+        value_batch = []
+        MAX_BATCH_SIZE = 100
+        val_external_id_list = []
+
+
+        attribute_model_metadata = []
+        for i in range(len(attribute_id_numbers)):
+            attribute_id_number = attribute_id_numbers[i]
+            attribute = attribute_ordered[i]
+            attribute_external_id = attr_val_dict[attribute]['attribute_external_id']
+            database_ids[attribute_external_id] = attribute_id_number
+
+            attribute_model_metadata.append({
+                'model': 'product.attribute',
+                'module': 'base',
+                'res_id': attribute_id_number,
+                'name': attribute_external_id
+            })
+
+            val_dict = attr_val_dict[attribute]['values']
+            for val in val_dict.keys():
+                if len(value_batch) >= MAX_BATCH_SIZE:
+                    self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list,model_name)
+                    value_batch = []
+                    val_external_id_list = []
+
+                value_external_id = val_dict[val]
+                val_external_id_list.append(value_external_id)
+                value_batch.append({
+                    'name': val,
+                    'attribute_id': attribute_id_number,
+                })
+
+        if len(value_batch) > 0:
+            self.val_batch_calls(db, uid, password, models, value_batch,attr_val_dict,database_ids,val_external_id_list,model_name)
+
+        models.execute_kw(db, uid, password, 'ir.model.data', 'create', [attribute_model_metadata])
+
+
+    def val_batch_calls(self, db, uid, password, models, value_id_batch,attr_val_dict,database_ids,val_extern_id_list, model_name):
+        value_id_numbers = models.execute_kw(db, uid, password, 'product.attribute.value', 'create', [value_id_batch])
+
+        value_model_metadata = []
+
+        for i in range(len(value_id_numbers)):
+            value_id_number = value_id_numbers[i]
+            attribute_id_number = value_id_batch[i]['attribute_id']
+            models.execute_kw(db, uid, password, 'product.attribute', 'write', [[attribute_id_number], {
+                    'value_ids': [(4, value_id_number, 0)]
+                }])
+            value_external_id = val_extern_id_list[i]
+            database_ids[value_external_id] = value_id_number
+
+            value_model_metadata.append({
+                'model': 'product.attribute.value',
+                'module': 'base',
+                'name': value_external_id,
+                'res_id': value_id_number
+            })
+        
+        models.execute_kw(db, uid, password, 'ir.model.data', 'create', [value_model_metadata])
+
+
+    def create_attribute_records_2(self, db, uid, password, models, attr_val_dict, model_name):
 
         """
         Reads from attribute-value excel file and creates corresponding attribute and value records in the database
@@ -293,7 +459,7 @@ class BSAImport(models.TransientModel):
         return product_field_information
 
 
-    def attribute_batch_calls(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids,model_name):
+    def attribute_batch_calls_2(self, db, uid, password, models, attribute_id_batch,attr_val_dict,attribute_ordered,database_ids,model_name):
         
         """
         makes api calls to create attributes and values in the database
@@ -349,7 +515,7 @@ class BSAImport(models.TransientModel):
         models.execute_kw(db, uid, password, 'ir.model.data', 'create', [attribute_model_metadata])
 
 
-    def val_batch_calls(self, db, uid, password, models, value_id_batch,attr_val_dict,database_ids,val_extern_id_list, model_name):
+    def val_batch_calls_2(self, db, uid, password, models, value_id_batch,attr_val_dict,database_ids,val_extern_id_list, model_name):
 
         """
         makes api calls to create values in the database
@@ -387,7 +553,7 @@ class BSAImport(models.TransientModel):
         models.execute_kw(db, uid, password, 'ir.model.data', 'create', [value_model_metadata])
 
 
-    def add_attributes_and_values(self, db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns):
+    def add_attributes_and_values_2(self, db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns):
        
         """
         This function creates new product.template records. It then adds the corresponding attribute lines to those records.
@@ -401,7 +567,7 @@ class BSAImport(models.TransientModel):
         """
         print('about to read file \n\n\n')
         output_df = pd.read_excel(BytesIO(self.clean_file), engine='openpyxl')
-        print(output_df.head())
+        # print(output_df.head())
         output_df.rename(columns = lambda x: x.strip().lower(), inplace=True)
 
         parent_model_batch = [] 
@@ -492,6 +658,155 @@ class BSAImport(models.TransientModel):
             curr_product_id = -1
 
 
+    def add_attributes_and_values_2(self, db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns):
+        output_df = pd.read_excel(BytesIO(self.clean_file), engine='openpyxl')
+        output_df.rename(columns = lambda x: x.strip().lower(), inplace=True)
+
+        parent_model_batch = [] 
+        attribute_lines_batch = []
+        product_ids = [] 
+
+        BATCH_SIZE = 1000
+        overwrite_model_batch = []
+        overwrite_attr_lines_batch = []
+        curr_product_id = -1
+
+        col_name = None
+        for i in range(len(fields)):
+            if fields[i].lower() == 'name':
+                col_name = columns[i].lower()
+                break
+
+
+        for row in range(0, len(output_df)):
+            #TODO: implement duplicate checking
+            if row % 50 == 0:
+                print(row)
+
+            if not pd.isna(output_df[col_name][row]):
+                #check if exists
+                curr_item_name = output_df[col_name][row]
+ 
+                
+                if len(parent_model_batch) > BATCH_SIZE:
+                        self.batch_create_calls(db, uid, password, models, parent_model_batch, attribute_lines_batch)
+                        parent_model_batch = []
+                        product_ids = []
+                        attribute_lines_batch = []
+                        curr_product_id = -1
+                
+
+                new_product_fields = {} 
+                new_product_attr_vals = {}
+                curr_product_id += 1
+                
+
+                for col in output_df.columns:      
+                    if col != "value" and col != "attribute":
+                        col = col.lower()
+                        field_name = product_field_information[col]['name']
+                        field_type = product_field_information[col]['type']
+                        field_val = output_df[col][row]
+                        if field_type == 'many2one':
+                            new_product_fields[field_name] = self.find_m2o_record(db, uid, password, models, product_field_information[col]['relation'], field_val)
+                        elif field_type != 'many2many' and field_type != 'one2many':
+                            new_product_fields[field_name] = self.convert_field_data_type(field_type, field_val)
+                        else:
+                            if field_name in new_product_fields:
+                                new_product_fields[field_name].append(self.link_field_to_model(db, uid, password, models, field_val, product_field_information[col]['relation']))                    
+                            else:
+                                new_product_fields[field_name] = [self.link_field_to_model(db, uid, password, models, field_val, product_field_information[col]['relation'])] 
+                exist, product_id = self.check_product_existence(models,db,uid,password,curr_item_name,overwrite_model_batch,overwrite_attr_lines_batch,new_product_fields)
+                if not exist:
+                    parent_model_batch.append(new_product_fields)
+                    
+
+            attribute_external_id = output_df['attribute'][row]
+            if not pd.isna(attribute_external_id) and curr_product_id != -1:
+                
+                attribute_id_number = database_ids[attribute_external_id]
+
+                value_external_ids_list = output_df["value"][row].split(',')
+
+                for val in range(0, len(value_external_ids_list)):
+                    value_external_ids_list[val] = (4, database_ids[value_external_ids_list[val]], 0)
+                to_append = {
+                    #'product_tmpl_id': curr_product_id,
+                    'attribute_id': attribute_id_number,
+                    'value_ids': value_external_ids_list
+                }
+                if not exist:
+                    attribute_lines_batch.append(to_append)
+                else:
+                    overwrite_attr_lines_batch.append(to_append)
+                product_ids.append(curr_product_id)
+
+            if exist:
+                new_p_fields, internal_id = overwrite_model_batch.pop()
+                models.execute_kw(db,uid,password,'product.template','write',[[internal_id],new_p_fields])
+
+                for attr_to_check in overwrite_attr_lines_batch:
+                    curr_attr_id = attr_to_check['attribute_id']
+                    attr_record = models.execute_kw(db,uid,password,'product.template.attribute.line','search_read',[[['attribute_id','=',curr_attr_id]]])
+                    if len(attr_record) > 0:
+                        print("\n\n")
+                        print("id of attribute line record is ", attr_record[0]['id'])
+                        models.execute_kw(db,uid,password,'product.template.attribute.line','write',[[attr_record[0]['id']],attr_to_check])
+                    else:
+                        models.execute_kw(db,uid,password,'product.template.attribute.line','create',[attr_to_check])
+                #write here
+                #
+
+
+        if len(parent_model_batch) > 0:
+            self.batch_create_calls(db, uid, password, models, parent_model_batch, attribute_lines_batch)
+            parent_model_batch = []
+            product_ids = []
+            attribute_lines_batch = []
+            curr_product_id = -1
+
+
+
+    def add_attributes_and_values(self, db, uid, password, models, database_ids, attr_val_dict, product_field_information, fields, columns):
+
+        clean_df = pd.read_excel(BytesIO(self.clean_file), engine='openpyxl')
+
+
+        #Find column that matches to name field
+        name_col = None
+        for f in fields:
+            if f.lower() == 'name':
+                name_col = columns.index(f)
+                break
+
+        if not name_col:
+            print('No name field found')
+            #TODO: raise error
+        
+        #Create nested dictionary. outer key is product database id, inner key is attribute name, value is list of values
+        product_attribute_dict = {}
+        placeholder_product_id = 2929292929
+
+
+        for row in range(0, len(clean_df)):
+            if not pd.isna(clean_df[name_col][row]):
+                curr_product_name = clean_df[name_col][row]
+                self.check_product_existence(models, db, uid, password, curr_product_name, overwrite_model_batch, overwrite_attr_lines_batch, new_product_fields)
+
+
+
+            
+    def check_product_existence(self,models,db,uid,password,curr_item_name,overwrite_model_batch,overwrite_attr_lines_batch, new_product_fields):
+        item_record = models.execute_kw(db,uid,password,'product.template','search_read',[[['name','=',curr_item_name]]], {'fields': ['id']})
+        if len(item_record) > 0:
+            overwrite_model_batch.append((new_product_fields,item_record[0]['id']))
+            return True, item_record[0]['id']
+        else:
+            return False, None
+
+
+    
+    
     def convert_field_data_type(self, field_type, field_val):
 
         """
@@ -536,12 +851,12 @@ class BSAImport(models.TransientModel):
         :param string comodel: Name of the comodel for the field. This the model that the funcion will search for/create.
         :rtype (int, int, int): A tuple that represents a link command. It will be of the form (4, model_id, 0). 
         """
-        print('comodel is', comodel)
+        # print('comodel is', comodel)
         existing_model_records = models.execute(db, uid, password, comodel, 'search_read')
         record_match = None
         for record in existing_model_records:
             name = record['name'][1]
-            print('\n \n \n name is ', name)
+            # print('\n \n \n name is ', name)
             if record['name'].lower() == str(field_val).lower():
                 record_match = record['id']
                 break
@@ -553,6 +868,13 @@ class BSAImport(models.TransientModel):
 
 
     def batch_create_calls(self, db, uid, password, models, parent_model_batch, attribute_lines_batch):
+        product_db_ids = models.execute_kw(db, uid, password, 'product.template', 'create', [parent_model_batch])
+        for attr_line in attribute_lines_batch:
+            attr_line['product_tmpl_id'] = product_db_ids[attr_line['product_tmpl_id']]
+        attribute_lines_ids = models.execute_kw(db, uid, password, 'product.template.attribute.line', 'create', [attribute_lines_batch])
+
+
+    def batch_create_calls_2(self, db, uid, password, models, parent_model_batch, attribute_lines_batch):
 
         """
         Helper function to make create api calls. Implements batching to improve runtime.
@@ -774,10 +1096,7 @@ class DirtyToClean():
         # output_rows.append(outHeader)
         count = 0
         for item in item_set:
-            if count < 20:
-                print("\n")
-                print('item is', item)
-                print("\n")
+
             row = []
             parents = item[0:-1]
             parent_len = len(parents)
@@ -786,10 +1105,7 @@ class DirtyToClean():
             attr_start = 0
             for val in parents:
                 row.append(val)
-            if count < 20:
-                print("\n")
-                print("row after parents", row)
-                print("\n")
+
             if len(attributes) > 0:
                 # print('attributes is', attributes)
                 attr0,val0 = attributes[attr_start]
@@ -807,18 +1123,12 @@ class DirtyToClean():
                     
                     row.append(id_dict[attr0]['values'][val0])
                     #TODO: fix
-            if count < 20:
-                print("\n")
-                print("row after attr pairs", row)
-                print("\n")
+
             # writer.writerow(row)
             output_rows.append(row)
             count+=1
             
-            if count < 20:
-                print("\n")
-                print("output rows before children rows", output_rows)
-                print("\n")
+
             for i in range(attr_start+1,len(attributes)):
                 attr,val = attributes[i]
                 #skipping empty value rows
@@ -834,13 +1144,10 @@ class DirtyToClean():
                 # writer.writerow(temprow)
                 output_rows.append(temprow)
                 count+=1
-            if count < 20:
-                print("\n")
-                print("output row is", output_rows)
-                print("\n")
+
         # print("outputing row is", output_rows[0:10])
         df = pd.DataFrame(output_rows, columns=outHeader)
-        print("Parsed data frame ", df.head())
+        # print("Parsed data frame ", df.head())
         writer = BytesIO()
         df.to_excel(writer, engine='openpyxl', index=False)
         writer.seek(0)
@@ -881,10 +1188,10 @@ class DirtyToClean():
         outheader.append('Attribute')
         outheader.append('Value')
         # file.close()
-        print("First ten lines of inrows ", inRows[0:10])
+        # print("First ten lines of inrows ", inRows[0:10])
         print("length of the inrows  is ", len(inRows))
         item_set = self.create_item_dict(inHeader,inRows,parents,children)
-        print("Item set is ", item_set[0:10])
+        # print("Item set is ", item_set[0:10])
         # id_dict = self.create_attr_val_dict(attr_val_file)
         return self.output_clean_data(item_set,outheader,attr_val_dict)
 
