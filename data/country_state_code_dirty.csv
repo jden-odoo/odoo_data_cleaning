@@ -1,0 +1,1408 @@
+State Name,State Code,Country
+Adana,01,Turkey
+Tarapacá,01,Chile
+Aveiro,01,Portugal
+Архангай,01,Mongolia
+Azuay,01,Ecuador
+Amazonas,01,Peru
+Hokkaido,01,Japan
+Bolivar,02,Ecuador
+Áncash,02,Peru
+Баян-Өлгий,02,Mongolia
+Beja,02,Portugal
+Aomori,02,Japan
+Antofagasta,02,Chile
+Adıyaman,02,Turkey
+Afyon,03,Turkey
+Баянхонгор,03,Mongolia
+Atacama,03,Chile
+Canar,03,Ecuador
+Apurímac,03,Peru
+Iwate,03,Japan
+Braga,03,Portugal
+Carchi,04,Ecuador
+Coquimbo,04,Chile
+Arequipa,04,Peru
+Miyagi,04,Japan
+Bragança,04,Portugal
+Булган,04,Mongolia
+Ağrı,04,Turkey
+Castelo Branco,05,Portugal
+Cotopaxi,05,Ecuador
+Amasya,05,Turkey
+Ayacucho,05,Peru
+Valparaíso,05,Chile
+Akita,05,Japan
+Говь-Алтай,05,Mongolia
+Coimbra,06,Portugal
+Chimborazo,06,Ecuador
+Ankara,06,Turkey
+Дорноговь,06,Mongolia
+Yamagata,06,Japan
+Cajamarca,06,Peru
+del Libertador Gral. Bernardo O'Higgins,06,Chile
+Évora,07,Portugal
+Дорнод,07,Mongolia
+del Maule,07,Chile
+Callao,07,Peru
+Fukushima,07,Japan
+El Oro,07,Ecuador
+Antalya,07,Turkey
+Ibaraki,08,Japan
+Artvin,08,Turkey
+Faro,08,Portugal
+Esmeraldas,08,Ecuador
+del BíoBio,08,Chile
+Дундговь,08,Mongolia
+Cusco,08,Peru
+Huancavelica,09,Peru
+de la Araucania,09,Chile
+Guayas,09,Ecuador
+Guarda,09,Portugal
+Aydın,09,Turkey
+Завхан,09,Mongolia
+Tochigi,09,Japan
+San José,1,Costa Rica
+Imbabura,10,Ecuador
+de los Lagos,10,Chile
+Gunma,10,Japan
+Huánuco,10,Peru
+Өвөрхангай,10,Mongolia
+Balıkesir,10,Turkey
+Leiria,10,Portugal
+Lisboa,11,Portugal
+Ica,11,Peru
+Saitama,11,Japan
+Bilecik,11,Turkey
+Aysén del Gral. Carlos Ibáñez del Campo,11,Chile
+Өмнөговь,11,Mongolia
+Loja,11,Ecuador
+Magallanes,12,Chile
+Portalegre,12,Portugal
+Junin,12,Peru
+Los Rios,12,Ecuador
+Bingöl,12,Turkey
+Сүхбаатар,12,Mongolia
+Chiba,12,Japan
+Manabi,13,Ecuador
+Porto,13,Portugal
+La Libertad,13,Peru
+Metropolitana,13,Chile
+Tokyo,13,Japan
+Bitlis,13,Turkey
+Сэлэнгэ,13,Mongolia
+Төв,14,Mongolia
+Morona Santiago,14,Ecuador
+Bolu,14,Turkey
+Lambayeque,14,Peru
+Los Ríos,14,Chile
+Santarém,14,Portugal
+Kanagawa,14,Japan
+Arica y Parinacota,15,Chile
+Lima,15,Peru
+Burdur,15,Turkey
+Увс,15,Mongolia
+Niigata,15,Japan
+Napo,15,Ecuador
+Setúbal,15,Portugal
+Bursa,16,Turkey
+Toyama,16,Japan
+Ховд,16,Mongolia
+Pastaza,16,Ecuador
+Viana do Castelo,16,Portugal
+del Ñuble,16,Chile
+Loreto,16,Peru
+Pichincha,17,Ecuador
+Ishikawa,17,Japan
+Vila Real,17,Portugal
+Хөвсгөл,17,Mongolia
+Madre de Dios,17,Peru
+Çanakkale,17,Turkey
+Viseu,18,Portugal
+Tungurahua,18,Ecuador
+Moquegua,18,Peru
+Fukui,18,Japan
+Çankırı,18,Turkey
+Хэнтий,18,Mongolia
+Pasco,19,Peru
+Дархан-Уул,19,Mongolia
+Yamanashi,19,Japan
+Zamora Chinchipe,19,Ecuador
+Çorum,19,Turkey
+Alajuela,2,Costa Rica
+Piura,20,Peru
+Орхон,20,Mongolia
+Açores,20,Portugal
+Denizli,20,Turkey
+Nagano,20,Japan
+Galapagos,20,Ecuador
+Gifu,21,Japan
+Puno,21,Peru
+Sucumbios,21,Ecuador
+Diyarbakır,21,Turkey
+Orellana,22,Ecuador
+Shizuoka,22,Japan
+Edirne,22,Turkey
+San Martín,22,Peru
+Aichi,23,Japan
+Tacna,23,Peru
+УБ - Хан Уул,23,Mongolia
+Santo Domingo de los Tsachilas,23,Ecuador
+Elazığ,23,Turkey
+Tumbes,24,Peru
+Erzincan,24,Turkey
+Mie,24,Japan
+УБ - Баянзүрх,24,Mongolia
+Santa Elena,24,Ecuador
+Erzurum,25,Turkey
+УБ - Сүхбаатар,25,Mongolia
+Ucayali,25,Peru
+Shiga,25,Japan
+УБ - Баянгол,26,Mongolia
+Eskişehir,26,Turkey
+Kyoto,26,Japan
+Gaziantep,27,Turkey
+Osaka,27,Japan
+УБ - Багануур,27,Mongolia
+УБ - Багахангай,28,Mongolia
+Hyogo,28,Japan
+Giresun,28,Turkey
+Nara,29,Japan
+Gümüşhane,29,Turkey
+УБ - Налайх,29,Mongolia
+Cartago,3,Costa Rica
+Madeira,30,Portugal
+Hakkari,30,Turkey
+Wakayama,30,Japan
+Tottori,31,Japan
+Hatay,31,Turkey
+Isparta,32,Turkey
+Говьсүмбэр,32,Mongolia
+Shimane,32,Japan
+Okayama,33,Japan
+İçel,33,Turkey
+Hiroshima,34,Japan
+İstanbul,34,Turkey
+УБ - Сонгино Хайрхан,34,Mongolia
+УБ - Чингэлтэй,35,Mongolia
+Yamaguchi,35,Japan
+İzmir,35,Turkey
+Tokushima,36,Japan
+Kars,36,Turkey
+Kastamonu,37,Turkey
+Kagawa,37,Japan
+Ehime,38,Japan
+Kayseri,38,Turkey
+Kochi,39,Japan
+Kırklareli,39,Turkey
+Heredia,4,Costa Rica
+Fukuoka,40,Japan
+Kırşehir,40,Turkey
+Kocaeli,41,Turkey
+Saga,41,Japan
+Nagasaki,42,Japan
+Konya,42,Turkey
+Kütahya,43,Turkey
+Kumamoto,43,Japan
+Malatya,44,Turkey
+Oita,44,Japan
+Miyazaki,45,Japan
+Manisa,45,Turkey
+Kagoshima,46,Japan
+K.maraş,46,Turkey
+Okinawa,47,Japan
+Mardin,47,Turkey
+Muğla,48,Turkey
+Muş,49,Turkey
+Guanacaste,5,Costa Rica
+Nevşehir,50,Turkey
+Niğde,51,Turkey
+Ordu,52,Turkey
+Rize,53,Turkey
+Sakarya,54,Turkey
+Samsun,55,Turkey
+Siirt,56,Turkey
+Sinop,57,Turkey
+Sivas,58,Turkey
+Tekirdağ,59,Turkey
+Puntarenas,6,Costa Rica
+Tokat,60,Turkey
+Trabzon,61,Turkey
+Tunceli,62,Turkey
+Şanlıurfa,63,Turkey
+Uşak,64,Turkey
+Van,65,Turkey
+Yozgat,66,Turkey
+Zonguldak,67,Turkey
+Aksaray,68,Turkey
+Bayburt,69,Turkey
+Limón,7,Costa Rica
+Karaman,70,Turkey
+Kırıkkale,71,Turkey
+Batman,72,Turkey
+Şırnak,73,Turkey
+Bartın,74,Turkey
+Ardahan,75,Turkey
+Iğdır,76,Turkey
+Yalova,77,Turkey
+Karabük,78,Turkey
+Kilis,79,Turkey
+Osmaniye,80,Turkey
+Düzce,81,Turkey
+Alacant (Alicante),A,Spain
+Salta,A,Argentina
+Aberdeenshire,A1,United Kingdom
+Angus,A5,United Kingdom
+Argyll,A7,United Kingdom
+Avon,A9,United Kingdom
+Armed Forces Americas,AA,United States
+Addis Ababa,AA,Ethiopia
+Alba,AB,Romania
+Albacete,AB,Spain
+Alberta,AB,Canada
+Aceh,AC,Indonesia
+Acre,AC,Brazil
+Australian Capital Territory,ACT,Australia
+Republic of Adygeya,AD,Russian Federation
+Armed Forces Europe,AE,United States
+Afar,AF,Ethiopia
+Agrigento,AG,Italy
+Argeș,AG,Romania
+Aguascalientes,AGU,Mexico
+Armagh,AH,Ireland
+Ajman,AJ,United Arab Emirates
+Alaska,AK,United States
+Alessandria,AL,Italy
+Alabama,AL,United States
+Altai Republic,AL,Russian Federation
+Alagoas,AL,Brazil
+Almería,AL,Spain
+Altai Krai,ALT,Russian Federation
+Alexandria,ALX,Egypt
+Amhara,AM,Ethiopia
+Antrim,AM,Ireland
+Amazonas,AM,Brazil
+Amazonas,AMA,Colombia
+Amur Oblast,AMU,Russian Federation
+Andaman and Nicobar,AN,India
+Ancona,AN,Italy
+Antioquia,ANT,Colombia
+Aosta,AO,Italy
+Amapá,AP,Brazil
+Ascoli Piceno,AP,Italy
+Armed Forces Pacific,AP,United States
+Andhra Pradesh,AP,India
+L'Aquila,AQ,Italy
+Arezzo,AR,Italy
+Arunachal Pradesh,AR,India
+Arkansas,AR,United States
+Arad,AR,Romania
+Arauca,ARA,Colombia
+Arkhangelsk Oblast,ARK,Russian Federation
+American Samoa,AS,United States
+Assam,AS,India
+Aswan,ASN,Egypt
+Astrakhan Oblast,AST,Russian Federation
+Asyut,AST,Egypt
+Asti,AT,Italy
+Atlántico,ATL,Colombia
+Auckland,AUK,New Zealand
+Avellino,AV,Italy
+Ávila,AV,Spain
+Alta Verapaz,AVE,Guatemala
+Abu Dhabi,AZ,United Arab Emirates
+Arizona,AZ,United States
+Azua,AZU,Dominican Republic
+București,B,Romania
+Buenos Aires,B,Argentina
+Barcelona,B,Spain
+Ayrshire,B1,United Kingdom
+Banffshire,B3,United Kingdom
+Bedfordshire,B5,United Kingdom
+Berkshire,B7,United Kingdom
+Berwickshire,B9,United Kingdom
+Republic of Bashkortostan,BA,Russian Federation
+Bari,BA,Italy
+Red Sea,BA,Egypt
+Badajoz,BA,Spain
+Bali,BA,Indonesia
+Bahia,BA,Brazil
+Bahoruco,BAH,Dominican Republic
+Barahona,BAR,Dominican Republic
+Bangka Belitung,BB,Indonesia
+British Columbia,BC,Canada
+Bacău,BC,Romania
+Baja California,BCN,Mexico
+Baja California Sur,BCS,Mexico
+Bengkulu,BE,Indonesia
+Belgorod Oblast,BEL,Russian Federation
+Bergamo,BG,Italy
+Bihor,BH,Romania
+Beheira,BH,Egypt
+Bizkaia (Vizcaya),BI,Spain
+Biella,BI,Italy
+Belluno,BL,Italy
+Benevento,BN,Italy
+Bistrița-Năsăud,BN,Romania
+Benishangul-Gumuz,BN,Ethiopia
+Beni Suef,BNS,Egypt
+Bologna,BO,Italy
+Bolívar,BOL,Colombia
+Bay of Plenty,BOP,New Zealand
+Boyacá,BOY,Colombia
+Bonaire,BQ1,Netherlands
+Saba,BQ2,Netherlands
+Sint Eustatius,BQ3,Netherlands
+Bihar,BR,India
+Brindisi,BR,Italy
+Brăila,BR,Romania
+Bryansk Oblast,BRY,Russian Federation
+Brescia,BS,Italy
+Botoșani,BT,Romania
+Barletta-Andria-Trani,BT,Italy
+Banten,BT,Indonesia
+Burgos,BU,Spain
+Republic of Buryatia,BU,Russian Federation
+Brașov,BV,Romania
+Baja Verapaz,BVE,Guatemala
+Bolzano,BZ,Italy
+Buzău,BZ,Romania
+Ciudad Autónoma de Buenos Aires,C,Argentina
+A Coruña (La Coruña),C,Spain
+Cork,C,Ireland
+Cairo,C,Egypt
+Buckinghamshire,C1,United Kingdom
+Caithness,C3,United Kingdom
+Cambridgeshire,C5,United Kingdom
+Channel Islands,C6,United Kingdom
+Cheshire,C7,United Kingdom
+Clackmannanshire,C9,United Kingdom
+Cagliari,CA,Italy
+California,CA,United States
+Cádiz,CA,Spain
+Caldas,CAL,Colombia
+Campeche,CAM,Mexico
+Canterbury,CAN,New Zealand
+Caquetá,CAQ,Colombia
+Casanare,CAS,Colombia
+Cauca,CAU,Colombia
+Campobasso,CB,Italy
+Cáceres,CC,Spain
+Caserta,CE,Italy
+Clare,CE,Ireland
+Ceuta,CE,Spain
+Ceará,CE,Brazil
+Chechen Republic,CE,Russian Federation
+Cesar,CES,Colombia
+Chattisgarh,CG,India
+Chieti,CH,Italy
+Chandigarh,CH,India
+Chelyabinsk Oblast,CHE,Russian Federation
+Chihuahua,CHH,Mexico
+Chocó,CHO,Colombia
+Chiapas,CHP,Mexico
+Chukotka Autonomous Okrug,CHU,Russian Federation
+Carbonia-Iglesias,CI,Italy
+Cluj,CJ,Romania
+Caltanissetta,CL,Italy
+Călărași,CL,Romania
+Chimaltenango,CMT,Guatemala
+Ciudad de México,CMX,Mexico
+Cavan,CN,Ireland
+Cuneo,CN,Italy
+Como,CO,Italy
+Colorado,CO,United States
+Córdoba,CO,Spain
+Coahuila,COA,Mexico
+Colima,COL,Mexico
+Córdoba,COR,Colombia
+Chiquimula,CQM,Guatemala
+Ciudad Real,CR,Spain
+Cremona,CR,Italy
+Caraș Severin,CS,Romania
+Cosenza,CS,Italy
+Castelló (Castellón),CS,Spain
+Connecticut,CT,United States
+Constanța,CT,Romania
+Catania,CT,Italy
+Chuvash Republic,CU,Russian Federation
+Cuenca,CU,Spain
+Cundinamarca,CUN,Colombia
+Covasna,CV,Romania
+Carlow,CW,Ireland
+Catanzaro,CZ,Italy
+Dublin,D,Ireland
+San Luis,D,Argentina
+Cleveland,D1,United Kingdom
+Clwyd,D3,United Kingdom
+County Antrim,D5,United Kingdom
+County Armagh,D7,United Kingdom
+County Down,D9,United Kingdom
+Republic of Dagestan,DA,Russian Federation
+Dajabón,DAJ,Dominican Republic
+Dâmbovița,DB,Romania
+Bogotá,DC,Colombia
+District of Columbia,DC,United States
+Daman and Diu,DD,India
+Delaware,DE,United States
+Distrito Federal,DF,Brazil
+Dolj,DJ,Romania
+Dakahlia,DK,Egypt
+Delhi,DL,India
+Donegal,DL,Ireland
+Down,DN,Ireland
+Dadra and Nagar Haveli,DN,India
+Distrito Nacional,DN,Dominican Republic
+Drenthe,DR,Netherlands
+Dire Dawa,DR,Ethiopia
+Damietta,DT,Egypt
+Dubai,DU,United Arab Emirates
+Duarte,DUA,Dominican Republic
+Durango,DUR,Mexico
+Entre Ríos,E,Argentina
+County Durham,E1,United Kingdom
+County Fermanagh,E3,United Kingdom
+County Londonderry,E5,United Kingdom
+County Tyrone,E7,United Kingdom
+Cornwall,E9,United Kingdom
+Eastern Cape,EC,South Africa
+Harjumaa,EE-37,Estonia
+Hiiumaa,EE-39,Estonia
+Ida-Virumaa,EE-44,Estonia
+Jõgevamaa,EE-49,Estonia
+Järvamaa,EE-51,Estonia
+Läänemaa,EE-57,Estonia
+Lääne-Virumaa,EE-59,Estonia
+Põlvamaa,EE-65,Estonia
+Pärnumaa,EE-67,Estonia
+Raplamaa,EE-70,Estonia
+Saaremaa,EE-74,Estonia
+Tartumaa,EE-78,Estonia
+Valgamaa,EE-82,Estonia
+Viljandimaa,EE-84,Estonia
+Võrumaa,EE-86,Estonia
+Elías Piña,ELP,Dominican Republic
+El Seibo,ELS,Dominican Republic
+Enna,EN,Italy
+El Progreso,EPR,Guatemala
+Espírito Santo,ES,Brazil
+Escuintla,ESC,Guatemala
+Espaillat,ESP,Dominican Republic
+La Rioja,F,Argentina
+Cumbria,F1,United Kingdom
+Derbyshire,F3,United Kingdom
+Devon,F5,United Kingdom
+Dorset,F7,United Kingdom
+Dumfriesshire,F9,United Kingdom
+Forlì-Cesena,FC,Italy
+Ferrara,FE,Italy
+Foggia,FG,Italy
+Fermanagh,FH,Ireland
+Firenze,FI,Italy
+Ahvenanmaa,FI-01,Finland
+Etelä-Karjala,FI-02,Finland
+Etelä-Pohjanmaa,FI-03,Finland
+Etelä-Savo,FI-04,Finland
+Kainuu,FI-05,Finland
+Kanta-Häme,FI-06,Finland
+Keski-Pohjanmaa,FI-07,Finland
+Keski-Suomi,FI-08,Finland
+Kymenlaakso,FI-09,Finland
+Lappi,FI-10,Finland
+Pirkanmaa,FI-11,Finland
+Pohjanmaa,FI-12,Finland
+Pohjois-Karjala,FI-13,Finland
+Pohjois-Pohjanmaa,FI-14,Finland
+Pohjois-Savo,FI-15,Finland
+Päijät-Häme,FI-16,Finland
+Satakunta,FI-17,Finland
+Uusimaa,FI-18,Finland
+Varsinais-Suomi,FI-19,Finland
+Flevoland,FL,Netherlands
+Florida,FL,United States
+Fermo,FM,Italy
+Federated States of Micronesia,FM,United States
+Frosinone,FR,Italy
+Friesland,FR,Netherlands
+Free State,FS,South Africa
+Fujairah,FU,United Arab Emirates
+Faiyum,FYM,Egypt
+Galway,G,Ireland
+Santiago Del Estero,G,Argentina
+Dunbartonshire,G1,United Kingdom
+Dyfed,G3,United Kingdom
+East Lothian,G5,United Kingdom
+East Sussex,G7,United Kingdom
+Essex,G9,United Kingdom
+Goa,GA,India
+Georgia,GA,United States
+Las Palmas,GC,Spain
+Genova,GE,Italy
+Gelderland,GE,Netherlands
+Gharbia,GH,Egypt
+Girona (Gerona),GI,Spain
+Gisborne,GIS,New Zealand
+Gujarat,GJ,India
+Gorj,GJ,Romania
+Galați,GL,Romania
+Gambella Peoples,GM,Ethiopia
+Gorontalo,GO,Indonesia
+Gorizia,GO,Italy
+Goiás,GO,Brazil
+Granada,GR,Spain
+Grosseto,GR,Italy
+Groningen,GR,Netherlands
+Giurgiu,GR,Romania
+Guerrero,GRO,Mexico
+Gauteng,GT,South Africa
+Guadalajara,GU,Spain
+Guam,GU,United States
+Guainía,GUA,Colombia
+Guanajuato,GUA,Mexico
+Guatemala,GUA,Guatemala
+Guaviare,GUV,Colombia
+Giza,GZ,Egypt
+Huelva,H,Spain
+Chaco,H,Argentina
+Fife,H1,United Kingdom
+Gloucestershire,H3,United Kingdom
+Gwent,H7,United Kingdom
+Gwynedd,H9,United Kingdom
+Hato Mayor,HAM,Dominican Republic
+Hunedoara,HD,Romania
+Hermanas Mirabal,HEM,Dominican Republic
+Hawaii,HI,United States
+Hidalgo,HID,Mexico
+Hawke's Bay,HKB,New Zealand
+Himachal Pradesh,HP,India
+Harrari Peoples,HR,Ethiopia
+Harghita,HR,Romania
+Haryana,HR,India
+Helwan,HU,Egypt
+Huesca,HU,Spain
+Huehuetenango,HUE,Guatemala
+Huila,HUI,Colombia
+Hampshire,I1,United Kingdom
+Herefordshire,I3,United Kingdom
+Hertfordshire,I5,United Kingdom
+Inverness-Shire,I7,United Kingdom
+Isle of Arran,I9,United Kingdom
+Iowa,IA,United States
+Idaho,ID,United States
+Ilfov,IF,Romania
+Ialomița,IL,Romania
+Illinois,IL,United States
+Imperia,IM,Italy
+Indiana,IN,United States
+Republic of Ingushetia,IN,Russian Federation
+Independencia,IND,Dominican Republic
+Irkutsk Oblast,IRK,Russian Federation
+Ismailia,IS,Egypt
+Iași,IS,Romania
+Isernia,IS,Italy
+Ivanovo Oblast,IVA,Russian Federation
+Izabal,IZA,Guatemala
+Jaén,J,Spain
+San Juan,J,Argentina
+Isle of Barra,J1,United Kingdom
+Isle of Benbecula,J3,United Kingdom
+Isle of Bute,J5,United Kingdom
+Isle of Canna,J7,United Kingdom
+Isle of Coll,J9,United Kingdom
+Jambi,JA,Indonesia
+Jalapa,JAL,Guatemala
+Jalisco,JAL,Mexico
+Jawa Barat,JB,Indonesia
+Jharkhand,JH,India
+Johor,JHR,Malaysia
+Jawa Timur,JI,Indonesia
+Jakarta,JK,Indonesia
+Jammu and Kashmir,JK,India
+South Sinai,JS,Egypt
+Jawa Tengah,JT,Indonesia
+Jutiapa,JUT,Guatemala
+Catamarca,K,Argentina
+Isle of Colonsay,K1,United Kingdom
+Isle of Cumbrae,K3,United Kingdom
+Isle of Eigg,K5,United Kingdom
+Isle of Gigha,K7,United Kingdom
+Isle of Harris,K9,United Kingdom
+Karnataka,KA,India
+Kamchatka Krai,KAM,Russian Federation
+Kabardino-Balkarian Republic,KB,Russian Federation
+Qalyubia,KB,Egypt
+Kalimantan Barat,KB,Indonesia
+Karachay–Cherkess Republic,KC,Russian Federation
+Krasnodar Krai,KDA,Russian Federation
+Kedah,KDH,Malaysia
+Kildare,KE,Ireland
+Kemerovo Oblast,KEM,Russian Federation
+Kafr el-Sheikh,KFS,Egypt
+Kaliningrad Oblast,KGD,Russian Federation
+Kurgan Oblast,KGN,Russian Federation
+Khabarovsk Krai,KHA,Russian Federation
+Khanty-Mansi Autonomous Okrug,KHM,Russian Federation
+Kalimantan Timur,KI,Indonesia
+Kirov Oblast,KIR,Russian Federation
+Republic of Khakassia,KK,Russian Federation
+Kilkenny,KK,Ireland
+Kerala,KL,India
+Republic of Kalmykia,KL,Russian Federation
+Kaluga Oblast,KLU,Russian Federation
+Qena,KN,Egypt
+Komi Republic,KO,Russian Federation
+Kostroma Oblast,KOS,Russian Federation
+Crotone,KR,Italy
+Republic of Karelia,KR,Russian Federation
+Kepulauan Riau,KR,Indonesia
+Kursk Oblast,KRS,Russian Federation
+Kalimantan Selatan,KS,Indonesia
+Kansas,KS,United States
+Kalimantan Tengah,KT,Indonesia
+Kelantan,KTN,Malaysia
+Kalimantan Utara,KU,Indonesia
+Kuala Lumpur,KUL,Malaysia
+Kerry,KY,Ireland
+Kentucky,KY,United States
+Krasnoyarsk Krai,KYA,Russian Federation
+Lleida (Lérida),L,Spain
+La Pampa,L,Argentina
+Isle of Iona,L1,United Kingdom
+Isle of Islay,L2,United Kingdom
+Isle of Jura,L5,United Kingdom
+Isle of Lewis,L7,United Kingdom
+Isle of Man,L9,United Kingdom
+Louisiana,LA,United States
+Lampung,LA,Indonesia
+La Altagracia,LA,Dominican Republic
+La Guajira,LAG,Colombia
+Labuan,LBN,Malaysia
+Lecco,LC,Italy
+Longford,LD,Ireland
+Lakshadweep,LD,India
+Lecce,LE,Italy
+León,LE,Spain
+Leningrad Oblast,LEN,Russian Federation
+Louth,LH,Ireland
+Limburg,LI,Netherlands
+Livorno,LI,Italy
+Lipetsk Oblast,LIP,Russian Federation
+Limerick,LK,Ireland
+Leitrim,LM,Ireland
+La Rioja,LO,Spain
+Lodi,LO,Italy
+Limpopo,LP,South Africa
+La Romana,LR,Dominican Republic
+Laois,LS,Ireland
+Latina,LT,Italy
+Alytaus apskritis,LT-AL,Lithuania
+Klaipėdos apskritis,LT-KL,Lithuania
+Kauno apskritis,LT-KU,Lithuania
+Marijampolės apskritis,LT-MR,Lithuania
+Panevėžio apskritis,LT-PN,Lithuania
+Šiaulių apskritis,LT-SA,Lithuania
+Tauragės apskritis,LT-TA,Lithuania
+Telšių apskritis,LT-TE,Lithuania
+Utenos apskritis,LT-UT,Lithuania
+Vilniaus apskritis,LT-VL,Lithuania
+Lugo,LU,Spain
+Lucca,LU,Italy
+La Vega,LV,Dominican Republic
+Aglonas novads,LV-001,Latvia
+Aizkraukles novads,LV-002,Latvia
+Aizputes novads,LV-003,Latvia
+Aknīstes novads,LV-004,Latvia
+Alojas novads,LV-005,Latvia
+Alsungas novads,LV-006,Latvia
+Alūksnes novads,LV-007,Latvia
+Amatas novads,LV-008,Latvia
+Apes novads,LV-009,Latvia
+Auces novads,LV-010,Latvia
+Ādažu novads,LV-011,Latvia
+Babītes novads,LV-012,Latvia
+Baldones novads,LV-013,Latvia
+Baltinavas novads,LV-014,Latvia
+Balvu novads,LV-015,Latvia
+Bauskas novads,LV-016,Latvia
+Beverīnas novads,LV-017,Latvia
+Brocēnu novads,LV-018,Latvia
+Burtnieku novads,LV-019,Latvia
+Carnikavas novads,LV-020,Latvia
+Cesvaines novads,LV-021,Latvia
+Cēsu novads,LV-022,Latvia
+Ciblas novads,LV-023,Latvia
+Dagdas novads,LV-024,Latvia
+Daugavpils novads,LV-025,Latvia
+Dobeles novads,LV-026,Latvia
+Dundagas novads,LV-027,Latvia
+Durbes novads,LV-028,Latvia
+Engures novads,LV-029,Latvia
+Ērgļu novads,LV-030,Latvia
+Garkalnes novads,LV-031,Latvia
+Grobiņas novads,LV-032,Latvia
+Gulbenes novads,LV-033,Latvia
+Iecavas novads,LV-034,Latvia
+Ikšķiles novads,LV-035,Latvia
+Ilūkstes novads,LV-036,Latvia
+Inčukalna novads,LV-037,Latvia
+Jaunjelgavas novads,LV-038,Latvia
+Jaunpiebalgas novads,LV-039,Latvia
+Jaunpils novads,LV-040,Latvia
+Jelgavas novads,LV-041,Latvia
+Jēkabpils novads,LV-042,Latvia
+Kandavas novads,LV-043,Latvia
+Kārsavas novads,LV-044,Latvia
+Kocēnu novads,LV-045,Latvia
+Kokneses novads,LV-046,Latvia
+Krāslavas novads,LV-047,Latvia
+Krimuldas novads,LV-048,Latvia
+Krustpils novads,LV-049,Latvia
+Kuldīgas novads,LV-050,Latvia
+Ķeguma novads,LV-051,Latvia
+Ķekavas novads,LV-052,Latvia
+Lielvārdes novads,LV-053,Latvia
+Limbažu novads,LV-054,Latvia
+Līgatnes novads,LV-055,Latvia
+Līvānu novads,LV-056,Latvia
+Lubānas novads,LV-057,Latvia
+Ludzas novads,LV-058,Latvia
+Madonas novads,LV-059,Latvia
+Mazsalacas novads,LV-060,Latvia
+Mālpils novads,LV-061,Latvia
+Mārupes novads,LV-062,Latvia
+Mērsraga novads,LV-063,Latvia
+Naukšēnu novads,LV-064,Latvia
+Neretas novads,LV-065,Latvia
+Nīcas novads,LV-066,Latvia
+Ogres novads,LV-067,Latvia
+Olaines novads,LV-068,Latvia
+Ozolnieku novads,LV-069,Latvia
+Pārgaujas novads,LV-070,Latvia
+Pāvilostas novads,LV-071,Latvia
+Pļaviņu novads,LV-072,Latvia
+Preiļu novads,LV-073,Latvia
+Priekules novads,LV-074,Latvia
+Priekuļu novads,LV-075,Latvia
+Raunas novads,LV-076,Latvia
+Rēzeknes novads,LV-077,Latvia
+Riebiņu novads,LV-078,Latvia
+Rojas novads,LV-079,Latvia
+Ropažu novads,LV-080,Latvia
+Rucavas novads,LV-081,Latvia
+Rugāju novads,LV-082,Latvia
+Rundāles novads,LV-083,Latvia
+Rūjienas novads,LV-084,Latvia
+Salas novads,LV-085,Latvia
+Salacgrīvas novads,LV-086,Latvia
+Salaspils novads,LV-087,Latvia
+Saldus novads,LV-088,Latvia
+Saulkrastu novads,LV-089,Latvia
+Sējas novads,LV-090,Latvia
+Siguldas novads,LV-091,Latvia
+Skrīveru novads,LV-092,Latvia
+Skrundas novads,LV-093,Latvia
+Smiltenes novads,LV-094,Latvia
+Stopiņu novads,LV-095,Latvia
+Strenču novads,LV-096,Latvia
+Talsu novads,LV-097,Latvia
+Tērvetes novads,LV-098,Latvia
+Tukuma novads,LV-099,Latvia
+Vaiņodes novads,LV-100,Latvia
+Valkas novads,LV-101,Latvia
+Varakļānu novads,LV-102,Latvia
+Vārkavas novads,LV-103,Latvia
+Vecpiebalgas novads,LV-104,Latvia
+Vecumnieku novads,LV-105,Latvia
+Ventspils novads,LV-106,Latvia
+Viesītes novads,LV-107,Latvia
+Viļakas novads,LV-108,Latvia
+Viļānu novads,LV-109,Latvia
+Zilupes novads,LV-110,Latvia
+Daugavpils,LV-DGV,Latvia
+Jelgava,LV-JEL,Latvia
+Jēkabpils,LV-JKB,Latvia
+Jūrmala,LV-JUR,Latvia
+Liepāja,LV-LPX,Latvia
+Rēzekne,LV-REZ,Latvia
+Rīga,LV-RIX,Latvia
+Ventspils,LV-VEN,Latvia
+Valmiera,LV-VMR,Latvia
+Luxor,LX,Egypt
+Londonderry,LY,Ireland
+Madrid,M,Spain
+Mendoza,M,Argentina
+Isle of Mull,M1,United Kingdom
+Isle of North Uist,M3,United Kingdom
+Orkney,M5,United Kingdom
+Isle of Rhum,M7,United Kingdom
+Isle of Scalpay,M9,United Kingdom
+Maranhão,MA,Brazil
+Málaga,MA,Spain
+Massachusetts,MA,United States
+Maluku,MA,Indonesia
+Magadan Oblast,MAG,Russian Federation
+Magdalena,MAG,Colombia
+Monza e Brianza,MB,Italy
+Manitoba,MB,Canada
+Marlborough,MBH,New Zealand
+Monte Cristi,MC,Dominican Republic
+Macerata,MC,Italy
+Maryland,MD,United States
+Melilla,ME,Spain
+Maine,ME,United States
+Messina,ME,Italy
+Mari El Republic,ME,Russian Federation
+Meta,MET,Colombia
+México,MEX,Mexico
+Minas Gerais,MG,Brazil
+Maharashtra,MH,India
+Marshall Islands,MH,United States
+Mehedinți,MH,Romania
+Meath,MH,Ireland
+Milano,MI,Italy
+Michigan,MI,United States
+Michoacán,MIC,Mexico
+Meghalaya,ML,India
+Melaka,MLK,Malaysia
+Maramureș,MM,Romania
+Monaghan,MN,Ireland
+Manipur,MN,India
+Minnesota,MN,United States
+Minya,MN,Egypt
+Mantova,MN,Italy
+Monufia,MNF,Egypt
+Republic of Mordovia,MO,Russian Federation
+Mayo,MO,Ireland
+Missouri,MO,United States
+Modena,MO,Italy
+Monseñor Nouel,MON,Dominican Republic
+Morelos,MOR,Mexico
+Moscow Oblast,MOS,Russian Federation
+Moscow,MOW,Russian Federation
+Mpumalanga,MP,South Africa
+Madhya Pradesh,MP,India
+Monte Plata,MP,Dominican Republic
+Northern Mariana Islands,MP,United States
+Massa-Carrara,MS,Italy
+Mato Grosso do Sul,MS,Brazil
+Mississippi,MS,United States
+Mureș,MS,Romania
+Mato Grosso,MT,Brazil
+Montana,MT,United States
+Matera,MT,Italy
+Matrouh,MT,Egypt
+María Trinidad Sánchez,MTS,Dominican Republic
+Murcia,MU,Spain
+Maluku Utara,MU,Indonesia
+Murmansk Oblast,MUR,Russian Federation
+Manawatu-Wanganui,MWT,New Zealand
+Mizoram,MZ,India
+Misiones,N,Argentina
+Shetland Islands,N1,United Kingdom
+Isle of Skye,N3,United Kingdom
+Isle of South Uist,N5,United Kingdom
+Isle of Tiree,N7,United Kingdom
+Isle of Wight,N9,United Kingdom
+Napoli,NA,Italy
+Navarra (Nafarroa),NA,Spain
+Nariño,NAR,Colombia
+Nayarit,NAY,Mexico
+Nusa Tenggara Barat,NB,Indonesia
+New Brunswick,NB,Canada
+Noord-Brabant,NB,Netherlands
+Northern Cape,NC,South Africa
+North Carolina,NC,United States
+North Dakota,ND,United States
+Nebraska,NE,United States
+Novgorod Oblast,NGR,Russian Federation
+Noord-Holland,NH,Netherlands
+New Hampshire,NH,United States
+Nizhny Novgorod Oblast,NIZ,Russian Federation
+New Jersey,NJ,United States
+Newfoundland and Labrador,NL,Canada
+KwaZulu-Natal,NL,South Africa
+Nagaland,NL,India
+Nuevo León,NLE,Mexico
+New Mexico,NM,United States
+Novara,NO,Italy
+Oslo,NO-03,Norway
+Rogaland,NO-11,Norway
+Møre og Romsdal,NO-15,Norway
+Nordland,NO-18,Norway
+Svalbard,NO-21,Norway
+Jan Mayen,NO-22,Norway
+Viken,NO-30,Norway
+Innlandet,NO-34,Norway
+Vestfold og Telemark,NO-38,Norway
+Agder,NO-42,Norway
+Vestland,NO-46,Norway
+Trøndelag,NO-50,Norway
+Troms og Finnmark / Romsa ja Finnmárku,NO-54,Norway
+Nova Scotia,NS,Canada
+Norte de Santander,NSA,Colombia
+Negeri Sembilan,NSN,Malaysia
+Nelson,NSN,New Zealand
+New South Wales,NSW,Australia
+Neamț,NT,Romania
+Nusa Tenggara Timur,NT,Indonesia
+Northwest Territories,NT,Canada
+Northern Territory,NT,Australia
+Northland,NTL,New Zealand
+Nuoro,NU,Italy
+Nunavut,NU,Canada
+Nevada,NV,United States
+Novosibirsk Oblast,NVS,Russian Federation
+North West,NW,South Africa
+New York,NY,United States
+Asturias,O,Spain
+Isles of Scilly,O1,United Kingdom
+Kent,O5,United Kingdom
+Kincardineshire,O7,United Kingdom
+Kinross-Shire,O9,United Kingdom
+Oaxaca,OAX,Mexico
+Ogliastra,OG,Italy
+Ohio,OH,United States
+Oklahoma,OK,United States
+Omsk Oblast,OMS,Russian Federation
+Ontario,ON,Canada
+Oromia,OR,Ethiopia
+Orissa,OR,India
+Oristano,OR,Italy
+Ourense (Orense),OR,Spain
+Oregon,OR,United States
+Orenburg Oblast,ORE,Russian Federation
+Oryol Oblast,ORL,Russian Federation
+Olbia-Tempio,OT,Italy
+Olt,OT,Romania
+Otago,OTA,New Zealand
+Overijssel,OV,Netherlands
+Offaly,OY,Ireland
+Formosa,P,Argentina
+Palencia,P,Spain
+Kirkcudbrightshire,P1,United Kingdom
+Lanarkshire,P3,United Kingdom
+Lancashire,P5,United Kingdom
+Leicestershire,P7,United Kingdom
+Lincolnshire,P9,United Kingdom
+Pennsylvania,PA,United States
+Pará,PA,Brazil
+Papua,PA,Indonesia
+Palermo,PA,Italy
+Papua Barat,PB,Indonesia
+Paraíba,PB,Brazil
+Punjab,PB,India
+Piacenza,PC,Italy
+Padova,PD,Italy
+Pernambuco,PE,Brazil
+Pescara,PE,Italy
+Prince Edward Island,PE,Canada
+Pedernales,PED,Dominican Republic
+Peravia,PER,Dominican Republic
+Perm Krai,PER,Russian Federation
+Petén,PET,Guatemala
+Perugia,PG,Italy
+Prahova,PH,Romania
+Pahang,PHG,Malaysia
+Piauí,PI,Brazil
+Pisa,PI,Italy
+Putrajaya,PJY,Malaysia
+Perlis,PLS,Malaysia
+Illes Balears (Islas Baleares),PM,Spain
+Pordenone,PN,Italy
+Pulau Pinang,PNG,Malaysia
+Penza Oblast,PNZ,Russian Federation
+Pontevedra,PO,Spain
+Prato,PO,Italy
+Puerto Plata,PP,Dominican Republic
+Parma,PR,Italy
+Paraná,PR,Brazil
+Puerto Rico,PR,United States
+Primorsky Krai,PRI,Russian Federation
+Perak,PRK,Malaysia
+Pskov Oblast,PSK,Russian Federation
+Pistoia,PT,Italy
+Port Said,PTS,Egypt
+Pesaro e Urbino,PU,Italy
+Puebla,PUE,Mexico
+Putumayo,PUT,Colombia
+Pavia,PV,Italy
+Palau,PW,United States
+Puducherry,PY,India
+Potenza,PZ,Italy
+Neuquén,Q,Argentina
+London,Q1,United Kingdom
+Merseyside,Q3,United Kingdom
+Mid Glamorgan,Q5,United Kingdom
+Midlothian,Q7,United Kingdom
+Middlesex,Q9,United Kingdom
+Quebec,QC,Canada
+Queensland,QLD,Australia
+Quetzaltenango,QUE,Guatemala
+Querétaro,QUE,Mexico
+Quindío,QUI,Colombia
+Quiché,QUI,Guatemala
+Río Negro,R,Argentina
+Morayshire,R1,United Kingdom
+Nairnshire,R3,United Kingdom
+Norfolk,R5,United Kingdom
+North Humberside,R7,United Kingdom
+North Yorkshire,R9,United Kingdom
+Ravenna,RA,Italy
+Reggio Calabria,RC,Italy
+Reggio Emilia,RE,Italy
+Retalhuleu,RET,Guatemala
+Ragusa,RG,Italy
+Rhode Island,RI,United States
+Rieti,RI,Italy
+Riau,RI,Indonesia
+Risaralda,RIS,Colombia
+Rio de Janeiro,RJ,Brazil
+Rajasthan,RJ,India
+Ras al-Khaimah,RK,United Arab Emirates
+Roma,RM,Italy
+Rimini,RN,Italy
+Roscommon,RN,Ireland
+Rio Grande do Norte,RN,Brazil
+Rondônia,RO,Brazil
+Rovigo,RO,Italy
+Quintana Roo,ROO,Mexico
+Rostov Oblast,ROS,Russian Federation
+Roraima,RR,Brazil
+Rio Grande do Sul,RS,Brazil
+Ryazan Oblast,RYA,Russian Federation
+Santa Fe,S,Argentina
+Cantabria,S,Spain
+Northamptonshire,S1,United Kingdom
+Northumberland,S3,United Kingdom
+Nottinghamshire,S5,United Kingdom
+Oxfordshire,S7,United Kingdom
+Peeblesshire,S9,United Kingdom
+Salamanca,SA,Spain
+South Australia,SA,Australia
+Salerno,SA,Italy
+Sakha Republic (Yakutia),SA,Russian Federation
+Sulawesi Utara,SA,Indonesia
+Sacatepéquez,SAC,Guatemala
+Sakhalin Oblast,SAK,Russian Federation
+Samaná,SAM,Dominican Republic
+Samara Oblast,SAM,Russian Federation
+Santander,SAN,Colombia
+San Andrés y Providencia,SAP,Colombia
+Saratov Oblast,SAR,Russian Federation
+Sumatra Barat,SB,Indonesia
+Sibiu,SB,Romania
+Sabah,SBH,Malaysia
+South Carolina,SC,United States
+San Cristóbal,SC,Dominican Republic
+Santa Catarina,SC,Brazil
+South Dakota,SD,United States
+Santo Domingo,SD,Dominican Republic
+Sevilla,SE,Spain
+Sergipe,SE,Brazil
+Republic of North Ossetia–Alania,SE,Russian Federation
+Stockholms län,SE-AB,Sweden
+Västerbottens län,SE-AC,Sweden
+Norrbottens län,SE-BD,Sweden
+Uppsala län,SE-C,Sweden
+Södermanlands län,SE-D,Sweden
+Östergötlands län,SE-E,Sweden
+Jönköpings län,SE-F,Sweden
+Kronobergs län,SE-G,Sweden
+Kalmar län,SE-H,Sweden
+Gotlands län,SE-I,Sweden
+Blekinge län,SE-K,Sweden
+Skåne län,SE-M,Sweden
+Hallands län,SE-N,Sweden
+Västra Götalands län,SE-O,Sweden
+Värmlands län,SE-S,Sweden
+Örebro län,SE-T,Sweden
+Västmanlands län,SE-U,Sweden
+Dalarnas län,SE-W,Sweden
+Gävleborgs län,SE-X,Sweden
+Västernorrlands län,SE-Y,Sweden
+Jämtlands län,SE-Z,Sweden
+Segovia,SG,Spain
+Sulawesi Tenggara,SG,Indonesia
+Selangor,SGR,Malaysia
+Sharjah,SH,United Arab Emirates
+Sohag,SHG,Egypt
+Al Sharqia,SHR,Egypt
+Siena,SI,Italy
+North Sinai,SIN,Egypt
+Sinaloa,SIN,Mexico
+San Juan,SJ,Dominican Republic
+Sălaj,SJ,Romania
+San José de Ocoa,SJO,Dominican Republic
+Saskatchewan,SK,Canada
+Sikkim,SK,India
+San Luis Potosí,SLP,Mexico
+Satu Mare,SM,Romania
+Somalia,SM,Ethiopia
+San Marcos,SMA,Guatemala
+Smolensk Oblast,SMO,Russian Federation
+Sulawesi Selatan,SN,Indonesia
+Sligo,SO,Ireland
+Sondrio,SO,Italy
+Soria,SO,Spain
+Sololá,SOL,Guatemala
+Sonora,SON,Mexico
+São Paulo,SP,Brazil
+"Southern Peoples, Nations, and Nationalities",SP,Ethiopia
+La Spezia,SP,Italy
+Saint Petersburg,SPE,Russian Federation
+San Pedro de Macorís,SPM,Dominican Republic
+Sulawesi Barat,SR,Indonesia
+Siracusa,SR,Italy
+Sánchez Ramírez,SRA,Dominican Republic
+Santiago Rodríguez,SRO,Dominican Republic
+Santa Rosa,SRO,Guatemala
+Sassari,SS,Italy
+Gipuzkoa (Guipúzcoa),SS,Spain
+Sumatra Selatan,SS,Indonesia
+Sulawesi Tengah,ST,Indonesia
+Stavropol Krai,STA,Russian Federation
+Santiago,STGO,Dominican Republic
+Southland,STL,New Zealand
+Sud Sardegna,SU,Italy
+Sumatra Utara,SU,Indonesia
+6th of October,SU,Egypt
+Sucre,SUC,Colombia
+Suchitepéquez,SUC,Guatemala
+Suez,SUZ,Egypt
+Savona,SV,Italy
+Suceava,SV,Romania
+Sverdlovsk Oblast,SVE,Russian Federation
+Sarawak,SWK,Malaysia
+Tarragona,T,Spain
+Tucumán,T,Argentina
+Perthshire,T1,United Kingdom
+Powys,T3,United Kingdom
+Renfrewshire,T5,United Kingdom
+Ross-Shire,T7,United Kingdom
+Roxburghshire,T9,United Kingdom
+Taranto,TA,Italy
+Republic of Tatarstan,TA,Russian Federation
+Tabasco,TAB,Mexico
+Tambov Oblast,TAM,Russian Federation
+Tamaulipas,TAM,Mexico
+Tasmania,TAS,Australia
+Tasman,TAS,New Zealand
+Tyrone,TE,Ireland
+Teruel,TE,Spain
+Teramo,TE,Italy
+Santa Cruz de Tenerife,TF,Spain
+Tigray,TG,Ethiopia
+Taranaki,TKI,New Zealand
+Tulcea,TL,Romania
+Tlaxcala,TLA,Mexico
+Timiș,TM,Romania
+Tamil Nadu,TN,India
+Trento,TN,Italy
+Tennessee,TN,United States
+Toledo,TO,Spain
+Tocantins,TO,Brazil
+Torino,TO,Italy
+Tolima,TOL,Colombia
+Tomsk Oblast,TOM,Russian Federation
+Totonicapán,TOT,Guatemala
+Trapani,TP,Italy
+Tripura,TR,India
+Tipperary,TR,Ireland
+Teleorman,TR,Romania
+Terni,TR,Italy
+Terengganu,TRG,Malaysia
+Trieste,TS,Italy
+Telangana,TS,India
+Tula Oblast,TUL,Russian Federation
+Treviso,TV,Italy
+Tver Oblast,TVE,Russian Federation
+Texas,TX,United States
+Tyva Republic,TY,Russian Federation
+Tyumen Oblast,TYU,Russian Federation
+Chubut,U,Argentina
+Selkirkshire,U3,United Kingdom
+Shropshire,U5,United Kingdom
+Somerset,U7,United Kingdom
+South Glamorgan,U9,United Kingdom
+Udine,UD,Italy
+Udmurtia,UD,Russian Federation
+Uttarakhand,UK,India
+Ulyanovsk Oblast,ULY,Russian Federation
+Uttar Pradesh,UP,India
+Umm al-Quwain,UQ,United Arab Emirates
+Utah,UT,United States
+Utrecht,UT,Netherlands
+València (Valencia),V,Spain
+Tierra del Fuego,V,Argentina
+South Humberside,V1,United Kingdom
+South Yorkshire,V3,United Kingdom
+Staffordshire,V5,United Kingdom
+Stirlingshire,V7,United Kingdom
+Suffolk,V9,United Kingdom
+Varese,VA,Italy
+Valladolid,VA,Spain
+Virginia,VA,United States
+Valle del Cauca,VAC,Colombia
+Valverde,VAL,Dominican Republic
+Vaupés,VAU,Colombia
+Verbano-Cusio-Ossola,VB,Italy
+Vercelli,VC,Italy
+Venezia,VE,Italy
+Veracruz,VER,Mexico
+Volgograd Oblast,VGG,Russian Federation
+Araba/Álava,VI,Spain
+Virgin Islands,VI,United States
+Vicenza,VI,Italy
+Victoria,VIC,Australia
+Vichada,VID,Colombia
+Vâlcea,VL,Romania
+Vladimir Oblast,VLA,Russian Federation
+Vologda Oblast,VLG,Russian Federation
+Vrancea,VN,Romania
+Lai Châu,VN-01,Vietnam
+Lào Cai,VN-02,Vietnam
+Hà Giang,VN-03,Vietnam
+Cao Bằng,VN-04,Vietnam
+Sơn La,VN-05,Vietnam
+Yên Bái,VN-06,Vietnam
+Tuyên Quang,VN-07,Vietnam
+Lạng Sơn,VN-09,Vietnam
+Quảng Ninh,VN-13,Vietnam
+Hòa Bình,VN-14,Vietnam
+Ninh Bình,VN-18,Vietnam
+Thái Bình,VN-20,Vietnam
+Thanh Hóa,VN-21,Vietnam
+Nghệ An,VN-22,Vietnam
+Hà Tĩnh,VN-23,Vietnam
+Quảng Bình,VN-24,Vietnam
+Quảng Trị,VN-25,Vietnam
+Thừa Thiên - Huế,VN-26,Vietnam
+Quảng Nam,VN-27,Vietnam
+Kon Tum,VN-28,Vietnam
+Quảng Ngãi,VN-29,Vietnam
+Gia Lai,VN-30,Vietnam
+Bình Định,VN-31,Vietnam
+Phú Yên,VN-32,Vietnam
+Đắk Lắk,VN-33,Vietnam
+Khánh Hòa,VN-34,Vietnam
+Lâm Đồng,VN-35,Vietnam
+Ninh Thuận,VN-36,Vietnam
+Tây Ninh,VN-37,Vietnam
+Đồng Nai,VN-39,Vietnam
+Bình Thuận,VN-40,Vietnam
+Long An,VN-41,Vietnam
+Bà Rịa - Vũng Tàu,VN-43,Vietnam
+An Giang,VN-44,Vietnam
+Đồng Tháp,VN-45,Vietnam
+Tiền Giang,VN-46,Vietnam
+Kiên Giang,VN-47,Vietnam
+Vĩnh Long,VN-49,Vietnam
+Bến Tre,VN-50,Vietnam
+Trà Vinh,VN-51,Vietnam
+Sóc Trăng,VN-52,Vietnam
+Bắc Kạn,VN-53,Vietnam
+Bắc Giang,VN-54,Vietnam
+Bạc Liêu,VN-55,Vietnam
+Bắc Ninh,VN-56,Vietnam
+Bình Dương,VN-57,Vietnam
+Bình Phước,VN-58,Vietnam
+Cà Mau,VN-59,Vietnam
+Hải Dương,VN-61,Vietnam
+Hà Nam,VN-63,Vietnam
+Hưng Yên,VN-66,Vietnam
+Nam Định,VN-67,Vietnam
+Phú Thọ,VN-68,Vietnam
+Thái Nguyên,VN-69,Vietnam
+Vĩnh Phúc,VN-70,Vietnam
+Điện Biên,VN-71,Vietnam
+Đắk Nông,VN-72,Vietnam
+Hậu Giang,VN-73,Vietnam
+TP Cần Thơ,VN-CT,Vietnam
+TP Đà Nẵng,VN-DN,Vietnam
+Hà Nội,VN-HN,Vietnam
+TP Hải Phòng,VN-HP,Vietnam
+TP Hồ Chí Minh,VN-SG,Vietnam
+Voronezh Oblast,VOR,Russian Federation
+Verona,VR,Italy
+Medio Campidano,VS,Italy
+Vaslui,VS,Romania
+Viterbo,VT,Italy
+Vermont,VT,United States
+Vibo Valentia,VV,Italy
+Corrientes,W,Argentina
+Surrey,W1,United Kingdom
+Sutherland,W3,United Kingdom
+Tyne and Wear,W5,United Kingdom
+Warwickshire,W7,United Kingdom
+West Glamorgan,W9,United Kingdom
+Western Australia,WA,Australia
+Washington,WA,United States
+New Valley,WAD,Egypt
+West Bengal,WB,India
+Western Cape,WC,South Africa
+Waterford,WD,Ireland
+Wellington,WGN,New Zealand
+Westmeath,WH,Ireland
+Wisconsin,WI,United States
+Waikato,WKO,New Zealand
+West Coast,WTC,New Zealand
+West Virginia,WV,United States
+Wicklow,WW,Ireland
+Wexford,WX,Ireland
+Wyoming,WY,United States
+Córdoba,X,Argentina
+West Lothian,X1,United Kingdom
+West Midlands,X3,United Kingdom
+West Sussex,X5,United Kingdom
+West Yorkshire,X7,United Kingdom
+Wigtownshire,X9,United Kingdom
+Jujuy,Y,Argentina
+Wiltshire,Y1,United Kingdom
+Worcestershire,Y3,United Kingdom
+Yamalo-Nenets Autonomous Okrug,YAN,Russian Federation
+Yaroslavl Oblast,YAR,Russian Federation
+Jewish Autonomous Oblast,YEV,Russian Federation
+Yogyakarta,YO,Indonesia
+Yukon,YT,Canada
+Yucatán,YUC,Mexico
+Zaragoza,Z,Spain
+Santa Cruz,Z,Argentina
+Zamora,ZA,Spain
+Zacapa,ZAC,Guatemala
+Zacatecas,ZAC,Mexico
+Zeeland,ZE,Netherlands
+Zuid-Holland,ZH,Netherlands
+北京市,京,China
+河北省,冀,China
+台湾省,台,China
+吉林省,吉,China
+宁夏回族自治区,宁,China
+新疆维吾尔自治区,新,China
+山西省,晋,China
+广西壮族自治区,桂,China
+上海市,沪,China
+天津市,津,China
+浙江省,浙,China
+重庆市,渝,China
+香港特别行政区,港,China
+湖南省,湘,China
+云南省,滇,China
+澳门特别行政区,澳,China
+海南省,琼,China
+甘肃省,甘,China
+安徽省,皖,China
+广东省,粤,China
+江苏省,苏,China
+内蒙古自治区,蒙,China
+西藏自治区,藏,China
+四川省,蜀,China
+河南省,豫,China
+江西省,赣,China
+辽宁省,辽,China
+湖北省,鄂,China
+福建省,闽,China
+陕西省,陕,China
+青海省,青,China
+山东省,鲁,China
+黑龙江省,黑,China
+贵州省,黔,China
