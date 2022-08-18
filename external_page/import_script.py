@@ -59,14 +59,14 @@ class ExternalImport():
         uid = common.authenticate(db, user, password, {})
         models = client.ServerProxy('{}/xmlrpc/2/object'.format(url))
 
-        #attr_val_dict = self.create_attr_val_dict(fields, columns)
-        #database_ids = self.create_attribute_records(db, uid, password, models, attr_val_dict, model_name)
-        #product_field_information = self.get_field_information(db, uid, password, models, fields, columns)
-        #if not product_field_information:
-        #    return None
-        #self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns)
+        attr_val_dict = self.create_attr_val_dict(fields, columns)
+        database_ids = self.create_attribute_records(db, uid, password, models, attr_val_dict, model_name)
+        product_field_information = self.get_field_information(db, uid, password, models, fields, columns)
+        if not product_field_information:
+            return None
+        self.add_attributes_and_values(db, uid, password, models, database_ids, attr_val_dict, product_field_information,fields,columns)
         
-        exp = self.export_product_variants(db, uid, password, models, 'default_code,name,list_price')
+        #exp = self.export_product_variants(db, uid, password, models, 'default_code,name,list_price')
         end = time.time()
         print(end - start)
 
