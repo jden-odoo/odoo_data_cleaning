@@ -531,6 +531,7 @@ class ExternalImport():
             }])
     
 
+    # from odoo addons web controller
     def fields_info(self, db, uid, password, models, model, export_fields):
         info = {}
         fields = models.execute_kw(db, uid, password, model, 'fields_get', [])
@@ -579,14 +580,28 @@ class ExternalImport():
                 info[base] = fields[base]['string']
         return info
 
+    # from odoo addons web controller
     def graft_subfields(self, model, prefix, prefix_string, fields):
         export_fields = [field.split('/', 1)[1] for field in fields]
         return (
             (prefix + '/' + k, prefix_string + '/' + v)
             for k, v in self.fields_info(model, export_fields).items())
 
-
+    
     def export_product_variants(self, db, uid, password, models, fields):
+
+        """
+        Creates a export template with given fields and returns an excel file with all values in product.product 
+        with the corresponding fields
+
+        :param string db: database name
+        :param int uid: user id for xmlrpc
+        :param string password: api key
+        :param ServerProxy models: object for making xmlrpc calls
+        :param string fields: comma separated string for all fields to be used in excel
+        :rtype boolean: if excel file was successfully produced
+
+        """
         if len(fields.split(',')) == 0:
             return False
         kwargs = {
