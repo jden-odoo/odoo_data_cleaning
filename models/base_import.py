@@ -117,6 +117,17 @@ class BSAImport(models.TransientModel):
 
 
     def parse_inputs(self, fields, columns):
+        """
+        Seperates inputs into parent and child columns. Also converts the columns into integer indices 
+        for data cleaning classes
+
+        :param list[string] fields: a list of fields that correspond to the columns to be imported
+        :param list[string] columns: a list of columns to be imported
+        :rtype list[string] parent_fields: a list of the names of the parent fields that correspond to the columns
+        :rtype list[string] parent_columns: a list of the names of the columns to be imported
+        :rtype list[int] parent_indicies: a list of indices of the parent columns
+        :rtype list[int] child_columns: a list of indices of the child columns
+        """
         parent_columns = []
         parent_fields = []
         parent_indices = []
